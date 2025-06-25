@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button'
 
 const ModernHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 pt-16 sm:pt-20 lg:pt-0">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -42,13 +42,13 @@ const ModernHero: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-full px-4 py-2 text-sm text-slate-600 shadow-soft mb-8"
+          className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm text-slate-600 shadow-soft mb-6 sm:mb-8"
         >
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
           Революция в корпоративных решениях
@@ -59,7 +59,7 @@ const ModernHero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-slate-900 mb-6 tracking-tight"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold text-slate-900 mb-6 tracking-tight leading-tight"
         >
           Искусственный
           <br />
@@ -75,7 +75,7 @@ const ModernHero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+          className="text-base sm:text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-2"
         >
           Создаем интеллектуальные решения, которые трансформируют 
           <br className="hidden md:block" />
@@ -87,7 +87,7 @@ const ModernHero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-4"
         >
           <Button 
             size="xl" 

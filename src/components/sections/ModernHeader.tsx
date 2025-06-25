@@ -39,12 +39,12 @@ const ModernHeader: React.FC = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/60 shadow-soft' 
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-soft' 
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -54,10 +54,10 @@ const ModernHeader: React.FC = () => {
               <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-sm" />
             </div>
             <div>
-              <h1 className="text-lg lg:text-xl font-display font-bold text-slate-900">
+              <h1 className="text-base sm:text-lg lg:text-xl font-display font-bold text-slate-900">
                 ФискалеПро
               </h1>
-              <p className="text-xs text-slate-500 hidden sm:block leading-none">
+              <p className="text-[10px] sm:text-xs text-slate-500 hidden sm:block leading-none">
                 AI Solutions
               </p>
             </div>
@@ -126,7 +126,7 @@ const ModernHeader: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200/60"
+            className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-200/60 shadow-lg"
           >
             <div className="px-6 py-6 space-y-4">
               {navItems.map((item, index) => (
