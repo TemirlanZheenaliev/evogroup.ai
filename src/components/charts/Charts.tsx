@@ -333,12 +333,12 @@ export const AnimatedMetric: React.FC<MetricProps> = ({
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold text-gray-900">
+      <div className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900">
         {displayValue}{suffix}
       </div>
-      <div className="text-sm text-gray-600 mt-1">{label}</div>
+      <div className="text-xs sm:text-sm text-gray-600 mt-1">{label}</div>
       {trend && trendValue && (
-        <div className={`text-xs mt-2 font-medium ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+        <div className={`text-[10px] sm:text-xs mt-1 sm:mt-2 font-medium ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
           {trend === 'up' ? '↑' : '↓'} {trendValue}
         </div>
       )}
@@ -479,10 +479,10 @@ export const RadialProgress: React.FC<{ value: number; label: string; className?
         />
         
         {/* Center text */}
-        <text x="60" y="55" textAnchor="middle" className="text-2xl font-bold fill-gray-800">
+        <text x="60" y="55" textAnchor="middle" className="text-lg sm:text-xl lg:text-2xl font-bold fill-gray-800">
           {value}%
         </text>
-        <text x="60" y="72" textAnchor="middle" className="text-xs fill-gray-600">
+        <text x="60" y="72" textAnchor="middle" className="text-[10px] sm:text-xs fill-gray-600">
           {label}
         </text>
       </svg>
@@ -589,13 +589,13 @@ export const FinancialDashboard: React.FC<ChartProps> = ({ className = '' }) => 
       </div>
       
       {/* Dashboard content */}
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-b-lg">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-3 sm:p-6 rounded-b-lg">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-white text-lg font-semibold">Financial Analytics Pro</h3>
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <h3 className="text-white text-sm sm:text-lg font-semibold">Financial Analytics Pro</h3>
           <div className="flex items-center gap-2">
-            <span className="text-green-400 text-sm flex items-center gap-1">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-green-400 text-xs sm:text-sm flex items-center gap-1">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
               Real-time
             </span>
           </div>
@@ -625,8 +625,8 @@ export const FinancialDashboard: React.FC<ChartProps> = ({ className = '' }) => 
         </div>
         
         {/* Chart area */}
-        <div className="bg-gray-800/30 rounded-lg p-4 backdrop-blur">
-          <LineChart className="h-40" />
+        <div className="bg-gray-800/30 rounded-lg p-2 sm:p-4 backdrop-blur">
+          <LineChart className="h-24 sm:h-40" />
         </div>
       </div>
     </div>

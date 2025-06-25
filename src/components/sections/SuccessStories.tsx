@@ -24,7 +24,7 @@ const SuccessStories: React.FC = () => {
       case 'banking-integration':
         // Для банка - финансовый дашборд
         return (
-          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
+          <div className="w-full h-full min-h-[250px] sm:min-h-[350px] lg:min-h-[500px] flex flex-col justify-center p-2 sm:p-4 lg:p-6">
             <FinancialDashboard className="w-full" />
           </div>
         )
@@ -32,27 +32,27 @@ const SuccessStories: React.FC = () => {
       case 'oil-automation':
         // Для нефтяной компании - операционные метрики
         return (
-          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-6">
+          <div className="w-full h-full min-h-[250px] sm:min-h-[350px] lg:min-h-[500px] flex flex-col justify-center p-2 sm:p-4 lg:p-6">
+            <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-3 sm:mb-6">
               Оптимизация производственных процессов
             </h4>
-            <div className="space-y-4">
-              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
-                <h5 className="text-xs font-medium text-gray-600 mb-3">Производительность в реальном времени</h5>
-                <RealtimeMetrics className="h-32 lg:h-40 w-full" />
+            <div className="space-y-2 sm:space-y-4">
+              <div className="bg-white rounded-lg p-2 sm:p-4 lg:p-6 shadow-sm">
+                <h5 className="text-[10px] sm:text-xs font-medium text-gray-600 mb-2 sm:mb-3">Производительность в реальном времени</h5>
+                <RealtimeMetrics className="h-20 sm:h-32 lg:h-40 w-full" />
               </div>
-              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
-                <ComparisonChart className="h-48 lg:h-56 w-full" />
+              <div className="bg-white rounded-lg p-2 sm:p-4 lg:p-6 shadow-sm">
+                <ComparisonChart className="h-24 sm:h-48 lg:h-56 w-full" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 shadow-sm flex items-center justify-center">
-                  <RadialProgress value={94} label="Эффективность" className="w-32 h-32" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+                <div className="bg-white rounded-lg p-2 sm:p-4 shadow-sm flex items-center justify-center">
+                  <RadialProgress value={94} label="Эффективность" className="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32" />
                 </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm flex items-center justify-center">
-                  <RadialProgress value={89} label="Безопасность" className="w-32 h-32" />
+                <div className="bg-white rounded-lg p-2 sm:p-4 shadow-sm flex items-center justify-center">
+                  <RadialProgress value={89} label="Безопасность" className="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32" />
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-4 text-center">
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-2 sm:p-4 text-center">
                 <AnimatedMetric value={47} suffix="%" label="Снижение простоев" trend="down" trendValue="-47%" />
               </div>
             </div>
@@ -62,27 +62,27 @@ const SuccessStories: React.FC = () => {
       case 'government-integration':
         // Для госструктуры - статистика и эффективность
         return (
-          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-6">
+          <div className="w-full h-full min-h-[250px] sm:min-h-[350px] lg:min-h-[500px] flex flex-col justify-center p-2 sm:p-4 lg:p-6">
+            <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-3 sm:mb-6">
               Статистика обработки обращений
             </h4>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
-              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
-                <h5 className="text-xs font-medium text-gray-600 mb-4">Обработка по кварталам</h5>
-                <BarChart className="h-40 lg:h-48 w-full" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-6">
+              <div className="bg-white rounded-lg p-2 sm:p-4 lg:p-6 shadow-sm">
+                <h5 className="text-[10px] sm:text-xs font-medium text-gray-600 mb-2 sm:mb-4">Обработка по кварталам</h5>
+                <BarChart className="h-24 sm:h-40 lg:h-48 w-full" />
               </div>
-              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
-                <h5 className="text-xs font-medium text-gray-600 mb-4">Распределение по типам</h5>
+              <div className="bg-white rounded-lg p-2 sm:p-4 lg:p-6 shadow-sm">
+                <h5 className="text-[10px] sm:text-xs font-medium text-gray-600 mb-2 sm:mb-4">Распределение по типам</h5>
                 <div className="flex justify-center">
-                  <PieChart className="h-40 lg:h-48 w-48 lg:w-56" />
+                  <PieChart className="h-24 sm:h-40 lg:h-48 w-28 sm:w-48 lg:w-56" />
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-2 sm:p-4 text-center">
                 <AnimatedMetric value={87} suffix="%" label="Решено в срок" trend="up" trendValue="+12%" />
               </div>
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 text-center">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-2 sm:p-4 text-center">
                 <AnimatedMetric value={4.8} suffix="/5" label="Оценка граждан" trend="up" trendValue="+0.3" />
               </div>
             </div>
@@ -122,8 +122,8 @@ const SuccessStories: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card variant="hover" className="overflow-hidden">
-                <div className="grid lg:grid-cols-2 gap-0">
-                  <div className="p-6 sm:p-8 lg:p-12">
+                <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0">
+                  <div className="p-4 sm:p-6 lg:p-12 order-2 lg:order-1">
                     <div className="mb-4">
                       <span className="text-sm text-blue-600 font-medium">{study.industry}</span>
                     </div>
@@ -141,11 +141,11 @@ const SuccessStories: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6">
                       {study.results.map((result) => (
                         <div key={result.metric} className="text-center p-3 bg-gray-50 rounded-lg">
-                          <div className="text-xl sm:text-2xl font-bold text-blue-600">{result.value}</div>
-                          <div className="text-xs text-gray-600">{result.metric}</div>
+                          <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">{result.value}</div>
+                          <div className="text-[10px] sm:text-xs text-gray-600">{result.metric}</div>
                         </div>
                       ))}
                     </div>
@@ -156,7 +156,7 @@ const SuccessStories: React.FC = () => {
                     </Button>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 lg:p-12">
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-6 lg:p-12 order-1 lg:order-2">
                     {renderVisualization(study.id)}
                   </div>
                 </div>

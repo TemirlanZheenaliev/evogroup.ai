@@ -1,5 +1,5 @@
-import Header from '@/components/sections/Header'
-import Hero from '@/components/sections/Hero'
+import ModernHeader from '@/components/sections/ModernHeader'
+import ModernHero from '@/components/sections/ModernHero'
 import TrustSignals from '@/components/sections/TrustSignals'
 import Solutions from '@/components/sections/Solutions'
 import TechnologyShowcase from '@/components/sections/TechnologyShowcase'
@@ -12,9 +12,9 @@ import Footer from '@/components/sections/Footer'
 export default function Home() {
   return (
     <>
-      <Header />
+      <ModernHeader />
       <main>
-        <Hero />
+        <ModernHero />
         <TrustSignals />
         <Solutions />
         <TechnologyShowcase />
