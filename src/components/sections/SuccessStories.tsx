@@ -23,68 +23,68 @@ const SuccessStories: React.FC = () => {
   // Функция для рендеринга визуализаций в зависимости от кейса
   const renderVisualization = (caseId: string, index: number) => {
     switch (caseId) {
-      case 'bank':
+      case 'banking-integration':
         // Для банка - финансовый дашборд
         return (
-          <div className="w-full h-full flex flex-col justify-center p-4">
-            <FinancialDashboard className="w-full mb-6" />
-            <div className="grid grid-cols-3 gap-3 mt-4">
-              <AnimatedMetric value={156} suffix="%" label="ROI" trend="up" trendValue="+23%" />
-              <AnimatedMetric value={2.3} suffix="M" label="Транзакций/день" trend="up" trendValue="+15%" />
-              <AnimatedMetric value={99.9} suffix="%" label="Аптайм" trend="up" trendValue="+0.3%" />
-            </div>
+          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
+            <FinancialDashboard className="w-full" />
           </div>
         )
       
-      case 'oil':
+      case 'oil-automation':
         // Для нефтяной компании - операционные метрики
         return (
-          <div className="w-full h-full flex flex-col justify-center">
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-gray-700 mb-4">
-                Оптимизация производственных процессов
-              </h4>
-              <div className="bg-white rounded-lg p-4 shadow-sm mb-4">
-                <RealtimeMetrics className="h-32" />
+          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
+            <h4 className="text-sm font-semibold text-gray-700 mb-6">
+              Оптимизация производственных процессов
+            </h4>
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+                <h5 className="text-xs font-medium text-gray-600 mb-3">Производительность в реальном времени</h5>
+                <RealtimeMetrics className="h-32 lg:h-40 w-full" />
               </div>
-              <div className="grid grid-cols-2 gap-4 mb-4">
-                <div className="bg-white rounded-lg p-3 shadow-sm">
-                  <ComparisonChart className="h-40" />
+              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+                <ComparisonChart className="h-48 lg:h-56 w-full" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-lg p-4 shadow-sm flex items-center justify-center">
+                  <RadialProgress value={94} label="Эффективность" className="w-32 h-32" />
                 </div>
-                <div className="bg-white rounded-lg p-3 shadow-sm">
-                  <div className="grid grid-cols-2 gap-2">
-                    <RadialProgress value={94} label="Эффективность" className="h-20" />
-                    <RadialProgress value={89} label="Безопасность" className="h-20" />
-                  </div>
-                  <div className="mt-3 text-center">
-                    <AnimatedMetric value={47} suffix="%" label="Снижение простоев" trend="down" trendValue="-47%" />
-                  </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm flex items-center justify-center">
+                  <RadialProgress value={89} label="Безопасность" className="w-32 h-32" />
                 </div>
+              </div>
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-4 text-center">
+                <AnimatedMetric value={47} suffix="%" label="Снижение простоев" trend="down" trendValue="-47%" />
               </div>
             </div>
           </div>
         )
       
-      case 'gov':
+      case 'government-integration':
         // Для госструктуры - статистика и эффективность
         return (
-          <div className="w-full h-full flex flex-col justify-center">
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-gray-700 mb-4">
-                Статистика обработки обращений
-              </h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <h5 className="text-xs font-medium text-gray-600 mb-3">Обработка по кварталам</h5>
-                  <BarChart className="h-32" />
-                </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <h5 className="text-xs font-medium text-gray-600 mb-3">Распределение по типам</h5>
-                  <PieChart className="h-32" />
+          <div className="w-full h-full min-h-[500px] flex flex-col justify-center p-4 lg:p-6">
+            <h4 className="text-sm font-semibold text-gray-700 mb-6">
+              Статистика обработки обращений
+            </h4>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+                <h5 className="text-xs font-medium text-gray-600 mb-4">Обработка по кварталам</h5>
+                <BarChart className="h-40 lg:h-48 w-full" />
+              </div>
+              <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+                <h5 className="text-xs font-medium text-gray-600 mb-4">Распределение по типам</h5>
+                <div className="flex justify-center">
+                  <PieChart className="h-40 lg:h-48 w-48 lg:w-56" />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 mt-4">
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 text-center">
                 <AnimatedMetric value={87} suffix="%" label="Решено в срок" trend="up" trendValue="+12%" />
+              </div>
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 text-center">
                 <AnimatedMetric value={4.8} suffix="/5" label="Оценка граждан" trend="up" trendValue="+0.3" />
               </div>
             </div>

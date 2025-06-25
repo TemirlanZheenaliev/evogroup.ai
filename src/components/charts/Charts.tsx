@@ -105,7 +105,7 @@ export const BarChart: React.FC<ChartProps> = ({ className = '' }) => {
   ]
 
   return (
-    <svg viewBox="0 0 300 100" className={className}>
+    <svg viewBox="0 0 320 140" className={className} preserveAspectRatio="xMidYMid meet">
       <defs>
         <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#8B5CF6" />
@@ -113,11 +113,34 @@ export const BarChart: React.FC<ChartProps> = ({ className = '' }) => {
         </linearGradient>
       </defs>
       
+      {/* Y-axis labels */}
+      {[0, 25, 50, 75, 100].map((value) => (
+        <g key={value}>
+          <line
+            x1="40"
+            y1={110 - (value / 100) * 90}
+            x2="300"
+            y2={110 - (value / 100) * 90}
+            stroke="#E5E7EB"
+            strokeWidth="1"
+            strokeDasharray="2 4"
+          />
+          <text
+            x="30"
+            y={115 - (value / 100) * 90}
+            textAnchor="end"
+            className="text-[10px] fill-gray-500"
+          >
+            {value}%
+          </text>
+        </g>
+      ))}
+      
       {data.map((item, index) => {
         const barWidth = 50
-        const barHeight = (item.value / 100) * 80
-        const x = 30 + index * 70
-        const y = 90 - barHeight
+        const barHeight = (item.value / 100) * 90
+        const x = 50 + index * 65
+        const y = 110 - barHeight
         
         return (
           <g key={index}>
@@ -135,9 +158,9 @@ export const BarChart: React.FC<ChartProps> = ({ className = '' }) => {
             />
             <text
               x={x + barWidth / 2}
-              y="98"
+              y="125"
               textAnchor="middle"
-              className="text-xs fill-gray-600"
+              className="text-xs font-medium fill-gray-700"
             >
               {item.label}
             </text>
@@ -162,15 +185,15 @@ export const BarChart: React.FC<ChartProps> = ({ className = '' }) => {
 // Круговая диаграмма
 export const PieChart: React.FC<ChartProps> = ({ className = '' }) => {
   const data = [
-    { label: 'Автоматизировано', value: 75, color: '#3B82F6' },
+    { label: 'Эффективно', value: 75, color: '#3B82F6' },
     { label: 'В процессе', value: 20, color: '#8B5CF6' },
-    { label: 'Планируется', value: 5, color: '#EC4899' },
+    { label: 'Ожидается', value: 5, color: '#EC4899' },
   ]
 
   let cumulativePercentage = 0
 
   return (
-    <svg viewBox="0 0 200 200" className={className}>
+    <svg viewBox="0 0 200 200" className={className} preserveAspectRatio="xMidYMid meet">
       {data.map((slice, index) => {
         const startAngle = (cumulativePercentage * 360) / 100
         const endAngle = ((cumulativePercentage + slice.value) * 360) / 100
@@ -330,7 +353,7 @@ export const ComparisonChart: React.FC<ChartProps> = ({ className = '' }) => {
   const newValues = [95, 98, 85, 90]
 
   return (
-    <svg viewBox="0 0 300 200" className={className}>
+    <svg viewBox="0 0 320 200" className={className} preserveAspectRatio="xMidYMid meet">
       <defs>
         <linearGradient id="oldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#9CA3AF" />
@@ -344,18 +367,18 @@ export const ComparisonChart: React.FC<ChartProps> = ({ className = '' }) => {
       
       {categories.map((category, index) => {
         const y = 30 + index * 40
-        const oldWidth = (oldValues[index] / 100) * 200
-        const newWidth = (newValues[index] / 100) * 200
+        const oldWidth = (oldValues[index] / 100) * 180
+        const newWidth = (newValues[index] / 100) * 180
         
         return (
           <g key={index}>
-            <text x="5" y={y + 5} className="text-xs fill-gray-700" textAnchor="start">
+            <text x="5" y={y + 5} className="text-sm font-medium fill-gray-700" textAnchor="start">
               {category}
             </text>
             
             {/* Old value bar */}
             <motion.rect
-              x="80"
+              x="90"
               y={y - 8}
               width={oldWidth}
               height="8"
@@ -369,7 +392,7 @@ export const ComparisonChart: React.FC<ChartProps> = ({ className = '' }) => {
             
             {/* New value bar */}
             <motion.rect
-              x="80"
+              x="90"
               y={y + 2}
               width={newWidth}
               height="8"
@@ -383,7 +406,7 @@ export const ComparisonChart: React.FC<ChartProps> = ({ className = '' }) => {
             
             {/* Value label */}
             <motion.text
-              x={80 + newWidth + 5}
+              x={90 + newWidth + 5}
               y={y + 8}
               className="text-xs font-bold fill-blue-600"
               initial={{ opacity: 0 }}
@@ -397,12 +420,12 @@ export const ComparisonChart: React.FC<ChartProps> = ({ className = '' }) => {
       })}
       
       {/* Legend */}
-      <g transform="translate(80, 180)">
+      <g transform="translate(90, 180)">
         <rect x="0" y="0" width="12" height="8" fill="url(#oldGradient)" rx="2" />
-        <text x="16" y="7" className="text-xs fill-gray-600">До внедрения</text>
+        <text x="16" y="7" className="text-[10px] fill-gray-600">До внедрения</text>
         
-        <rect x="100" y="0" width="12" height="8" fill="url(#newGradient)" rx="2" />
-        <text x="116" y="7" className="text-xs fill-gray-600">После внедрения</text>
+        <rect x="90" y="0" width="12" height="8" fill="url(#newGradient)" rx="2" />
+        <text x="106" y="7" className="text-[10px] fill-gray-600">После внедрения</text>
       </g>
     </svg>
   )
@@ -492,7 +515,7 @@ export const RealtimeMetrics: React.FC<ChartProps> = ({ className = '' }) => {
     .join(' ')
 
   return (
-    <svg viewBox="0 0 300 100" className={className}>
+    <svg viewBox="0 0 300 120" className={className} preserveAspectRatio="xMidYMid meet">
       <defs>
         <linearGradient id="realtimeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#10B981" stopOpacity="0.8" />
@@ -539,8 +562,11 @@ export const RealtimeMetrics: React.FC<ChartProps> = ({ className = '' }) => {
         className="animate-pulse"
       />
       
-      <text x="150" y="15" textAnchor="middle" className="text-xs font-semibold fill-gray-700">
+      <text x="150" y="15" textAnchor="middle" className="text-sm font-semibold fill-gray-700">
         Производительность в реальном времени
+      </text>
+      <text x="290" y="105" textAnchor="end" className="text-[10px] fill-gray-500">
+        Сейчас
       </text>
     </svg>
   )
@@ -576,17 +602,24 @@ export const FinancialDashboard: React.FC<ChartProps> = ({ className = '' }) => 
         </div>
         
         {/* Metrics row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4">
           {[
-            { label: 'Revenue', value: '$12.4M', change: '+23%' },
-            { label: 'Transactions', value: '1.2M', change: '+15%' },
-            { label: 'Users', value: '45.6K', change: '+8%' },
-            { label: 'Efficiency', value: '94.5%', change: '+12%' }
+            { label: 'Доход', value: '₽12.4M', change: '+23%', icon: '📈' },
+            { label: 'Транзакции', value: '1.2M', change: '+15%', icon: '💳' },
+            { label: 'Клиенты', value: '45.6K', change: '+8%', icon: '👥' },
+            { label: 'KPI', value: '94.5%', change: '+12%', icon: '🎯' }
           ].map((metric, i) => (
-            <div key={i} className="bg-gray-800/50 rounded-lg p-2 sm:p-3 backdrop-blur">
-              <p className="text-gray-400 text-[10px] sm:text-xs mb-1">{metric.label}</p>
-              <p className="text-white text-sm sm:text-lg font-bold">{metric.value}</p>
-              <p className="text-green-400 text-[10px] sm:text-xs">{metric.change}</p>
+            <div key={i} className="bg-gray-800/50 rounded-lg p-2 sm:p-3 backdrop-blur border border-gray-700/50">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-gray-400 text-[10px] sm:text-xs">{metric.label}</p>
+                <span className="text-xs">{metric.icon}</span>
+              </div>
+              <p className="text-white text-sm sm:text-base font-bold">{metric.value}</p>
+              <p className={`text-[10px] sm:text-xs font-medium ${
+                metric.change.startsWith('+') ? 'text-green-400' : 'text-red-400'
+              }`}>
+                {metric.change}
+              </p>
             </div>
           ))}
         </div>
