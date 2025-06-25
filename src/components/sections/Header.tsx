@@ -40,21 +40,30 @@ const Header: React.FC = () => {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50' 
-          : 'bg-transparent'
+          : 'bg-gradient-to-b from-navy/80 to-transparent backdrop-blur-sm'
       )}
     >
       <div className="w-full px-4 sm:px-6 lg:max-w-7xl lg:mx-auto">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-              <Icon name="brain" className="text-white" size="sm" />
+            <div className={cn(
+              "w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transition-all duration-300",
+              isScrolled ? "shadow-lg" : "shadow-xl ring-2 ring-white/20"
+            )}>
+              <Icon name="brain" className="text-white drop-shadow-sm" size="sm" />
             </div>
             <div>
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-navy">
+              <h1 className={cn(
+                "text-lg sm:text-xl lg:text-2xl font-display font-bold transition-colors duration-300",
+                isScrolled ? "text-navy" : "text-white"
+              )}>
                 ФискалеПро
               </h1>
-              <p className="text-[10px] sm:text-xs text-gray-600 hidden sm:block">
+              <p className={cn(
+                "text-[10px] sm:text-xs hidden sm:block transition-colors duration-300",
+                isScrolled ? "text-gray-600" : "text-white/80"
+              )}>
                 ИИ-решения для бизнеса
               </p>
             </div>
@@ -68,8 +77,9 @@ const Header: React.FC = () => {
                 onClick={() => scrollToSection(item.href)}
                 className={cn(
                   'flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                  'hover:bg-blue-50 hover:text-blue-600',
-                  isScrolled ? 'text-gray-700' : 'text-white hover:text-blue-200'
+                  isScrolled 
+                    ? 'text-gray-700 hover:bg-blue-50 hover:text-blue-600' 
+                    : 'text-white/90 hover:bg-white/10 hover:text-white'
                 )}
               >
                 <Icon name={item.icon} size="sm" />
