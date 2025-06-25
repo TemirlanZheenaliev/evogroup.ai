@@ -7,21 +7,19 @@ import { Card } from '@/components/ui/Card'
 import { Icon } from '@/components/ui/Icon'
 import { Button } from '@/components/ui/Button'
 import { 
-  LineChart, 
   BarChart, 
   PieChart, 
-  HeatMap, 
   AnimatedMetric,
-  DashboardPreview,
   ComparisonChart,
   RadialProgress,
   RealtimeMetrics,
-  FinancialDashboard
+  FinancialDashboard,
+  DashboardPreview
 } from '@/components/charts/Charts'
 
 const SuccessStories: React.FC = () => {
   // Функция для рендеринга визуализаций в зависимости от кейса
-  const renderVisualization = (caseId: string, index: number) => {
+  const renderVisualization = (caseId: string) => {
     switch (caseId) {
       case 'banking-integration':
         // Для банка - финансовый дашборд
@@ -159,7 +157,7 @@ const SuccessStories: React.FC = () => {
                   </div>
                   
                   <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 lg:p-12">
-                    {renderVisualization(study.id, index)}
+                    {renderVisualization(study.id)}
                   </div>
                 </div>
               </Card>
