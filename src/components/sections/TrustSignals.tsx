@@ -14,7 +14,7 @@ const TrustSignals: React.FC = () => {
                 subtitle: 'We work with the largest banks, industrial companies and government organizations',
                 keyClients: 'Our Key Clients',
                 certificationsTitle: 'Certifications and Partnerships',
-                trustQuote: '"FiscalePro is the only company in Kyrgyzstan with full government API integration and AI expertise for enterprise solutions"',
+                trustQuote: '"Evolution Group is the only company in Kyrgyzstan with full government API integration and AI expertise for enterprise solutions"',
                 trustSource: '— IT Companies Association of Kyrgyzstan'
             }
         } else if (locale === 'ky') {
@@ -23,7 +23,7 @@ const TrustSignals: React.FC = () => {
                 subtitle: 'Эң ири банктар, өнөр жай компаниялары жана мамлекеттик уюмдар менен иштейбиз',
                 keyClients: 'Биздин негизги кардарлар',
                 certificationsTitle: 'Сертификаттар жана серипкештик',
-                trustQuote: '"ФискалеПро Кыргызстанда мамлекеттик APIлерди толук интеграциялоо жана корпоративдик чечимдер үчүн ИИ адистиги бар жалгыз компания"',
+                trustQuote: '"Evolution Group Кыргызстанда мамлекеттик APIлерди толук интеграциялоо жана корпоративдик чечимдер үчүн ИИ адистиги бар жалгыз компания"',
                 trustSource: '— Кыргызстандын IT компанияларынын ассоциациясы'
             }
         } else {
@@ -32,7 +32,7 @@ const TrustSignals: React.FC = () => {
                 subtitle: 'Работаем с крупнейшими банками, промышленными компаниями и государственными организациями',
                 keyClients: 'Наши ключевые клиенты',
                 certificationsTitle: 'Сертификации и партнерства',
-                trustQuote: '"ФискалеПро - единственная компания в Кыргызстане с полной интеграцией государственных API и экспертизой в области искусственного интеллекта для enterprise-решений"',
+                trustQuote: '"Evolution Group - единственная компания в Кыргызстане с полной интеграцией государственных API и экспертизой в области искусственного интеллекта для enterprise-решений"',
                 trustSource: '— Ассоциация IT-компаний Кыргызстана'
             }
         }

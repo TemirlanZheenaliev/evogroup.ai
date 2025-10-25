@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                     successMessage: 'Thank you for subscribing!'
                 },
                 company: {
-                    name: 'FiscalePro',
+                    name: 'Evolution Group',
                     tagline: 'AI Solutions',
                     description: 'We create intelligent solutions that transform the way companies work.',
                     slogan: 'Made with ❤️ in Kyrgyzstan'
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                     successMessage: 'Жазылганыңыз үчүн рахмат!'
                 },
                 company: {
-                    name: 'ФискалеПро',
+                    name: 'Evolution Group',
                     tagline: 'ИИ Чечимдери',
                     description: 'Компаниялардын иштөө ыкмасын өзгөрткөн акылдуу чечимдерди түзөбүз.',
                     slogan: 'Кыргызстанда ❤️ менен жасалган'
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                     successMessage: 'Спасибо за подписку!'
                 },
                 company: {
-                    name: 'ФискалеПро',
+                    name: 'Evolution Group',
                     tagline: 'AI Solutions',
                     description: 'Создаем интеллектуальные решения, которые трансформируют способ работы компаний.',
                     slogan: 'Сделано с ❤️ в Кыргызстане'
@@ -321,7 +321,7 @@ const Footer: React.FC = () => {
                         <div className="space-y-3">
                             <div className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group">
                                 <span className="text-lg group-hover:scale-110 transition-transform">📧</span>
-                                <a href="mailto:info@fiscalepro.kg">info@fiscalepro.kg</a>
+                                <a href="mailto:info@evolution-group.kg">info@fiscalepro.kg</a>
                             </div>
                             <div className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group">
                                 <span className="text-lg group-hover:scale-110 transition-transform">📞</span>

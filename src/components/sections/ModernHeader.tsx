@@ -22,7 +22,7 @@ const ModernHeader: React.FC = () => {
     const getTranslations = () => {
         if (locale === 'en') {
             return {
-                company: 'FiscalePro',
+                company: 'Evolution Group',
                 nav: {
                     solutions: 'Solutions',
                     cases: 'Cases',
@@ -34,7 +34,7 @@ const ModernHeader: React.FC = () => {
             }
         } else if (locale === 'ky') {
             return {
-                company: 'ФискалеПро',
+                company: 'Evolution Group',
                 nav: {
                     solutions: 'Чечимдер',
                     cases: 'Мисалдар',
@@ -46,7 +46,7 @@ const ModernHeader: React.FC = () => {
             }
         } else {
             return {
-                company: 'ФискалеПро',
+                company: 'Evolution Group',
                 nav: {
                     solutions: 'Решения',
                     cases: 'Кейсы',

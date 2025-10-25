@@ -269,7 +269,7 @@ const CompetitiveAdvantages: React.FC = () => {
                                     {locale === 'en' ? 'Parameter' : locale === 'ky' ? 'Параметр' : 'Параметр'}
                                 </th>
                                 <th className="text-center text-blue-400 py-4 px-4">
-                                    {locale === 'en' ? 'FiscalePro' : 'ФискалеПро'}
+                                    {locale === 'en' ? 'Evolution Group' : 'Evolution Group'}
                                 </th>
                                 <th className="text-center text-white/60 py-4 px-4">
                                     {locale === 'en' ? 'Competitors' : locale === 'ky' ? 'Атаандаштар' : 'Конкуренты'}

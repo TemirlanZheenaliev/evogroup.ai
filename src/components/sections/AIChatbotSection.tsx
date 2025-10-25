@@ -51,7 +51,7 @@ const AIChatbotSection: React.FC = () => {
                 subtitle: 'Биздин кызматтар, баалар жана бизнесиңиз үчүн ИИ мүмкүнчүлүктөрү жөнүндө тез жооп алыңыз',
                 demoTitle: 'Чат-бот демонстрациясы',
                 openChatbot: 'Чат-ботту ачуу',
-                placeholder: 'Суракыңызды жазыңыз...',
+                placeholder: 'Сурагыңызды жазыңыз...',
                 headerTitle: 'ИИ Жардамчы',
                 headerStatus: 'Онлайн • Тез жооп берет',
                 features: [
@@ -111,7 +111,7 @@ const AIChatbotSection: React.FC = () => {
                 {
                     id: '1',
                     text: 'ИИ долбоорунун наркы',
-                    response: 'ИИ долбоорунун наркы көп факторлордон көз каранды: тапшырманын түрү, татаалдуулугу, мөөнөттөрү жана интеграциялар. Негизги наркы 3 айлык иштеп чыгуу үчүн $50,000дон башталат. так эсептөө үчүн жогорудагы калькуляторду колдонуңуз же жеке консультация үчүн биз менен байланышыңыз.'
+                    response: 'ИИ долбоорунун наркы көп факторлордон көз каранды: тапшырманын түрү, татаалдуулугу, мөөнөттөрү жана интеграциялар. Негизги наркы 3 айлык иштеп чыгуу үчүн $50,000дон баштолат. Так эсептөө үчүн жогорудагы калькуляторду колдонуңуз же жеке консультация үчүн биз менен байланышыңыз.'
                 },
                 {
                     id: '2',
@@ -161,7 +161,7 @@ const AIChatbotSection: React.FC = () => {
     const getBotResponses = (): { [key: string]: string } => {
         if (locale === 'en') {
             return {
-                'hello': 'Hello! I\'m the AI assistant of FiscalePro. I help answer questions about our AI services and solutions.',
+                'hello': 'Hello! I\'m the AI assistant of Evolution Group. I help answer questions about our AI services and solutions.',
                 'services': 'We provide:\n• Custom AI solution development\n• Big data analytics\n• Business process automation\n• Integration with existing systems\n• 24/7 technical support',
                 'price': 'Project costs start from $50,000. Use the calculator above or contact us for personal consultation.',
                 'contacts': 'Contact us:\n📧 info@fiscalepro.kg\n📞 +996 312 123-456\n🏢 Bishkek, Kievskaya str. 123\n\nOr fill out the contact form on our website.',
@@ -169,15 +169,15 @@ const AIChatbotSection: React.FC = () => {
             }
         } else if (locale === 'ky') {
             return {
-                'салам': 'Салам! Мен ФискалеПронун ИИ жардамчысымын. Биздин ИИ кызматтары жана чечимдери жөнүндө суракка жооп берүүгө жардам берем.',
+                'салам': 'Салам! Мен Evolution Group ИИ жардамчысымын. Биздин ИИ кызматтары жана чечимдери жөнүндө суракка жооп берүүгө жардам берем.',
                 'кызматтар': 'Биз сунуштайбыз:\n• Буйрутма боюнча ИИ чечимдерин иштеп чыгуу\n• Чоң маалыматтарды талдоо\n• Бизнес процесстерди автоматташтыруу\n• Учурдагы системалар менен интеграция\n• 24/7 техникалык колдоо',
-                'баа': 'Долбоорлордун баасы $50,000дон башталат. Жогорудагы калькуляторду колдонуңуз же жеке консультация үчүн биз менен байланышыңыз.',
+                'баа': 'Долбоорлордун баасы $50,000дон баштолат. Жогорудагы калькуляторду колдонуңуз же жеке консультация үчүн биз менен байланышыңыз.',
                 'байланыш': 'Биз менен байланыш:\n📧 info@fiscalepro.kg\n📞 +996 312 123-456\n🏢 Бишкек ш., Киев көч. 123\n\nЖе сайттагы байланыш формасын толтуруңуз.',
-                'команда': 'Биздин командада 25+ эксперт бар:\n• ML инженерлер\n• Маалымат окумуштуулары\n• Backend/Frontend өнүктүрүүчүлөр\n• DevOps инженерлер\n• Бизнес аналитиктер\n\nКомандынын орточо тажрыйбасы - ИИда 7+ жыл.'
+                'команда': 'Биздин командада 25+ эксперт бар:\n• ML инженерлер\n• Маалымат окумуштуулары\n• Backend/Frontend өнүктүрүүчүлөр\n• DevOps инженерлер\n• Бизнес аналитиктер\n\nКомандынын ортоcho тажрыйбасы - ИИда 7+ жыл.'
             }
         } else {
             return {
-                'привет': 'Привет! Я ИИ-ассистент ФискалеПро. Помогу ответить на вопросы о наших услугах и решениях искусственного интеллекта.',
+                'привет': 'Привет! Я ИИ-ассистент Evolution Group. Помогу ответить на вопросы о наших услугах и решениях искусственного интеллекта.',
                 'услуги': 'Мы предоставляем:\n• Разработку ИИ-решений под заказ\n• Аналитику больших данных\n• Автоматизацию бизнес-процессов\n• Интеграцию с существующими системами\n• Техническую поддержку 24/7',
                 'цена': 'Стоимость проектов начинается от $50,000. Используйте калькулятор выше или оставьте заявку для персональной консультации.',
                 'контакты': 'Свяжитесь с нами:\n📧 info@fiscalepro.kg\n📞 +996 312 123-456\n🏢 г. Бишкек, ул. Киевская 123\n\nИли заполните форму обратной связи на сайте.',
@@ -191,11 +191,11 @@ const AIChatbotSection: React.FC = () => {
     // Приветствие для разных языков
     const getGreeting = (): string => {
         if (locale === 'en') {
-            return 'Hello! I\'m the AI assistant of FiscalePro. I help answer questions about our AI services and solutions. How can I help you?'
+            return 'Hello! I\'m the AI assistant of Evolution Group. I help answer questions about our AI services and solutions. How can I help you?'
         } else if (locale === 'ky') {
-            return 'Салам! Мен ФискалеПронун ИИ жардамчысымын. Биздин ИИ кызматтары жана чечимдери жөнүндө суракка жооп берүүгө жардам берем. Кантип жардам бере алам?'
+            return 'Салам! Мен Evolution Group ИИ жардамчысымын. Биздин ИИ кызматтары жана чечимдери жөнүндө суракка жооп берүүгө жардам берем. Кантип жардам бере алам?'
         } else {
-            return 'Здравствуйте! Я ИИ-ассистент ФискалеПро. Помогу ответить на вопросы о наших услугах в области искусственного интеллекта. Чем могу помочь?'
+            return 'Здравствуйте! Я ИИ-ассистент Evolution Group. Помогу ответить на вопросы о наших услугах в области искусственного интеллекта. Чем могу помочь?'
         }
     }
 
@@ -236,7 +236,7 @@ const AIChatbotSection: React.FC = () => {
             if (locale === 'en') {
                 return 'You\'re welcome! If you have more questions - feel free to ask. Ready to help you choose an AI solution for your business.'
             } else if (locale === 'ky') {
-                return 'Кайрылык эмес! Дагы суракыңыз болсо - сураңыз. Бизнесиңиз үчүн ИИ чечимин тандоого жардам берүүгө даярмын.'
+                return 'Кайрылык эмес! Дагы сурагыңыз болсо - сураңыз. Бизнесиңиз үчүн ИИ чечимин тандоого жардам берүүгө даярмын.'
             } else {
                 return 'Пожалуйста! Если у вас есть еще вопросы - обращайтесь. Готов помочь с выбором ИИ-решения для вашего бизнеса.'
             }
@@ -294,31 +294,31 @@ const AIChatbotSection: React.FC = () => {
     }, [isOpen, locale])
 
     return (
-        <section id="chatbot" className="py-24 bg-slate-900/30 relative overflow-hidden">
+        <section id="chatbot" className="py-12 sm:py-24 bg-slate-900/30 relative overflow-hidden">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/3 left-16 w-64 h-64 bg-green-500/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/3 right-16 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white/80 shadow-sm mb-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div className="text-center mb-12 sm:mb-16">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white/80 shadow-sm mb-4 sm:mb-6">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                         {translations.badge}
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
                         {translations.title}
                     </h2>
-                    <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                    <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto px-4">
                         {translations.subtitle}
                     </p>
                 </div>
 
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
-                        <h3 className="text-2xl font-bold text-white mb-6 text-center">{translations.demoTitle}</h3>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-white/10 mb-6 sm:mb-8">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">{translations.demoTitle}</h3>
 
-                        <div className="grid md:grid-cols-2 gap-4 mb-8">
+                        <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                             {quickReplies.map((reply) => (
                                 <button
                                     key={reply.id}
@@ -326,17 +326,17 @@ const AIChatbotSection: React.FC = () => {
                                         setIsOpen(true)
                                         setTimeout(() => handleQuickReply(reply), 300)
                                     }}
-                                    className="p-4 bg-white/5 border border-white/10 rounded-xl text-left hover:bg-white/10 transition-all duration-200 group"
+                                    className="p-3 sm:p-4 bg-white/5 border border-white/10 rounded-xl text-left hover:bg-white/10 transition-all duration-200 group"
                                 >
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors flex-shrink-0">
+                                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                             </svg>
                                         </div>
-                                        <div className="flex-1">
-                                            <div className="text-white font-medium">{reply.text}</div>
-                                            <div className="text-white/60 text-sm">
+                                        <div className="flex-1 min-w-0">
+                                            <div className="text-white font-medium text-sm sm:text-base">{reply.text}</div>
+                                            <div className="text-white/60 text-xs sm:text-sm">
                                                 {locale === 'en' ? 'Click for example' :
                                                     locale === 'ky' ? 'Мисал үчүн басыңыз' :
                                                         'Нажмите для примера'}
@@ -352,35 +352,35 @@ const AIChatbotSection: React.FC = () => {
                                 onClick={() => setIsOpen(true)}
                                 variant="primary"
                                 size="lg"
-                                className="bg-blue-600 hover:bg-blue-700 text-lg px-8"
+                                className="bg-blue-600 hover:bg-blue-700 text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
                             >
                                 {translations.openChatbot}
                             </Button>
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
                         {translations.features.map((feature, index) => (
-                            <div key={index} className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <div key={index} className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/10">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                     {index === 0 && (
-                                        <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
                                     )}
                                     {index === 1 && (
-                                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                         </svg>
                                     )}
                                     {index === 2 && (
-                                        <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                                         </svg>
                                     )}
                                 </div>
-                                <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
-                                <p className="text-white/60 text-sm">{feature.description}</p>
+                                <h4 className="text-base sm:text-lg font-bold text-white mb-2">{feature.title}</h4>
+                                <p className="text-white/60 text-xs sm:text-sm">{feature.description}</p>
                             </div>
                         ))}
                     </div>
@@ -389,7 +389,7 @@ const AIChatbotSection: React.FC = () => {
 
             {/* Chat Widget */}
             {isOpen && (
-                <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl z-50 flex flex-col overflow-hidden">
+                <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-96 sm:h-[600px] bg-slate-900/95 backdrop-blur-xl sm:rounded-2xl border-t sm:border border-white/10 shadow-2xl z-50 flex flex-col overflow-hidden">
                     <div className="flex items-center justify-between p-4 border-b border-white/10 bg-gradient-to-r from-blue-600 to-violet-600">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -398,7 +398,7 @@ const AIChatbotSection: React.FC = () => {
                                 </svg>
                             </div>
                             <div>
-                                <div className="text-white font-medium">{translations.headerTitle}</div>
+                                <div className="text-white font-medium text-sm sm:text-base">{translations.headerTitle}</div>
                                 <div className="text-white/70 text-xs">{translations.headerStatus}</div>
                             </div>
                         </div>
@@ -415,7 +415,7 @@ const AIChatbotSection: React.FC = () => {
                     <div className="flex-1 overflow-y-auto p-4 space-y-4">
                         {messages.map((message) => (
                             <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-xs px-4 py-2 rounded-lg ${
+                                <div className={`max-w-[80%] sm:max-w-xs px-4 py-2 rounded-lg ${
                                     message.sender === 'user'
                                         ? 'bg-blue-600 text-white'
                                         : 'bg-white/10 text-white border border-white/10'
@@ -445,7 +445,7 @@ const AIChatbotSection: React.FC = () => {
                         <div ref={messagesEndRef} />
                     </div>
 
-                    <div className="p-4 border-t border-white/10">
+                    <div className="p-4 border-t border-white/10 bg-slate-900/50">
                         <div className="flex gap-2">
                             <input
                                 type="text"
@@ -453,12 +453,12 @@ const AIChatbotSection: React.FC = () => {
                                 onChange={(e) => setInputText(e.target.value)}
                                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                                 placeholder={translations.placeholder}
-                                className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                                className="flex-1 px-3 py-2.5 sm:py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                             />
                             <button
                                 onClick={handleSendMessage}
                                 disabled={!inputText.trim()}
-                                className="w-10 h-10 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg flex items-center justify-center text-white transition-colors"
+                                className="w-10 h-10 sm:h-10 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg flex items-center justify-center text-white transition-colors flex-shrink-0"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -472,9 +472,9 @@ const AIChatbotSection: React.FC = () => {
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-40 flex items-center justify-center group"
+                    className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-40 flex items-center justify-center group"
                 >
-                    <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                     <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
