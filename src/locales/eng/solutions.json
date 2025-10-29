@@ -1,0 +1,85 @@
+{
+  "title": "Our Solutions",
+  "subtitle": "We develop AI systems for different business industries",
+  "description": "Each solution is created considering industry specifics and client business processes",
+  "banking": {
+    "title": "Banking Solutions",
+    "description": "Automation of credit decisions, risk analysis and product personalization",
+    "features": [
+      "Credit scoring",
+      "Fraud analysis",
+      "Product personalization",
+      "Process automation"
+    ],
+    "benefits": [
+      "35% risk reduction",
+      "5x faster decisions",
+      "$2M+ annual savings"
+    ]
+  },
+  "government": {
+    "title": "Government Sector",
+    "description": "Service digitization, data analysis and process optimization",
+    "features": [
+      "Citizen request processing",
+      "Efficiency analytics",
+      "Document workflow automation",
+      "Inter-agency integration"
+    ],
+    "benefits": [
+      "60% acceleration",
+      "Improved service quality",
+      "Reduced bureaucracy"
+    ]
+  },
+  "energy": {
+    "title": "Oil and Gas",
+    "description": "Predictive analytics, production optimization and equipment monitoring",
+    "features": [
+      "Predictive maintenance",
+      "Production optimization",
+      "Safety monitoring",
+      "Geological data analysis"
+    ],
+    "benefits": [
+      "45% accident reduction",
+      "30% maintenance savings",
+      "15% production increase"
+    ]
+  },
+  "manufacturing": {
+    "title": "Manufacturing",
+    "description": "Smart manufacturing using AI for process optimization",
+    "features": [
+      "Quality control",
+      "Production planning",
+      "Supply chain management",
+      "Predictive maintenance"
+    ]
+  },
+  "retail": {
+    "title": "Retail",
+    "description": "Personalization of customer experience and sales optimization",
+    "features": [
+      "Recommendation systems",
+      "Demand forecasting",
+      "Price optimization",
+      "Customer behavior analysis"
+    ]
+  },
+  "healthcare": {
+    "title": "Healthcare",
+    "description": "Medical analytics and decision support",
+    "features": [
+      "Diagnostic support",
+      "Medical image analysis",
+      "Risk prediction",
+      "Treatment optimization"
+    ]
+  },
+  "cta": {
+    "title": "Need a solution for your industry?",
+    "description": "Let's discuss your challenges and propose optimal solution",
+    "button": "Get Consultation"
+  }
+}

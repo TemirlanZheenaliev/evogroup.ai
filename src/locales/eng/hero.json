@@ -1,0 +1,37 @@
+{
+  "badge_text": "Revolution in Corporate Solutions",
+  "title": {
+    "line1": "Artificial",
+    "line2": "Intelligence",
+    "line3": "for Business"
+  },
+  "subtitle": "We create intelligent solutions that transform how Kyrgyzstan's largest companies work",
+  "description": "We specialize in developing cutting-edge AI solutions for banks, government organizations, and industrial companies",
+  "cta_primary": "Start Project",
+  "cta_secondary": "View Cases",
+  "scroll_hint": "Scroll down",
+  "metrics": {
+    "projects": {
+      "value": "50+",
+      "label": "Projects"
+    },
+    "savings": {
+      "value": "$10M+",
+      "label": "Client Savings"
+    },
+    "uptime": {
+      "value": "99.9%",
+      "label": "Uptime"
+    },
+    "experts": {
+      "value": "25+",
+      "label": "Experts"
+    }
+  },
+  "features": [
+    "Rapid deployment in 1-3 months",
+    "Guaranteed return on investment",
+    "24/7 support",
+    "Integration with any systems"
+  ]
+}

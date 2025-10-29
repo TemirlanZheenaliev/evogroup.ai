@@ -1,0 +1,136 @@
+{
+  "title": "Our Team",
+  "subtitle": "Experienced specialists in artificial intelligence",
+  "description": "Team of experts with deep knowledge in AI, machine learning and enterprise development",
+  "members": {
+    "ceo": {
+      "name": "Alexey Petrov",
+      "position": "CEO & AI Architect",
+      "experience": "15+ years in AI",
+      "bio": "AI expert with experience leading major projects in banking and government sectors",
+      "expertise": [
+        "AI system architecture",
+        "Digital transformation strategy",
+        "Product management",
+        "Enterprise sales"
+      ],
+      "education": "Moscow State University, Faculty of Computational Mathematics and Cybernetics",
+      "achievements": [
+        "Led AI implementation in top-5 Russian banks",
+        "Speaker at international AI conferences",
+        "Author of 20+ publications on machine learning"
+      ]
+    },
+    "cto": {
+      "name": "Maria Ivanova",
+      "position": "CTO & ML Engineer",
+      "experience": "12+ years in ML/DL",
+      "bio": "Technical expert in deep learning and big data with experience in fintech and industry",
+      "expertise": [
+        "Deep learning",
+        "Computer vision",
+        "NLP and text processing",
+        "MLOps and automation"
+      ],
+      "education": "Moscow Institute of Physics and Technology, Applied Mathematics and Physics",
+      "achievements": [
+        "Created fraud detection system for major bank",
+        "PhD in machine learning",
+        "Mentor in AI talent development programs"
+      ]
+    },
+    "lead_dev": {
+      "name": "Bekzat Omuraliev",
+      "position": "Lead Developer",
+      "experience": "10+ years in development",
+      "bio": "Experienced full-stack developer specializing in high-load systems and microservice architecture",
+      "expertise": [
+        "Backend development",
+        "Microservice architecture",
+        "DevOps and infrastructure",
+        "System integration"
+      ],
+      "education": "Kyrgyz Technical University named after I. Razzakov, Information Technology",
+      "achievements": [
+        "Architect of government digital services platform",
+        "Expert in integrations with KR government systems",
+        "Created platform for 1M+ users"
+      ]
+    },
+    "data_scientist": {
+      "name": "Anna Kozlova",
+      "position": "Senior Data Scientist",
+      "experience": "8+ years in analytics",
+      "bio": "Specialist in extracting insights from data and building predictive models",
+      "expertise": [
+        "Statistical analysis",
+        "Time series",
+        "A/B testing",
+        "Data visualization"
+      ]
+    },
+    "ml_engineer": {
+      "name": "Dmitry Sidorov",
+      "position": "ML Engineer",
+      "experience": "7+ years in ML",
+      "bio": "Machine learning engineer focused on production ML and process automation",
+      "expertise": [
+        "MLOps",
+        "Kubernetes for ML",
+        "Pipeline automation",
+        "ML model monitoring"
+      ]
+    },
+    "frontend_lead": {
+      "name": "Elena Makarova",
+      "position": "Frontend Team Lead",
+      "experience": "9+ years in frontend",
+      "bio": "Frontend team leader specializing in user experience",
+      "expertise": [
+        "React/Next.js",
+        "UX/UI design",
+        "Mobile development",
+        "Accessibility"
+      ]
+    }
+  },
+  "stats": {
+    "total_members": "25+",
+    "avg_experience": "8",
+    "senior_level": "85%",
+    "certifications": "50+"
+  },
+  "culture": {
+    "title": "Our Culture",
+    "values": [
+      {
+        "title": "Innovation",
+        "description": "Continuously learning new technologies and approaches"
+      },
+      {
+        "title": "Quality",
+        "description": "High standards for code and architecture"
+      },
+      {
+        "title": "Collaboration",
+        "description": "Open communication and mutual support"
+      },
+      {
+        "title": "Growth",
+        "description": "Investing in every employee's development"
+      }
+    ]
+  },
+  "join_team": {
+    "title": "Join Our Team",
+    "description": "We're always looking for talented specialists to work on interesting projects",
+    "button": "Open Positions",
+    "benefits": [
+      "Competitive salary",
+      "Flexible schedule",
+      "Company-funded training",
+      "Medical insurance",
+      "Modern equipment"
+    ]
+  }
+}

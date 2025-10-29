@@ -1,0 +1,35 @@
+{
+  "company_name": "FiscalePro",
+  "tagline": "AI Solutions",
+  "buttons": {
+    "start_project": "Start Project",
+    "view_cases": "View Cases",
+    "contact": "Contact",
+    "demo": "Demo",
+    "get_consultation": "Get Consultation",
+    "download_presentation": "Download Presentation",
+    "submit": "Submit Request",
+    "subscribe": "Subscribe",
+    "request_demo": "Request Demo",
+    "detailed_case": "Detailed Case",
+    "calculate_price": "Calculate Cost",
+    "order_consultation": "Order Consultation",
+    "download_estimate": "Download PDF Estimate",
+    "open_chatbot": "Open Chatbot",
+    "send_message": "Send"
+  },
+  "stats": {
+    "projects": "Projects",
+    "savings": "Client Savings",
+    "uptime": "Uptime",
+    "experts": "Experts",
+    "satisfied_clients": "Satisfied Clients",
+    "satisfaction": "Satisfaction",
+    "support": "Support",
+    "years_experience": "Years Experience"
+  },
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "required": "Required field"
+}

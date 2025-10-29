@@ -1,0 +1,152 @@
+{
+  "title": "Results Speak for Themselves",
+  "subtitle": "Over 50 successful projects for leading companies and organizations in Kyrgyzstan",
+  "badge": "Our Client Reviews",
+  "description": "We take pride in the trust our clients place in us and the results of our work",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Almaz Sydykov",
+      "position": "IT Director",
+      "company": "Demir Bank",
+      "avatar": "AS",
+      "rating": 5,
+      "project": "Credit Scoring System",
+      "content": "FiscalePro completely transformed our credit scoring processes. Risk assessment accuracy increased by 35%, and application processing time decreased by 3x. Incredible results in such a short implementation period.",
+      "results": [
+        {
+          "metric": "Scoring Accuracy",
+          "value": "+35%",
+          "description": "Improved credit risk assessment accuracy"
+        },
+        {
+          "metric": "Processing Speed",
+          "value": "3x",
+          "description": "Accelerated loan application processing"
+        },
+        {
+          "metric": "Savings",
+          "value": "$850K",
+          "description": "Annual savings from risk reduction"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gulnara Toktosunova",
+      "position": "Deputy Chairperson",
+      "company": "Ministry of Digital Development KR",
+      "avatar": "GT",
+      "rating": 5,
+      "project": "Digital Government Services",
+      "content": "Automating citizen request processing with AI increased review speed by 60%. The quality and transparency of government services have reached a new level.",
+      "results": [
+        {
+          "metric": "Processing Speed",
+          "value": "+60%",
+          "description": "Accelerated request review"
+        },
+        {
+          "metric": "Citizen Satisfaction",
+          "value": "4.8/5",
+          "description": "Average service quality rating"
+        },
+        {
+          "metric": "Automation",
+          "value": "85%",
+          "description": "Percentage of automatically processed requests"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Mirlan Zhaparov",
+      "position": "General Director",
+      "company": "KyrgyzGas",
+      "avatar": "MZ",
+      "rating": 5,
+      "project": "Predictive Maintenance",
+      "content": "Predictive analytics for gas pipeline maintenance reduced emergency situations by 45% and saved us over $2M per year. The FiscalePro team are true professionals.",
+      "results": [
+        {
+          "metric": "Accident Reduction",
+          "value": "-45%",
+          "description": "Decrease in emergency situations"
+        },
+        {
+          "metric": "Savings",
+          "value": "$2.1M",
+          "description": "Annual savings on repairs and downtime"
+        },
+        {
+          "metric": "Prediction Accuracy",
+          "value": "92%",
+          "description": "Accuracy of failure prediction"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Aigul Omurzakova",
+      "position": "Financial Director",
+      "company": "KICB",
+      "avatar": "AO",
+      "rating": 5,
+      "project": "Anti-fraud System",
+      "content": "The AI system for detecting fraudulent operations works around the clock and blocks 98% of suspicious transactions. Fraud losses decreased 8-fold.",
+      "results": [
+        {
+          "metric": "Detection Accuracy",
+          "value": "98%",
+          "description": "Share of blocked fraudulent operations"
+        },
+        {
+          "metric": "Loss Reduction",
+          "value": "8x",
+          "description": "Decrease in fraud losses"
+        },
+        {
+          "metric": "Response Time",
+          "value": "<1sec",
+          "description": "Transaction analysis time"
+        }
+      ]
+    }
+  ],
+  "navigation": {
+    "prev": "Previous",
+    "next": "Next",
+    "slide_of": "of"
+  },
+  "stats_section": {
+    "title": "Our Achievements in Numbers",
+    "metrics": [
+      {
+        "value": "50+",
+        "label": "Satisfied Clients",
+        "description": "Companies that trusted us with their projects"
+      },
+      {
+        "value": "95%",
+        "label": "Satisfaction",
+        "description": "Average rating of our service quality"
+      },
+      {
+        "value": "24/7",
+        "label": "Support",
+        "description": "Round-the-clock technical support"
+      },
+      {
+        "value": "15+",
+        "label": "Years Experience",
+        "description": "Combined team experience in AI"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to become our next success story?",
+    "description": "Tell us about your challenges, and we'll show how AI can help your business",
+    "button_primary": "Discuss Project",
+    "button_secondary": "View All Cases"
+  }
+}

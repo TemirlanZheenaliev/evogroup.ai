@@ -1,0 +1,139 @@
+{
+  "newsletter": {
+    "title": "Stay updated with latest AI news",
+    "subtitle": "Get exclusive case studies, market analytics and announcements of new solutions",
+    "placeholder": "Your email",
+    "button": "Subscribe",
+    "success_message": "Thank you for subscribing!",
+    "frequency": "Newsletter 1-2 times per month, you can unsubscribe anytime"
+  },
+
+  "company": {
+    "name": "Evolution Group",
+    "tagline": "AI Solutions",
+    "description": "We create intelligent solutions that transform the way companies work.",
+    "slogan": "Made with ❤️ in Kyrgyzstan"
+  },
+
+  "contact_info": {
+    "email": "info@fiscalepro.kg",
+    "phone": "+996 555 123 456",
+    "address": "Bishkek, Tech Park",
+    "address_full": "Bishkek, Tech Park, Isanova str. 42",
+    "working_hours": "Mon-Fri: 9:00-18:00"
+  },
+
+  "sections": {
+    "solutions": {
+      "title": "Solutions",
+      "links": {
+        "banking": "Banking Systems",
+        "government": "Government Sector",
+        "manufacturing": "Manufacturing",
+        "api": "API Integration",
+        "consulting": "Consulting",
+        "audit": "System Audit"
+      }
+    },
+    "company": {
+      "title": "Company",
+      "links": {
+        "about": "About Us",
+        "team": "Team",
+        "careers": "Careers",
+        "blog": "Blog",
+        "news": "News",
+        "investors": "Investors"
+      }
+    },
+    "support": {
+      "title": "Support",
+      "links": {
+        "documentation": "Documentation",
+        "cases": "Case Studies",
+        "faq": "FAQ",
+        "tech_support": "Technical Support",
+        "training": "Training",
+        "community": "Community"
+      }
+    },
+    "legal": {
+      "title": "Legal Information",
+      "links": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "cookies": "Cookie Policy",
+        "gdpr": "Personal Data Processing"
+      }
+    }
+  },
+
+  "achievements": {
+    "title": "Our Achievements",
+    "metrics": [
+      {
+        "value": "50+",
+        "label": "Projects",
+        "description": "Successfully completed projects"
+      },
+      {
+        "value": "$10M+",
+        "label": "Savings",
+        "description": "Saved for clients"
+      },
+      {
+        "value": "25+",
+        "label": "Experts",
+        "description": "Specialists in team"
+      },
+      {
+        "value": "99.9%",
+        "label": "Uptime",
+        "description": "Reliability of our systems"
+      }
+    ]
+  },
+
+  "technologies": {
+    "title": "Technologies we work with:",
+    "list": [
+      {"name": "Python", "category": "Programming Language"},
+      {"name": "TensorFlow", "category": "ML Framework"},
+      {"name": "React", "category": "Frontend"},
+      {"name": "AWS", "category": "Cloud Platform"},
+      {"name": "Docker", "category": "Containerization"},
+      {"name": "Kubernetes", "category": "Orchestration"}
+    ]
+  },
+
+  "social": {
+    "title": "Social Media",
+    "platforms": [
+      {"name": "LinkedIn", "url": "#", "description": "Professional news"},
+      {"name": "GitHub", "url": "#", "description": "Open source projects"},
+      {"name": "Telegram", "url": "#", "description": "Quick communication"},
+      {"name": "YouTube", "url": "#", "description": "Videos and webinars"}
+    ]
+  },
+
+  "status": {
+    "online": "Status: Online 🟢",
+    "response_time": "Average response time: 15 minutes",
+    "availability": "Available for urgent questions 24/7"
+  },
+
+  "copyright": {
+    "text": "© {year} Evolution Group. All rights reserved.",
+    "additional": "All trademarks belong to their owners."
+  },
+
+  "certifications": {
+    "title": "Certifications and Partnerships",
+    "list": [
+      "ISO 27001 - Information Security",
+      "Official Google Cloud Partner",
+      "AWS Advanced Consulting Partner",
+      "Member of IT Association of Kyrgyzstan"
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "title": "Want detailed consultation for your project?",
+  "subtitle": "Tell us about your task, and our experts will propose optimal AI solution considering your business specifics",
+  "description": "We'll respond within 2 hours during business hours and provide detailed project evaluation",
+
+  "form": {
+    "personal_info": {
+      "title": "Contact Information"
+    },
+    "project_info": {
+      "title": "Project Information"
+    },
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "required": true,
+        "error_required": "Please enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com",
+        "required": true,
+        "error_required": "Please enter email",
+        "error_invalid": "Invalid email format"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Company name",
+        "required": true,
+        "error_required": "Please enter company name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+996 XXX XXX XXX",
+        "required": false
+      },
+      "position": {
+        "label": "Position",
+        "placeholder": "Your position",
+        "required": false
+      },
+      "project_type": {
+        "label": "Project Type",
+        "placeholder": "Select project type",
+        "required": false,
+        "options": {
+          "analytics": "Data Analytics",
+          "chatbot": "Chatbot",
+          "fraud": "Anti-fraud System",
+          "predictive": "Predictive Analytics",
+          "documents": "Document Processing",
+          "vision": "Computer Vision",
+          "automation": "Process Automation",
+          "recommendation": "Recommendation Systems",
+          "other": "Other"
+        }
+      },
+      "budget": {
+        "label": "Planned Budget",
+        "placeholder": "Select range",
+        "required": false,
+        "options": {
+          "under_50k": "Under $50,000",
+          "50k_100k": "$50,000 - $100,000",
+          "100k_250k": "$100,000 - $250,000",
+          "250k_500k": "$250,000 - $500,000",
+          "over_500k": "Over $500,000",
+          "not_defined": "Not defined"
+        }
+      },
+      "timeline": {
+        "label": "Desired Timeline",
+        "placeholder": "When do you plan to launch the project?",
+        "required": false,
+        "options": {
+          "asap": "As soon as possible",
+          "1_3_months": "1-3 months",
+          "3_6_months": "3-6 months",
+          "6_12_months": "6-12 months",
+          "over_year": "More than a year"
+        }
+      },
+      "description": {
+        "label": "Task Description",
+        "placeholder": "Describe your business task that you want to solve with AI. The more detailed - the more accurately we can evaluate the project and propose a solution.",
+        "required": true,
+        "error_required": "Please describe the project task",
+        "min_length": 50,
+        "error_min_length": "Description must contain at least 50 characters"
+      },
+      "current_solution": {
+        "label": "Current Solution",
+        "placeholder": "How is this task currently solved in your company?",
+        "required": false
+      },
+      "data_available": {
+        "label": "Data Availability",
+        "placeholder": "Do you have data for model training?",
+        "required": false,
+        "options": {
+          "lots": "Lots of data (>100GB)",
+          "some": "Medium volume (1-100GB)",
+          "little": "Little data (<1GB)",
+          "none": "No data",
+          "unknown": "Don't know"
+        }
+      }
+    },
+    "additional": {
+      "title": "Additional Options",
+      "newsletter": {
+        "label": "Subscribe to AI technology news",
+        "description": "We'll send interesting cases and technology updates"
+      },
+      "nda": {
+        "label": "NDA signing required",
+        "description": "Project contains confidential information"
+      },
+      "demo": {
+        "label": "Want to see demo of similar solution",
+        "description": "We'll show examples of implemented projects"
+      }
+    }
+  },
+
+  "buttons": {
+    "submit": "Submit Request",
+    "download_presentation": "Download Presentation",
+    "schedule_call": "Schedule Call",
+    "get_estimate": "Get Estimate"
+  },
+
+  "success": {
+    "title": "Request Sent!",
+    "message": "We received your request and will respond within 2 hours during business hours.",
+    "next_steps": [
+      "Our expert will study your task",
+      "We'll prepare preliminary proposal",
+      "Contact you to discuss details",
+      "Provide accurate project estimate"
+    ],
+    "contact_info": "If you have urgent questions, call: +996 312 123-456"
+  },
+
+  "validation": {
+    "email_invalid": "Invalid email address format",
+    "phone_invalid": "Invalid phone number format",
+    "required_field": "This field is required",
+    "min_length": "Minimum length {count} characters",
+    "max_length": "Maximum length {count} characters"
+  },
+
+  "privacy_notice": "By submitting the form, you agree to personal data processing according to our privacy policy",
+
+  "alternative_contact": {
+    "title": "Other Contact Methods",
+    "methods": [
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "info@fiscalepro.kg",
+        "description": "We'll respond within 2 hours"
+      },
+      {
+        "type": "phone",
+        "label": "Phone",
+        "value": "+996 312 123-456",
+        "description": "We take calls from 9:00 to 18:00"
+      },
+      {
+        "type": "telegram",
+        "label": "Telegram",
+        "value": "@evolution-group",
+        "description": "Quick responses in messenger"
+      },
+      {
+        "type": "address",
+        "label": "Office",
+        "value": "Bishkek, Tech Park, Isanova str. 42",
+        "description": "Come for a cup of coffee"
+      }
+    ]
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "How much does AI solution development cost?",
+        "answer": "Cost depends on project complexity and starts from $50,000. Use our calculator for preliminary estimate."
+      },
+      {
+        "question": "What are the development timelines?",
+        "answer": "Simple solutions - 1-3 months, complex systems - 4-12 months. Exact timelines are determined after requirements analysis."
+      },
+      {
+        "question": "Is special data needed?",
+        "answer": "Yes, data is needed for training AI models. We'll help prepare data or find alternative sources."
+      },
+      {
+        "question": "Do you provide technical support?",
+        "answer": "Yes, we offer various support levels from basic to enterprise with 99.9% SLA."
+      }
+    ]
+  }
+}

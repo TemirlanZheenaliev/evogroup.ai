@@ -1,0 +1,46 @@
+{
+  "title": "Алдыңкы технологиялар",
+  "subtitle": "Ишенимдүү жана эффективдүү чечимдерди түзүү үчүн эң заманбап технологияларды колдонобуз",
+  "ai_category": "Жасалма акыл",
+  "integrations_category": "Интеграциялар",
+  "security_category": "Коопсуздук",
+  "technologies": {
+    "machine_learning": {
+      "name": "Machine Learning",
+      "description": "Алдын ала аналитика жана автоматташтыруу"
+    },
+    "nlp": {
+      "name": "NLP",
+      "description": "Табигый тилди иштетүү"
+    },
+    "computer_vision": {
+      "name": "Computer Vision",
+      "description": "Көзөмөлдөө үчүн компьютердик көрүү"
+    },
+    "api_gateway": {
+      "name": "API Gateway",
+      "description": "Мамлекеттик кызматтарга бирдиктүү кирүү чекити"
+    },
+    "microservices": {
+      "name": "Microservices",
+      "description": "Масштабдалуучу архитектура"
+    },
+    "real_time_sync": {
+      "name": "Real-time Sync",
+      "description": "Реалдуу убакта синхрондоштуруу"
+    },
+    "encryption": {
+      "name": "Encryption",
+      "description": "256-бит маалыматтарды шифрлөө"
+    },
+    "compliance": {
+      "name": "Compliance",
+      "description": "Стандарттарга ылайыктуулук"
+    },
+    "monitoring": {
+      "name": "Monitoring",
+      "description": "24/7 системаларды көзөмөлдөө"
+    }
+  },
+  "certification_text": "Бардык технологиялар сертификатталган жана сыналган"
+}

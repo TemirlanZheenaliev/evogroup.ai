@@ -1,0 +1,201 @@
+{
+  "title": "Why Choose Us",
+  "subtitle": "We don't just develop software — we create intelligent ecosystems",
+  "description": "Our competitive advantages are based on deep expertise and proven experience",
+
+  "advantages": [
+    {
+      "id": "expertise",
+      "title": "AI Expertise",
+      "description": "15+ years of experience in artificial intelligence solutions development",
+      "icon": "🧠",
+      "details": {
+        "experience_years": "15+",
+        "projects_completed": "50+",
+        "technologies_mastered": "20+",
+        "certifications": "10+"
+      },
+      "benefits": [
+        "Deep understanding of ML/DL algorithms",
+        "Experience with enterprise clients",
+        "Industry-specific knowledge",
+        "Continuous learning of new technologies"
+      ]
+    },
+    {
+      "id": "fast_deployment",
+      "title": "Rapid Deployment",
+      "description": "Ready-made solutions and APIs for integration in days",
+      "icon": "⚡",
+      "details": {
+        "deployment_time": "1-7 days",
+        "ready_solutions": "15+",
+        "api_endpoints": "100+",
+        "integration_methods": "5+"
+      },
+      "benefits": [
+        "Library of ready-made components",
+        "Automated deployment",
+        "Documented APIs",
+        "Minimal infrastructure requirements"
+      ]
+    },
+    {
+      "id": "support",
+      "title": "24/7 Support",
+      "description": "Round-the-clock technical support and system monitoring",
+      "icon": "🛡️",
+      "details": {
+        "response_time": "< 1 hour",
+        "availability": "99.9%",
+        "support_channels": "5",
+        "languages": "3"
+      },
+      "benefits": [
+        "Proactive system monitoring",
+        "On-duty engineering team",
+        "Automatic failure notifications",
+        "Remote troubleshooting"
+      ]
+    },
+    {
+      "id": "flexibility",
+      "title": "Solution Flexibility",
+      "description": "We adapt technologies to your business specifics",
+      "icon": "🔧",
+      "details": {
+        "customization_level": "100%",
+        "integration_types": "10+",
+        "deployment_options": "5",
+        "scaling_methods": "3"
+      },
+      "benefits": [
+        "Customization for business processes",
+        "Flexible solution architecture",
+        "Multiple integration options",
+        "On-demand scaling"
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Enterprise Security",
+      "description": "Compliance with international data protection standards",
+      "icon": "🔒",
+      "details": {
+        "encryption_level": "256-bit",
+        "compliance_standards": "ISO 27001, GDPR",
+        "security_audits": "Quarterly",
+        "penetration_tests": "Regular"
+      },
+      "benefits": [
+        "End-to-end data encryption",
+        "Role-based access control",
+        "Audit of all operations",
+        "International standards compliance"
+      ]
+    },
+    {
+      "id": "cost_effectiveness",
+      "title": "Cost Effectiveness",
+      "description": "Transparent pricing and guaranteed return on investment",
+      "icon": "💰",
+      "details": {
+        "roi_average": "250%",
+        "payback_period": "6-18 months",
+        "cost_reduction": "30-60%",
+        "efficiency_increase": "40-80%"
+      },
+      "benefits": [
+        "Detailed ROI calculation before project start",
+        "Phased payment based on results",
+        "ROI guarantees",
+        "Free efficiency audit"
+      ]
+    }
+  ],
+
+  "comparison": {
+    "title": "Comparison with Competitors",
+    "subtitle": "Why clients choose us",
+    "criteria": [
+      {
+        "parameter": "Implementation Speed",
+        "us": "1-30 days",
+        "competitors": "3-6 months",
+        "advantage": "6x faster"
+      },
+      {
+        "parameter": "Development Cost",
+        "us": "From $50K",
+        "competitors": "From $150K+",
+        "advantage": "60% cheaper"
+      },
+      {
+        "parameter": "Support Hours",
+        "us": "24/7",
+        "competitors": "Business hours",
+        "advantage": "Round-the-clock"
+      },
+      {
+        "parameter": "Localization",
+        "us": "Kyrgyzstan + CIS",
+        "competitors": "Foreign only",
+        "advantage": "Local expertise"
+      }
+    ]
+  },
+
+  "guarantees": {
+    "title": "Our Guarantees",
+    "list": [
+      {
+        "title": "Result Guarantee",
+        "description": "If the solution doesn't deliver expected benefits - we'll refund your money",
+        "duration": "6 months"
+      },
+      {
+        "title": "Quality Guarantee",
+        "description": "Free fixing of all defects and bugs",
+        "duration": "12 months"
+      },
+      {
+        "title": "Support Guarantee",
+        "description": "Technical support and consultations",
+        "duration": "Entire usage period"
+      }
+    ]
+  },
+
+  "process": {
+    "title": "Our Work Approach",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Deep Analysis",
+        "description": "We study business processes and identify AI application points"
+      },
+      {
+        "step": 2,
+        "title": "Prototyping",
+        "description": "Create MVP to test hypotheses and get feedback"
+      },
+      {
+        "step": 3,
+        "title": "Iterative Development",
+        "description": "Develop solution in short sprints with constant feedback"
+      },
+      {
+        "step": 4,
+        "title": "Implementation and Scaling",
+        "description": "Smooth implementation with team training and gradual expansion"
+      }
+    ]
+  },
+
+  "cta": {
+    "title": "Ready to see our advantages in action?",
+    "description": "Get free audit of your processes and optimization suggestions",
+    "primary_button": "Get Audit",
+    "secondary_button": "Compare with Competitors"
+  }
+}

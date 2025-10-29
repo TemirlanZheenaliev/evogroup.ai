@@ -1,0 +1,36 @@
+
+{
+  "company_name": "ФискалеПро",
+  "tagline": "AI Solutions",
+  "buttons": {
+    "start_project": "Начать проект",
+    "view_cases": "Посмотреть кейсы",
+    "contact": "Связаться",
+    "demo": "Демо",
+    "get_consultation": "Получить консультацию",
+    "download_presentation": "Скачать презентацию",
+    "submit": "Отправить заявку",
+    "subscribe": "Подписаться",
+    "request_demo": "Запросить демо",
+    "detailed_case": "Подробный кейс",
+    "calculate_price": "Рассчитать стоимость",
+    "order_consultation": "Заказать консультацию",
+    "download_estimate": "Скачать смету PDF",
+    "open_chatbot": "Открыть чат-бот",
+    "send_message": "Отправить"
+  },
+  "stats": {
+    "projects": "Проектов",
+    "savings": "Экономии клиентов",
+    "uptime": "Аптайм",
+    "experts": "Экспертов",
+    "satisfied_clients": "Довольных клиентов",
+    "satisfaction": "Удовлетворенность",
+    "support": "Поддержка",
+    "years_experience": "Лет опыта"
+  },
+  "loading": "Загрузка...",
+  "error": "Ошибка",
+  "success": "Успешно",
+  "required": "Обязательное поле"
+}

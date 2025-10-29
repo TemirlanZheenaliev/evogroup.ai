@@ -1,0 +1,35 @@
+{
+  "company_name": "ФискалеПро",
+  "tagline": "ИИ Чечимдери",
+  "buttons": {
+    "start_project": "Долбоорду баштоо",
+    "view_cases": "Мисалдарды көрүү",
+    "contact": "Байланышуу",
+    "demo": "Демо",
+    "get_consultation": "Консультация алуу",
+    "download_presentation": "Презентацияны жүктөө",
+    "submit": "Өтүнүч жөнөтүү",
+    "subscribe": "Жазылуу",
+    "request_demo": "Демо сураныч",
+    "detailed_case": "Толук мисал",
+    "calculate_price": "Баасын эсептөө",
+    "order_consultation": "Консультация заказ берүү",
+    "download_estimate": "PDF смета жүктөө",
+    "open_chatbot": "Чат-ботту ачуу",
+    "send_message": "Жөнөтүү"
+  },
+  "stats": {
+    "projects": "Долбоорлор",
+    "savings": "Кардарлардын үнөмү",
+    "uptime": "Жумуштоо убактысы",
+    "experts": "Адистер",
+    "satisfied_clients": "Канааттанган кардарлар",
+    "satisfaction": "Канааттануу",
+    "support": "Колдоо",
+    "years_experience": "Жылдык тажрыйба"
+  },
+  "loading": "Жүктөлүүдө...",
+  "error": "Ката",
+  "success": "Ийгиликтүү",
+  "required": "Милдеттүү талаа"
+}
