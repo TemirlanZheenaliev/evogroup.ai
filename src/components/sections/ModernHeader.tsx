@@ -18,6 +18,29 @@ const ModernHeader: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    // Close mobile menu on Escape key
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && isMobileMenuOpen) {
+                setIsMobileMenuOpen(false)
+            }
+        }
+        document.addEventListener('keydown', handleEscape)
+        return () => document.removeEventListener('keydown', handleEscape)
+    }, [isMobileMenuOpen])
+
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+        return () => {
+            document.body.style.overflow = 'unset'
+        }
+    }, [isMobileMenuOpen])
+
     // Функция для получения переводов с fallback значениями
     const getTranslations = () => {
         if (locale === 'en') {
@@ -137,18 +160,19 @@ const ModernHeader: React.FC = () => {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 text-white"
+                            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white relative"
+                            aria-label="Toggle mobile menu"
                         >
-                            <span className={`w-6 h-0.5 bg-current transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                            <span className={`w-6 h-0.5 bg-current transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-                            <span className={`w-6 h-0.5 bg-current transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                            <span className={`w-6 h-0.5 bg-current transition-all duration-300 absolute ${isMobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} />
+                            <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+                            <span className={`w-6 h-0.5 bg-current transition-all duration-300 absolute ${isMobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} />
                         </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
-                <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-                    isMobileMenuOpen ? 'max-h-96 pb-6' : 'max-h-0'
+                <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+                    isMobileMenuOpen ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0'
                 }`}>
                     <nav className="flex flex-col space-y-4 pt-4 border-t border-white/10">
                         <button
