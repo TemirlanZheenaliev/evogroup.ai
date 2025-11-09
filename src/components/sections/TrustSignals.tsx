@@ -200,8 +200,8 @@ const TrustSignals: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Trust message */}
-                <div className="text-center">
+                {/* Trust message - Temporarily hidden */}
+                {/* <div className="text-center">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 max-w-4xl mx-auto hover:bg-white/10 transition-all duration-200">
                         <div className="mb-4">
                             <svg className="w-8 h-8 text-blue-400/40 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
@@ -216,7 +216,7 @@ const TrustSignals: React.FC = () => {
                             {translations.trustSource}
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

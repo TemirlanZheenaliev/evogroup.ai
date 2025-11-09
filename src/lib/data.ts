@@ -110,11 +110,11 @@ export const caseStudies: CaseStudy[] = [
 export const teamMembers: TeamMember[] = [
   {
     id: 'cto',
-    name: 'Алексей Петров',
+    name: 'Вадим Беркович',
     position: 'CTO & AI Lead',
     expertise: ['Machine Learning', 'Computer Vision', 'NLP', 'System Architecture'],
     image: '/team/cto.jpg',
-    linkedin: 'https://linkedin.com/in/alexey-petrov'
+    linkedin: 'https://linkedin.com/in/vadim-berkovich'
   },
   {
     id: 'lead-dev',

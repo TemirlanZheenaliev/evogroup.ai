@@ -7,7 +7,7 @@ import Solutions from '@/components/sections/Solutions'
 import TechnologyShowcase from '@/components/sections/TechnologyShowcase'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 // import AICalculatorSection from '@/components/sections/AICalculatorSection'
-import PortfolioGallery from '@/components/sections/PortfolioGallery'
+// import PortfolioGallery from '@/components/sections/PortfolioGallery'
 import AIChatbotSection from '@/components/sections/AIChatbotSection'
 import SuccessStories from '@/components/sections/SuccessStories'
 import Team from '@/components/sections/Team'
@@ -32,7 +32,7 @@ export default function Home() {
                 <Team />
                 <TrustSignals />
                 <ContactForm />
-                <PortfolioGallery />
+                {/* <PortfolioGallery /> */}
                 <Footer />
             </div>
         </I18nProvider>

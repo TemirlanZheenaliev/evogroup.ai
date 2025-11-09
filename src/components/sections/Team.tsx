@@ -64,19 +64,19 @@ export default function Team() {
             return [
                 {
                     id: 'ceo',
-                    name: 'Alexey Petrov',
-                    position: 'CEO & AI Architect',
-                    experience: '15+ years in AI',
-                    initials: 'AP',
+                    name: 'Vadim Berkovich',
+                    position: 'CTO & AI Architect',
+                    experience: '15+ years in DevTech',
+                    initials: 'VB',
                     gradient: 'from-blue-400 to-purple-600',
                     hoverColor: 'blue-400'
                 },
                 {
                     id: 'cto',
-                    name: 'Maria Ivanova',
-                    position: 'CTO & ML Engineer',
-                    experience: '12+ years in ML/DL',
-                    initials: 'MI',
+                    name: 'Alibek Omorov',
+                    position: 'CEO & Oil-Gas Dept Lead',
+                    experience: '10+ years in IT Tech',
+                    initials: 'AO',
                     gradient: 'from-purple-400 to-pink-600',
                     hoverColor: 'purple-400'
                 },
@@ -94,19 +94,19 @@ export default function Team() {
             return [
                 {
                     id: 'ceo',
-                    name: 'Алексей Петров',
-                    position: 'Башкы директор жана ИИ архитектору',
-                    experience: 'ИИ тармагында 15+ жыл',
-                    initials: 'АП',
+                    name: 'Вадим Беркович',
+                    position: 'Техникалык директор жана ИИ архитектору',
+                    experience: 'DevTech тармагында 15+ жыл',
+                    initials: 'ВБ',
                     gradient: 'from-blue-400 to-purple-600',
                     hoverColor: 'blue-400'
                 },
                 {
                     id: 'cto',
-                    name: 'Мария Иванова',
-                    position: 'Техникалык директор жана ML инженер',
-                    experience: 'ML/DL тармагында 12+ жыл',
-                    initials: 'МИ',
+                    name: 'Алибек Оморов',
+                    position: 'Башкы директор жана мунай-газ бөлүмүнүн жетекчиси',
+                    experience: 'IT Tech тармагында 10+ жыл',
+                    initials: 'АО',
                     gradient: 'from-purple-400 to-pink-600',
                     hoverColor: 'purple-400'
                 },
@@ -124,19 +124,19 @@ export default function Team() {
             return [
                 {
                     id: 'ceo',
-                    name: 'Алексей Петров',
-                    position: 'CEO & AI Architect',
-                    experience: '15+ лет в ИИ',
-                    initials: 'АП',
+                    name: 'Вадим Беркович',
+                    position: 'CTO & AI Architect',
+                    experience: '15+ лет в DevTech',
+                    initials: 'ВБ',
                     gradient: 'from-blue-400 to-purple-600',
                     hoverColor: 'blue-400'
                 },
                 {
                     id: 'cto',
-                    name: 'Мария Иванова',
-                    position: 'CTO & ML Engineer',
-                    experience: '12+ лет в ML/DL',
-                    initials: 'МИ',
+                    name: 'Алибек Оморов',
+                    position: 'CEO & Oil-Gas Dept Lead',
+                    experience: '10+ лет в IT Tech',
+                    initials: 'АО',
                     gradient: 'from-purple-400 to-pink-600',
                     hoverColor: 'purple-400'
                 },
