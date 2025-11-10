@@ -25,10 +25,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Results Speak for Themselves',
                 subtitle: 'Over 50 successful projects for leading companies and organizations in Kyrgyzstan',
                 badge: 'Our Client Reviews',
-                navigation: {
-                    prev: 'Previous',
-                    next: 'Next'
-                },
                 stats: [
                     { value: '50+', label: 'Satisfied Clients' },
                     { value: '95%', label: 'Satisfaction' },
@@ -41,10 +37,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Натыйжалар өзү үчүн сүйлөйт',
                 subtitle: 'Кыргызстандын алдыңкы компаниялары жана уюмдары үчүн 50дөн ашык ийгиликтүү долбоор',
                 badge: 'Кардарлардын пикирлери',
-                navigation: {
-                    prev: 'Мурунку',
-                    next: 'Кийинки'
-                },
                 stats: [
                     { value: '50+', label: 'Канааттанган кардар' },
                     { value: '95%', label: 'Канааттануу' },
@@ -57,10 +49,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Результаты говорят за нас',
                 subtitle: 'Более 50 успешных проектов для ведущих компаний и организаций Кыргызстана',
                 badge: 'Отзывы наших клиентов',
-                navigation: {
-                    prev: 'Предыдущий',
-                    next: 'Следующий'
-                },
                 stats: [
                     { value: '50+', label: 'Довольных клиентов' },
                     { value: '95%', label: 'Удовлетворенность' },
@@ -210,10 +198,6 @@ const TestimonialsSection: React.FC = () => {
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length)
-    }
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length)
     }
 
     useEffect(() => {
