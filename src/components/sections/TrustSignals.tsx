@@ -92,23 +92,23 @@ const TrustSignals: React.FC = () => {
         if (locale === 'en') {
             return [
                 { icon: '🏦', name: 'Largest Bank of KR', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'OilProm KR', color: 'from-orange-500 to-orange-600' },
+                { icon: '🏭', name: 'Oil & Gas Industry KR', color: 'from-orange-500 to-orange-600' },
                 { icon: '🏛️', name: 'Ministry of Digital Development', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Development Corporation KR', color: 'from-green-500 to-green-600' },
+                { icon: '🏢', name: 'Telecom Operators KR', color: 'from-green-500 to-green-600' },
             ]
         } else if (locale === 'ky') {
             return [
                 { icon: '🏦', name: 'КРнын эң ири банкы', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'МунайПром КР', color: 'from-orange-500 to-orange-600' },
+                { icon: '🏭', name: 'Мунай-газ тармагы КР', color: 'from-orange-500 to-orange-600' },
                 { icon: '🏛️', name: 'Санариптик өнүктүрүү министрлиги', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Өнүктүрүү корпорациясы КР', color: 'from-green-500 to-green-600' },
+                { icon: '🏢', name: 'Телеком операторлору КР', color: 'from-green-500 to-green-600' },
             ]
         } else {
             return [
                 { icon: '🏦', name: 'Крупнейший банк КР', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'НефтеПром КР', color: 'from-orange-500 to-orange-600' },
+                { icon: '🏭', name: 'Нефтяная отрасль КР', color: 'from-orange-500 to-orange-600' },
                 { icon: '🏛️', name: 'Министерство цифрового развития', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Корпорация развития КР', color: 'from-green-500 to-green-600' },
+                { icon: '🏢', name: 'Телеком операторы КР', color: 'from-green-500 to-green-600' },
             ]
         }
     }

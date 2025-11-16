@@ -5,7 +5,7 @@ import ModernHeader from '@/components/sections/ModernHeader'
 import ModernHero from '@/components/sections/ModernHero'
 import Solutions from '@/components/sections/Solutions'
 import TechnologyShowcase from '@/components/sections/TechnologyShowcase'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
+// import TestimonialsSection from '@/components/sections/TestimonialsSection'
 // import AICalculatorSection from '@/components/sections/AICalculatorSection'
 // import PortfolioGallery from '@/components/sections/PortfolioGallery'
 import AIChatbotSection from '@/components/sections/AIChatbotSection'
@@ -28,7 +28,7 @@ export default function Home() {
                 {/* <AICalculatorSection /> */}
                 <AIChatbotSection />
                 <SuccessStories />
-                <TestimonialsSection />
+                {/* <TestimonialsSection /> */}
                 <Team />
                 <TrustSignals />
                 <ContactForm />

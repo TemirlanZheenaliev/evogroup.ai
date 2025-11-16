@@ -183,7 +183,8 @@ const SuccessStories: React.FC = () => {
     }
 
     const translations = getTranslations()
-    const caseStudies = getCaseStudies()
+    // Filter out government sector case - temporarily hidden
+    const caseStudies = getCaseStudies().filter(study => study.id !== 'government-integration')
 
     return (
         <section id="cases" className="py-24 bg-slate-800/30">

@@ -206,7 +206,8 @@ const TestimonialsSection: React.FC = () => {
     }
 
     const translations = getTranslations()
-    const testimonials = getTestimonials()
+    // Filter testimonials - keep only first two (Almaz and Gulnara)
+    const testimonials = getTestimonials().filter(t => t.id <= 2)
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length)
