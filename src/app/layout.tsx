@@ -94,12 +94,12 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="ru">
+        <html lang="ru" className="dark">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         </head>
-        <body className={`${inter.className} antialiased`}>
+        <body className={`${inter.className} antialiased dark bg-black text-white`}>
         {children}
         </body>
         </html>

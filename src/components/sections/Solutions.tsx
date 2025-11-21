@@ -1,134 +1,218 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { Card, CardBody, Modal, ModalContent, ModalHeader, ModalBody } from '@nextui-org/react'
 import { useTranslation } from '@/components/providers/I18nProvider'
-import { AnimatedSection } from '@/components/animations/AnimatedSection'
-import { StaggeredContainer } from '@/components/animations/StaggeredContainer'
 
 const Solutions: React.FC = () => {
-    const { t, locale } = useTranslation()
-
-    // Функция для безопасного получения переводов с fallback
-    const getString = (key: string, fallbackRu: string, fallbackEn: string, fallbackKy: string): string => {
-        const value = t(key, 'solutions')
-        if (typeof value === 'string' && value !== key) return value
-
-        // Fallback по языкам
-        if (locale === 'en') return fallbackEn
-        if (locale === 'ky') return fallbackKy
-        return fallbackRu
-    }
+    const { locale } = useTranslation()
+    const [selectedSolution, setSelectedSolution] = useState<string | null>(null)
 
     const getTranslations = () => {
-        return {
-            title: getString('title', 'Наши решения', 'Our Solutions', 'Биздин чечимдер'),
-            subtitle: getString('subtitle',
-                'Разрабатываем ИИ-системы для разных отраслей бизнеса',
-                'We develop AI systems for different business industries',
-                'Ар кандай бизнес салаттары үчүн ИИ системаларын иштеп чыгабыз'
-            ),
-            banking: {
-                title: getString('banking.title', 'Банковские решения', 'Banking Solutions', 'Банктык чечимдер'),
-                description: getString('banking.description',
-                    'Автоматизация кредитных решений, анализ рисков и персонализация продуктов',
-                    'Automation of credit decisions, risk analysis and product personalization',
-                    'Кредиттик чечимдерди автоматташтыруу, тобокелдикти талдоо жана продуктуларды жекелештирүү'
-                )
-            },
-            government: {
-                title: getString('government.title', 'Государственный сектор', 'Government Sector', 'Мамлекеттик сектор'),
-                description: getString('government.description',
-                    'Цифровизация услуг, анализ данных и оптимизация процессов',
-                    'Service digitization, data analysis and process optimization',
-                    'Кызматтарды санариптештирүү, маалыматтарды талдоо жана процесстерди оптималдаштыруу'
-                )
-            },
-            energy: {
-                title: getString('energy.title', 'Нефть и газ', 'Oil and Gas', 'Нефть жана газ'),
-                description: getString('energy.description',
-                    'Предиктивная аналитика, оптимизация добычи и мониторинг оборудования',
-                    'Predictive analytics, production optimization and equipment monitoring',
-                    'Алдын ала аналитика, казып алууну оптималдаштыруу жана жабдуулардын мониторинги'
-                )
+        if (locale === 'en') {
+            return {
+                preTitle: 'Industries',
+                title: 'Solutions for every business',
+                subtitle: 'We create AI systems tailored to the unique challenges of your industry',
+                banking: {
+                    title: 'Banking',
+                    description: 'Intelligent credit scoring, fraud detection, and personalized financial services',
+                    fullDescription: 'Our company specializes in technological solutions for banks and the corporate sector. We create products in the areas of tax services, inventory management, smart contracts, and HR automation. Our developments accelerate business processes, reduce risks, and ensure transparency of operations.'
+                },
+                government: {
+                    title: 'TelecomAI Connect',
+                    description: 'Multi-agent AI systems for telecom customer service',
+                    fullDescription: 'We create multi-agent AI systems for telecom operator customer service. Our solutions automate support, accelerate request processing, and provide personalized service in large subscriber networks. AI agents distribute workload, prevent errors, and improve the quality of customer interactions.'
+                },
+                energy: {
+                    title: 'Oil & Gas',
+                    description: 'Predictive maintenance, production optimization, and safety monitoring',
+                    fullDescription: 'We develop solutions that enhance the efficiency of production and management processes in the oil and gas industry. We create systems for production and logistics control, inventory optimization, equipment monitoring, and digitalization of key operations. Our technologies help reduce costs, improve data accuracy, and maintain stable infrastructure performance.'
+                }
+            }
+        } else if (locale === 'ky') {
+            return {
+                preTitle: 'Тармактар',
+                title: 'Ар бир бизнес үчүн чечимдер',
+                subtitle: 'Тармагыңыздын уникалдуу маселелерине ылайыкташтырылган ИИ системаларын түзөбүз',
+                banking: {
+                    title: 'Банктык',
+                    description: 'Акылдуу кредиттик баалоо, алдамчылыкты аныктоо жана жекелештирилген финансылык кызматтар',
+                    fullDescription: 'Биздин компания банктар жана корпоративдик сектор үчүн технологиялык чечимдерге адистешет. Биз салык кызматтары, товарды эсепке алуу, смарт-келишимдер жана HR-автоматташтыруу чөйрөсүндө продуктуларды түзөбүз. Биздин иштелмелер бизнес-процесстерди тездетет, тобокелдиктерди азайтат жана операциялардын ачыктыгын камсыздайт.'
+                },
+                government: {
+                    title: 'TelecomAI Connect',
+                    description: 'Телеком операторлору үчүн көп агенттүү ИИ системалар',
+                    fullDescription: 'Биз телеком операторлорунун кардарларды тейлөө үчүн көп агенттүү ИИ системаларын түзөбүз. Биздин чечимдер колдоону автоматташтырат, кайрылууларды тез иштетет жана чоң абоненттик тармактарда жекелештирилген тейлөөнү камсыздайт. ИИ агенттери жүктөмдү бөлүштүрөт, каталарды алдын алат жана кардарлар менен өз ара аракеттенүүнүн сапатын жогорулатат.'
+                },
+                energy: {
+                    title: 'Мунай жана газ',
+                    description: 'Алдын ала тейлөө, өндүрүштү оптималдаштыруу жана коопсуздукту көзөмөлдөө',
+                    fullDescription: 'Биз мунай-газ тармагындагы өндүрүштүк жана башкаруу процесстеринин эффективдүүлүгүн жогорулаткан чечимдерди иштеп чыгабыз. Биз өндүрүш жана логистиканы көзөмөлдөө, товарды эсепке алууну оптималдаштыруу, жабдууларды мониторинг жана негизги операцияларды санариптештирүү системаларын түзөбүз. Биздин технологиялар чыгымдарды кыскартууга, маалыматтардын тактыгын жогорулатууга жана инфраструктуранын туруктуу иштешине жардам берет.'
+                }
+            }
+        } else {
+            return {
+                preTitle: 'Отрасли',
+                title: 'Решения для каждого бизнеса',
+                subtitle: 'Создаем AI-системы под уникальные задачи вашей отрасли',
+                banking: {
+                    title: 'Банкинг',
+                    description: 'Интеллектуальный скоринг, детекция мошенничества и персонализированные финансовые услуги',
+                    fullDescription: 'Наша компания специализируется на технологических решениях для банков и корпоративного сектора. Мы создаём продукты в области налоговых сервисов, товароучёта, смарт-контрактов и HR-автоматизации. Наши разработки ускоряют бизнес-процессы, снижают риски и обеспечивают прозрачность операций.'
+                },
+                government: {
+                    title: 'TelecomAI Connect',
+                    description: 'Мультиагентные ИИ-системы для клиентского сервиса телеком-операторов',
+                    fullDescription: 'Мы создаём мультиагентные ИИ-системы для клиентского сервиса телеком-операторов. Наши решения автоматизируют поддержку, ускоряют обработку обращений и обеспечивают персонализированное обслуживание в крупных абонентских сетях. ИИ-агенты распределяют нагрузку, предотвращают ошибки и повышают качество взаимодействия с клиентами.'
+                },
+                energy: {
+                    title: 'Нефть и газ',
+                    description: 'Предиктивное обслуживание, оптимизация добычи и мониторинг безопасности',
+                    fullDescription: 'Мы разрабатываем решения, повышающие эффективность производственных и управленческих процессов в нефтегазовой отрасли. Создаём системы для контроля добычи и логистики, оптимизации товароучёта, мониторинга оборудования и цифровизации ключевых операций. Наши технологии помогают снижать издержки, повышать точность данных и поддерживать стабильную работу инфраструктуры.'
+                }
             }
         }
     }
 
     const translations = getTranslations()
 
+    const solutions = [
+        {
+            id: 'banking',
+            title: translations.banking.title,
+            description: translations.banking.description,
+            icon: '🏦',
+            gradient: 'from-blue-500/20 to-cyan-500/20',
+            hoverGradient: 'group-hover:from-blue-500/30 group-hover:to-cyan-500/30'
+        },
+        {
+            id: 'government',
+            title: translations.government.title,
+            description: translations.government.description,
+            icon: '🏛️',
+            gradient: 'from-purple-500/20 to-pink-500/20',
+            hoverGradient: 'group-hover:from-purple-500/30 group-hover:to-pink-500/30'
+        },
+        {
+            id: 'energy',
+            title: translations.energy.title,
+            description: translations.energy.description,
+            icon: '⚡',
+            gradient: 'from-green-500/20 to-emerald-500/20',
+            hoverGradient: 'group-hover:from-green-500/30 group-hover:to-emerald-500/30'
+        }
+    ]
+
     return (
-        <section
-            id="solutions"
-            className="relative px-6 py-24 bg-gradient-to-br from-slate-800/50 via-blue-900/20 to-slate-800/50 overflow-hidden"
-        >
-            {/* Фоновые эффекты */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"
-                     style={{ animationDelay: '2s' }} />
+        <section id="solutions" className="relative py-32 overflow-hidden">
+            {/* Section header */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6 mb-20 text-center">
+                <span className="inline-block mb-6 px-4 py-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 text-sm font-medium text-white/90 animate-fade-in">
+                    {translations.preTitle}
+                </span>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up">
+                    {translations.title}
+                </h2>
+                <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.1s'}}>
+                    {translations.subtitle}
+                </p>
             </div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
-                <AnimatedSection animationType="slideUp" className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white/80 shadow-sm mb-6">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                        {locale === 'en' ? 'Our Solutions' : locale === 'ky' ? 'Биздин чечимдер' : 'Наши решения'}
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        {translations.title}
-                    </h2>
-                    <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                        {translations.subtitle}
-                    </p>
-                </AnimatedSection>
+            {/* Solutions grid */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                    {solutions.map((solution, index) => (
+                        <Card
+                            key={solution.id}
+                            isPressable
+                            onPress={() => setSelectedSolution(solution.id)}
+                            className="group bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 animate-slide-up cursor-pointer"
+                            style={{animationDelay: `${index * 0.1}s`}}
+                        >
+                            <CardBody className="p-8">
+                                {/* Icon */}
+                                <div className={`mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${solution.gradient} ${solution.hoverGradient} flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                                    <span className="text-4xl">{solution.icon}</span>
+                                </div>
 
-                <StaggeredContainer className="grid md:grid-cols-3 gap-8" staggerDelay={200}>
-                    {/* Banking Card */}
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 border border-white/10 group">
-                        <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
-                            {translations.banking.title}
-                        </h3>
-                        <p className="text-white/70 leading-relaxed">
-                            {translations.banking.description}
-                        </p>
-                    </div>
+                                {/* Title */}
+                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                                    {solution.title}
+                                </h3>
 
-                    {/* Government Card */}
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 border border-white/10 group">
-                        <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
-                            {translations.government.title}
-                        </h3>
-                        <p className="text-white/70 leading-relaxed">
-                            {translations.government.description}
-                        </p>
-                    </div>
+                                {/* Description */}
+                                <p className="text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                                    {solution.description}
+                                </p>
 
-                    {/* Energy Card */}
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 border border-white/10 group">
-                        <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors duration-300">
-                            {translations.energy.title}
-                        </h3>
-                        <p className="text-white/70 leading-relaxed">
-                            {translations.energy.description}
-                        </p>
-                    </div>
-                </StaggeredContainer>
+                                {/* Hover indicator */}
+                                <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span className="text-sm font-medium">Learn more</span>
+                                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    ))}
+                </div>
             </div>
+
+            {/* Background decoration */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px] pointer-events-none" />
+
+            {/* Modal */}
+            <Modal
+                isOpen={selectedSolution !== null}
+                onClose={() => setSelectedSolution(null)}
+                size="2xl"
+                backdrop="blur"
+                classNames={{
+                    backdrop: "bg-black/80 backdrop-blur-md",
+                    base: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10",
+                    header: "border-b border-white/10",
+                    body: "py-6",
+                    closeButton: "hover:bg-white/10 active:bg-white/20"
+                }}
+            >
+                <ModalContent>
+                    {() => {
+                        const solution = solutions.find(s => s.id === selectedSolution)
+                        if (!solution) return null
+
+                        const fullDescription = selectedSolution === 'banking'
+                            ? translations.banking.fullDescription
+                            : selectedSolution === 'government'
+                            ? translations.government.fullDescription
+                            : translations.energy.fullDescription
+
+                        const getIconGradientClass = () => {
+                            if (selectedSolution === 'banking') return 'from-blue-500/20 to-cyan-500/20'
+                            if (selectedSolution === 'government') return 'from-purple-500/20 to-pink-500/20'
+                            return 'from-green-500/20 to-emerald-500/20'
+                        }
+
+                        return (
+                            <>
+                                <ModalHeader className="flex flex-col gap-1">
+                                    <div className="flex items-center gap-4">
+                                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${getIconGradientClass()} flex items-center justify-center`}>
+                                            <span className="text-3xl">{solution.icon}</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white">{solution.title}</h3>
+                                    </div>
+                                </ModalHeader>
+                                <ModalBody>
+                                    <p className="text-white/80 leading-relaxed text-base">
+                                        {fullDescription}
+                                    </p>
+                                </ModalBody>
+                            </>
+                        )
+                    }}
+                </ModalContent>
+            </Modal>
         </section>
     )
 }
