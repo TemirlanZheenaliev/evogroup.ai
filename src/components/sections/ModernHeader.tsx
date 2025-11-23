@@ -82,10 +82,6 @@ const ModernHeader: React.FC = () => {
             }}
         >
             <NavbarContent>
-                <NavbarMenuToggle
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="lg:hidden text-white"
-                />
                 <NavbarBrand className="gap-3">
                     <div className="w-10 h-10 flex items-center justify-center">
                         <Image
@@ -128,6 +124,12 @@ const ModernHeader: React.FC = () => {
                     >
                         {translations.cta}
                     </Button>
+                </NavbarItem>
+                <NavbarItem className="lg:hidden">
+                    <NavbarMenuToggle
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                        className="text-white"
+                    />
                 </NavbarItem>
             </NavbarContent>
 

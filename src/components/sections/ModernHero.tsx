@@ -63,6 +63,13 @@ const ModernHero: React.FC = () => {
 
     const translations = getTranslations()
 
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
@@ -95,6 +102,7 @@ const ModernHero: React.FC = () => {
                         color="primary"
                         className="text-base font-semibold px-8 h-14 bg-blue-600 hover:bg-blue-700 transition-all duration-300"
                         radius="full"
+                        onPress={() => scrollToSection('contact')}
                     >
                         {translations.ctaPrimary}
                     </Button>
@@ -103,6 +111,7 @@ const ModernHero: React.FC = () => {
                         variant="bordered"
                         className="text-base font-semibold px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300"
                         radius="full"
+                        onPress={() => scrollToSection('technology')}
                     >
                         {translations.ctaSecondary}
                     </Button>
