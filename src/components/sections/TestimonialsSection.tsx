@@ -25,10 +25,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Results Speak for Themselves',
                 subtitle: 'Over 50 successful projects for leading companies and organizations in Kyrgyzstan',
                 badge: 'Our Client Reviews',
-                navigation: {
-                    prev: 'Previous',
-                    next: 'Next'
-                },
                 stats: [
                     { value: '50+', label: 'Satisfied Clients' },
                     { value: '95%', label: 'Satisfaction' },
@@ -41,10 +37,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Натыйжалар өзү үчүн сүйлөйт',
                 subtitle: 'Кыргызстандын алдыңкы компаниялары жана уюмдары үчүн 50дөн ашык ийгиликтүү долбоор',
                 badge: 'Кардарлардын пикирлери',
-                navigation: {
-                    prev: 'Мурунку',
-                    next: 'Кийинки'
-                },
                 stats: [
                     { value: '50+', label: 'Канааттанган кардар' },
                     { value: '95%', label: 'Канааттануу' },
@@ -57,10 +49,6 @@ const TestimonialsSection: React.FC = () => {
                 title: 'Результаты говорят за нас',
                 subtitle: 'Более 50 успешных проектов для ведущих компаний и организаций Кыргызстана',
                 badge: 'Отзывы наших клиентов',
-                navigation: {
-                    prev: 'Предыдущий',
-                    next: 'Следующий'
-                },
                 stats: [
                     { value: '50+', label: 'Довольных клиентов' },
                     { value: '95%', label: 'Удовлетворенность' },
@@ -213,10 +201,6 @@ const TestimonialsSection: React.FC = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length)
     }
 
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-    }
-
     useEffect(() => {
         const timer = setInterval(nextSlide, 6000)
         return () => clearInterval(timer)
@@ -297,26 +281,6 @@ const TestimonialsSection: React.FC = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Navigation Arrows */}
-                    <button
-                        onClick={prevSlide}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-200 hover:scale-110"
-                        aria-label={translations.navigation.prev}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-200 hover:scale-110"
-                        aria-label={translations.navigation.next}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
 
                     {/* Dots Indicator */}
                     <div className="flex justify-center mt-8 gap-2">
