@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Card, CardBody, Modal, ModalContent, ModalHeader, ModalBody } from '@nextui-org/react'
 import { useTranslation } from '@/components/providers/I18nProvider'
 
@@ -82,7 +83,7 @@ const Solutions: React.FC = () => {
             id: 'banking',
             title: translations.banking.title,
             description: translations.banking.description,
-            icon: '🏦',
+            iconSvg: '/bank.svg',
             gradient: 'from-blue-500/20 to-cyan-500/20',
             hoverGradient: 'group-hover:from-blue-500/30 group-hover:to-cyan-500/30'
         },
@@ -90,7 +91,7 @@ const Solutions: React.FC = () => {
             id: 'government',
             title: translations.government.title,
             description: translations.government.description,
-            icon: '🏛️',
+            iconSvg: '/bank_2.svg',
             gradient: 'from-purple-500/20 to-pink-500/20',
             hoverGradient: 'group-hover:from-purple-500/30 group-hover:to-pink-500/30'
         },
@@ -98,7 +99,7 @@ const Solutions: React.FC = () => {
             id: 'energy',
             title: translations.energy.title,
             description: translations.energy.description,
-            icon: '⚡',
+            iconSvg: '/neft-gas.svg',
             gradient: 'from-green-500/20 to-emerald-500/20',
             hoverGradient: 'group-hover:from-green-500/30 group-hover:to-emerald-500/30'
         }
@@ -133,7 +134,13 @@ const Solutions: React.FC = () => {
                             <CardBody className="p-8">
                                 {/* Icon */}
                                 <div className={`mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${solution.gradient} ${solution.hoverGradient} flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-                                    <span className="text-4xl">{solution.icon}</span>
+                                    <Image
+                                        src={solution.iconSvg}
+                                        alt={solution.title}
+                                        width={40}
+                                        height={40}
+                                        className="w-10 h-10"
+                                    />
                                 </div>
 
                                 {/* Title */}
@@ -198,7 +205,13 @@ const Solutions: React.FC = () => {
                                 <ModalHeader className="flex flex-col gap-1">
                                     <div className="flex items-center gap-4">
                                         <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${getIconGradientClass()} flex items-center justify-center`}>
-                                            <span className="text-3xl">{solution.icon}</span>
+                                            <Image
+                                                src={solution.iconSvg}
+                                                alt={solution.title}
+                                                width={32}
+                                                height={32}
+                                                className="w-8 h-8"
+                                            />
                                         </div>
                                         <h3 className="text-2xl font-bold text-white">{solution.title}</h3>
                                     </div>

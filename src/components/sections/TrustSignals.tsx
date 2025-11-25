@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { useTranslation } from '@/components/providers/I18nProvider'
 
 const TrustSignals: React.FC = () => {
@@ -42,21 +43,21 @@ const TrustSignals: React.FC = () => {
     const getCertifications = () => {
         if (locale === 'en') {
             return [
-                { name: 'ISO 27001', icon: '🏆', description: 'Security certification' },
-                { name: 'API Partner', icon: '🤝', description: 'Official government partner' },
-                { name: 'AI Certified', icon: '🧠', description: 'Certified AI solutions' },
+                { name: 'ISO 27001', iconSvg: '/certification.svg', description: 'Security certification' },
+                { name: 'API Partner', iconSvg: '/mark.svg', description: 'Official government partner' },
+                { name: 'AI Certified', iconSvg: '/partner.svg', description: 'Certified AI solutions' },
             ]
         } else if (locale === 'ky') {
             return [
-                { name: 'ISO 27001', icon: '🏆', description: 'Коопсуздук сертификаты' },
-                { name: 'API өнөктөш', icon: '🤝', description: 'Расмий мамлекеттик өнөктөш' },
-                { name: 'ИИ сертификат', icon: '🧠', description: 'Сертификатталган ИИ чечимдер' },
+                { name: 'ISO 27001', iconSvg: '/certification.svg', description: 'Коопсуздук сертификаты' },
+                { name: 'API өнөктөш', iconSvg: '/mark.svg', description: 'Расмий мамлекеттик өнөктөш' },
+                { name: 'ИИ сертификат', iconSvg: '/partner.svg', description: 'Сертификатталган ИИ чечимдер' },
             ]
         } else {
             return [
-                { name: 'ISO 27001', icon: '🏆', description: 'Сертификация безопасности' },
-                { name: 'API Partner', icon: '🤝', description: 'Официальный партнер госорганов' },
-                { name: 'AI Certified', icon: '🧠', description: 'Сертифицированные ИИ-решения' },
+                { name: 'ISO 27001', iconSvg: '/certification.svg', description: 'Сертификация безопасности' },
+                { name: 'API Partner', iconSvg: '/mark.svg', description: 'Официальный партнер госорганов' },
+                { name: 'AI Certified', iconSvg: '/partner.svg', description: 'Сертифицированные ИИ-решения' },
             ]
         }
     }
@@ -65,24 +66,24 @@ const TrustSignals: React.FC = () => {
     const getStats = () => {
         if (locale === 'en') {
             return [
-                { value: '10+', label: 'Years in market', icon: '⭐' },
-                { value: '50+', label: 'Major clients', icon: '🏢' },
-                { value: '99.9%', label: 'System reliability', icon: '🛡️' },
-                { value: '24/7', label: 'Technical support', icon: '📞' },
+                { value: '10+', label: 'Years in market', iconSvg: '/security.svg' },
+                { value: '50+', label: 'Major clients', iconSvg: '/bank_3.svg' },
+                { value: '99.9%', label: 'System reliability', iconSvg: '/chelovek.svg' },
+                { value: '24/7', label: 'Technical support', iconSvg: '/tech_support.svg' },
             ]
         } else if (locale === 'ky') {
             return [
-                { value: '10+', label: 'Базардагы жылдар', icon: '⭐' },
-                { value: '50+', label: 'Ири кардарлар', icon: '🏢' },
-                { value: '99.9%', label: 'Системанын ишенимдүүлүгү', icon: '🛡️' },
-                { value: '24/7', label: 'Техникалык колдоо', icon: '📞' },
+                { value: '10+', label: 'Базардагы жылдар', iconSvg: '/security.svg' },
+                { value: '50+', label: 'Ири кардарлар', iconSvg: '/bank_3.svg' },
+                { value: '99.9%', label: 'Системанын ишенимдүүлүгү', iconSvg: '/chelovek.svg' },
+                { value: '24/7', label: 'Техникалык колдоо', iconSvg: '/tech_support.svg' },
             ]
         } else {
             return [
-                { value: '10+', label: 'Лет на рынке', icon: '⭐' },
-                { value: '50+', label: 'Крупных клиентов', icon: '🏢' },
-                { value: '99.9%', label: 'Надежность систем', icon: '🛡️' },
-                { value: '24/7', label: 'Техподдержка', icon: '📞' },
+                { value: '10+', label: 'Лет на рынке', iconSvg: '/security.svg' },
+                { value: '50+', label: 'Крупных клиентов', iconSvg: '/bank_3.svg' },
+                { value: '99.9%', label: 'Надежность систем', iconSvg: '/chelovek.svg' },
+                { value: '24/7', label: 'Техподдержка', iconSvg: '/tech_support.svg' },
             ]
         }
     }
@@ -91,24 +92,24 @@ const TrustSignals: React.FC = () => {
     const getClients = () => {
         if (locale === 'en') {
             return [
-                { icon: '🏦', name: 'Largest Bank of KR', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'Oil & Gas Industry KR', color: 'from-orange-500 to-orange-600' },
-                { icon: '🏛️', name: 'Ministry of Digital Development', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Telecom Operators KR', color: 'from-green-500 to-green-600' },
+                { iconSvg: '/bank.svg', name: 'Largest Bank of KR', color: 'from-blue-500 to-blue-600' },
+                { iconSvg: '/tech_support_2.svg', name: 'Oil & Gas Industry KR', color: 'from-orange-500 to-orange-600' },
+                { iconSvg: '/bank_2.svg', name: 'Ministry of Digital Development', color: 'from-purple-500 to-purple-600' },
+                { iconSvg: '/Group 1000002915.svg', name: 'Telecom Operators KR', color: 'from-green-500 to-green-600' },
             ]
         } else if (locale === 'ky') {
             return [
-                { icon: '🏦', name: 'КРнын эң ири банкы', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'Мунай-газ тармагы КР', color: 'from-orange-500 to-orange-600' },
-                { icon: '🏛️', name: 'Санариптик өнүктүрүү министрлиги', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Телеком операторлору КР', color: 'from-green-500 to-green-600' },
+                { iconSvg: '/bank.svg', name: 'КРнын эң ири банкы', color: 'from-blue-500 to-blue-600' },
+                { iconSvg: '/tech_support_2.svg', name: 'Мунай-газ тармагы КР', color: 'from-orange-500 to-orange-600' },
+                { iconSvg: '/bank_2.svg', name: 'Санариптик өнүктүрүү министрлиги', color: 'from-purple-500 to-purple-600' },
+                { iconSvg: '/Group 1000002915.svg', name: 'Телеком операторлору КР', color: 'from-green-500 to-green-600' },
             ]
         } else {
             return [
-                { icon: '🏦', name: 'Крупнейший банк КР', color: 'from-blue-500 to-blue-600' },
-                { icon: '🏭', name: 'Нефтяная отрасль КР', color: 'from-orange-500 to-orange-600' },
-                { icon: '🏛️', name: 'Министерство цифрового развития', color: 'from-purple-500 to-purple-600' },
-                { icon: '🏢', name: 'Телеком операторы КР', color: 'from-green-500 to-green-600' },
+                { iconSvg: '/bank.svg', name: 'Крупнейший банк КР', color: 'from-blue-500 to-blue-600' },
+                { iconSvg: '/tech_support_2.svg', name: 'Нефтяная отрасль КР', color: 'from-orange-500 to-orange-600' },
+                { iconSvg: '/bank_2.svg', name: 'Министерство цифрового развития', color: 'from-purple-500 to-purple-600' },
+                { iconSvg: '/Group 1000002915.svg', name: 'Телеком операторы КР', color: 'from-green-500 to-green-600' },
             ]
         }
     }
@@ -154,7 +155,13 @@ const TrustSignals: React.FC = () => {
                                     className="flex flex-col items-center justify-center p-6 hover:bg-white/10 rounded-lg transition-all duration-200 group"
                                 >
                                     <div className={`mb-4 w-16 h-16 bg-gradient-to-br ${client.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg`}>
-                                        <span className="text-2xl">{client.icon}</span>
+                                        <Image
+                                            src={client.iconSvg}
+                                            alt={client.name}
+                                            width={32}
+                                            height={32}
+                                            className="w-8 h-8"
+                                        />
                                     </div>
                                     <span className="text-sm text-white/80 text-center leading-tight">{client.name}</span>
                                 </div>
@@ -170,7 +177,15 @@ const TrustSignals: React.FC = () => {
                             key={index}
                             className="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 border border-white/10 group"
                         >
-                            <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200">{stat.icon}</div>
+                            <div className="flex justify-center mb-3 group-hover:scale-110 transition-transform duration-200">
+                                <Image
+                                    src={stat.iconSvg}
+                                    alt={stat.label}
+                                    width={48}
+                                    height={48}
+                                    className="w-12 h-12"
+                                />
+                            </div>
                             <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
                             <div className="text-sm text-white/60">{stat.label}</div>
                         </div>
@@ -188,8 +203,14 @@ const TrustSignals: React.FC = () => {
                                 key={index}
                                 className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-200 group"
                             >
-                                <div className="bg-white/20 rounded-full p-3 text-2xl group-hover:scale-110 transition-transform duration-200">
-                                    {cert.icon}
+                                <div className="bg-white/20 rounded-full p-3 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
+                                    <Image
+                                        src={cert.iconSvg}
+                                        alt={cert.name}
+                                        width={32}
+                                        height={32}
+                                        className="w-8 h-8"
+                                    />
                                 </div>
                                 <div className="flex-1">
                                     <div className="font-semibold text-white text-lg mb-1">{cert.name}</div>

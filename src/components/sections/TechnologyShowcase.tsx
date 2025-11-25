@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { Card, CardBody, Chip } from '@nextui-org/react'
 import { useTranslation } from '@/components/providers/I18nProvider'
 
@@ -71,7 +72,15 @@ const TechnologyShowcase: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     <Card className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/8 transition-all duration-300">
                         <CardBody className="p-8 text-center">
-                            <div className="text-4xl mb-4">🧠</div>
+                            <div className="flex justify-center mb-4">
+                                <Image
+                                    src="/ai.svg"
+                                    alt="AI"
+                                    width={64}
+                                    height={64}
+                                    className="w-16 h-16"
+                                />
+                            </div>
                             <h3 className="text-xl font-bold text-white mb-2">{translations.ai}</h3>
                             <p className="text-white/60 text-sm">Machine Learning, Deep Learning, NLP</p>
                         </CardBody>
@@ -79,7 +88,15 @@ const TechnologyShowcase: React.FC = () => {
 
                     <Card className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/8 transition-all duration-300">
                         <CardBody className="p-8 text-center">
-                            <div className="text-4xl mb-4">☁️</div>
+                            <div className="flex justify-center mb-4">
+                                <Image
+                                    src="/Weather.svg"
+                                    alt="Cloud"
+                                    width={64}
+                                    height={64}
+                                    className="w-16 h-16"
+                                />
+                            </div>
                             <h3 className="text-xl font-bold text-white mb-2">{translations.cloud}</h3>
                             <p className="text-white/60 text-sm">Scalable, Reliable, High-Performance</p>
                         </CardBody>
@@ -87,7 +104,15 @@ const TechnologyShowcase: React.FC = () => {
 
                     <Card className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/8 transition-all duration-300">
                         <CardBody className="p-8 text-center">
-                            <div className="text-4xl mb-4">🔒</div>
+                            <div className="flex justify-center mb-4">
+                                <Image
+                                    src="/security.svg"
+                                    alt="Security"
+                                    width={64}
+                                    height={64}
+                                    className="w-16 h-16"
+                                />
+                            </div>
                             <h3 className="text-xl font-bold text-white mb-2">{translations.security}</h3>
                             <p className="text-white/60 text-sm">Certified, Compliant, Protected</p>
                         </CardBody>
