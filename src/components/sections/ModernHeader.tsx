@@ -13,6 +13,11 @@ const ModernHeader: React.FC = () => {
     const pathname = usePathname()
     const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
+    // Log для отладки
+    React.useEffect(() => {
+        console.log('ModernHeader: isMenuOpen =', isMenuOpen)
+    }, [isMenuOpen])
+
     // Функция для получения переводов с fallback значениями
     const getTranslations = () => {
         if (locale === 'en') {
@@ -66,10 +71,15 @@ const ModernHeader: React.FC = () => {
 
     const isActive = (href: string) => pathname === href
 
+    const handleMenuOpenChange = React.useCallback((open: boolean) => {
+        console.log('handleMenuOpenChange called with:', open)
+        setIsMenuOpen(open)
+    }, [])
+
     return (
         <Navbar
             isMenuOpen={isMenuOpen}
-            onMenuOpenChange={setIsMenuOpen}
+            onMenuOpenChange={handleMenuOpenChange}
             maxWidth="xl"
             className="bg-black/80 backdrop-blur-2xl border-b border-white/10 fixed top-0 z-50"
             classNames={{
@@ -134,6 +144,10 @@ const ModernHeader: React.FC = () => {
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="text-white relative z-50"
+                        onClick={(e) => {
+                            console.log('NavbarMenuToggle clicked')
+                            e.stopPropagation()
+                        }}
                     />
                 </NavbarItem>
             </NavbarContent>
