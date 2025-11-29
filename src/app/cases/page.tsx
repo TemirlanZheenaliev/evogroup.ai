@@ -1,6 +1,7 @@
 'use client'
 
 import { I18nProvider, useTranslation } from '@/components/providers/I18nProvider'
+import { NextUIProvider } from '@/components/providers/NextUIProvider'
 import ModernHeader from '@/components/sections/ModernHeader'
 import AIChatbotSection from '@/components/sections/AIChatbotSection'
 import Footer from '@/components/sections/Footer'
@@ -85,8 +86,10 @@ function CasesContent() {
 
 export default function CasesPage() {
     return (
-        <I18nProvider initialLocale="ru">
-            <CasesContent />
-        </I18nProvider>
+        <NextUIProvider>
+            <I18nProvider initialLocale="ru">
+                <CasesContent />
+            </I18nProvider>
+        </NextUIProvider>
     )
 }
