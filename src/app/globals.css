@@ -45,3 +45,12 @@ body {
     padding: 0;
     margin: 0;
 }
+
+/* Optimize burger menu performance */
+[data-slot="menu"] {
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out !important;
+}
+
+[data-slot="menu-toggle"] {
+    transition: transform 0.15s ease-out !important;
+}

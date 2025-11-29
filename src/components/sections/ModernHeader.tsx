@@ -13,11 +13,6 @@ const ModernHeader: React.FC = () => {
     const pathname = usePathname()
     const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-    // Log для отладки
-    React.useEffect(() => {
-        console.log('ModernHeader: isMenuOpen =', isMenuOpen)
-    }, [isMenuOpen])
-
     // Функция для получения переводов с fallback значениями
     const getTranslations = () => {
         if (locale === 'en') {
@@ -72,7 +67,6 @@ const ModernHeader: React.FC = () => {
     const isActive = (href: string) => pathname === href
 
     const handleMenuOpenChange = React.useCallback((open: boolean) => {
-        console.log('handleMenuOpenChange called with:', open)
         setIsMenuOpen(open)
     }, [])
 
@@ -87,6 +81,12 @@ const ModernHeader: React.FC = () => {
                 item: "text-white/70 hover:text-white data-[active=true]:text-white transition-colors",
                 menuItem: "text-white/80",
                 menu: "fixed top-[64px] left-0 right-0 z-[60] bg-slate-900/98 backdrop-blur-xl",
+            }}
+            motionProps={{
+                initial: { opacity: 0, y: -20 },
+                animate: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: -20 },
+                transition: { duration: 0.15, ease: "easeOut" }
             }}
         >
             <NavbarContent>
