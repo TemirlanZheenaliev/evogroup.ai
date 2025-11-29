@@ -1,6 +1,5 @@
 'use client'
 
-import { NextUIProvider } from '@/components/providers/NextUIProvider'
 import { I18nProvider } from '@/components/providers/I18nProvider'
 import ModernHeader from '@/components/sections/ModernHeader'
 import ModernHero from '@/components/sections/ModernHero'
@@ -11,8 +10,7 @@ import { Card, CardBody, Button } from '@nextui-org/react'
 
 export default function Home() {
     return (
-        <NextUIProvider>
-            <I18nProvider initialLocale="ru">
+        <I18nProvider initialLocale="ru">
                 <div className="relative min-h-screen bg-black">
                     {/* Apple-style gradient background */}
                     <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -91,7 +89,6 @@ export default function Home() {
 
                     <Footer />
                 </div>
-            </I18nProvider>
-        </NextUIProvider>
+        </I18nProvider>
     )
 }

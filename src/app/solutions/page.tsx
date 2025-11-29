@@ -1,7 +1,6 @@
 'use client'
 
 import { I18nProvider, useTranslation } from '@/components/providers/I18nProvider'
-import { NextUIProvider } from '@/components/providers/NextUIProvider'
 import ModernHeader from '@/components/sections/ModernHeader'
 import Solutions from '@/components/sections/Solutions'
 import CompetitiveAdvantages from '@/components/sections/CompetitiveAdvantages'
@@ -84,10 +83,8 @@ function SolutionsContent() {
 
 export default function SolutionsPage() {
     return (
-        <NextUIProvider>
-            <I18nProvider initialLocale="ru">
-                <SolutionsContent />
-            </I18nProvider>
-        </NextUIProvider>
+        <I18nProvider initialLocale="ru">
+            <SolutionsContent />
+        </I18nProvider>
     )
 }

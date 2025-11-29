@@ -1,7 +1,6 @@
 'use client'
 
 import { I18nProvider, useTranslation } from '@/components/providers/I18nProvider'
-import { NextUIProvider } from '@/components/providers/NextUIProvider'
 import ModernHeader from '@/components/sections/ModernHeader'
 import TechnologyShowcase from '@/components/sections/TechnologyShowcase'
 import Footer from '@/components/sections/Footer'
@@ -85,10 +84,8 @@ function TechnologyContent() {
 
 export default function TechnologyPage() {
     return (
-        <NextUIProvider>
-            <I18nProvider initialLocale="ru">
-                <TechnologyContent />
-            </I18nProvider>
-        </NextUIProvider>
+        <I18nProvider initialLocale="ru">
+            <TechnologyContent />
+        </I18nProvider>
     )
 }
