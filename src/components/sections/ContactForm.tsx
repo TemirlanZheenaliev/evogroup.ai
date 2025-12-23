@@ -13,6 +13,15 @@ interface FormData {
     newsletter: boolean
 }
 
+interface FormErrors {
+    name?: string
+    email?: string
+    company?: string
+    phone?: string
+    description?: string
+    general?: string
+}
+
 const ContactForm: React.FC = () => {
     const { locale } = useTranslation()
 
@@ -25,6 +34,7 @@ const ContactForm: React.FC = () => {
         newsletter: false,
     })
 
+    const [errors, setErrors] = useState<FormErrors>({})
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -66,7 +76,18 @@ const ContactForm: React.FC = () => {
                         'Provide accurate project estimate'
                     ]
                 },
-                privacyNotice: 'By submitting the form, you agree to personal data processing'
+                privacyNotice: 'By submitting the form, you agree to personal data processing',
+                errors: {
+                    nameRequired: 'Name is required',
+                    nameInvalid: 'Name contains invalid characters',
+                    emailRequired: 'Email is required',
+                    emailInvalid: 'Invalid email address',
+                    descriptionRequired: 'Description is required',
+                    descriptionTooShort: 'Description must be at least 10 characters',
+                    phoneInvalid: 'Invalid phone format',
+                    rateLimited: 'Too many requests. Please try again in 15 minutes.',
+                    serverError: 'Failed to submit form. Please try again later.',
+                }
             }
         } else if (locale === 'ky') {
             return {
@@ -104,7 +125,18 @@ const ContactForm: React.FC = () => {
                         'Долбоордун так бааланышын беребиз'
                     ]
                 },
-                privacyNotice: 'Форманы жөнөтүү менен, сиз жеке маалыматтарды иштетүүгө макулсуз'
+                privacyNotice: 'Форманы жөнөтүү менен, сиз жеке маалыматтарды иштетүүгө макулсуз',
+                errors: {
+                    nameRequired: 'Аты талап кылынат',
+                    nameInvalid: 'Атта уруксат берилбеген символдор бар',
+                    emailRequired: 'Email талап кылынат',
+                    emailInvalid: 'Туура эмес email дареги',
+                    descriptionRequired: 'Сүрөттөмө талап кылынат',
+                    descriptionTooShort: 'Сүрөттөмө кеминде 10 символ болушу керек',
+                    phoneInvalid: 'Туура эмес телефон форматы',
+                    rateLimited: 'Өтө көп суроо. 15 мүнөттөн кийин кайталап көрүңүз.',
+                    serverError: 'Форманы жөнөтүү мүмкүн болгон жок. Кийинчерээк кайталап көрүңүз.',
+                }
             }
         } else {
             return {
@@ -142,12 +174,57 @@ const ContactForm: React.FC = () => {
                         'Предоставим точную оценку проекта'
                     ]
                 },
-                privacyNotice: 'Отправляя форму, вы соглашаетесь с обработкой персональных данных'
+                privacyNotice: 'Отправляя форму, вы соглашаетесь с обработкой персональных данных',
+                errors: {
+                    nameRequired: 'Имя обязательно',
+                    nameInvalid: 'Имя содержит недопустимые символы',
+                    emailRequired: 'Email обязателен',
+                    emailInvalid: 'Неверный формат email',
+                    descriptionRequired: 'Описание обязательно',
+                    descriptionTooShort: 'Описание должно быть не менее 10 символов',
+                    phoneInvalid: 'Неверный формат телефона',
+                    rateLimited: 'Слишком много запросов. Попробуйте через 15 минут.',
+                    serverError: 'Не удалось отправить форму. Попробуйте позже.',
+                }
             }
         }
     }
 
     const translations = getTranslations()
+
+    // --- Клиентская валидация ---
+    const validateForm = (): boolean => {
+        const newErrors: FormErrors = {}
+
+        // Имя
+        if (!formData.name.trim()) {
+            newErrors.name = translations.errors.nameRequired
+        } else if (!/^[a-zA-Zа-яА-ЯёЁүүөөңңҢҢ\s\-']+$/.test(formData.name)) {
+            newErrors.name = translations.errors.nameInvalid
+        }
+
+        // Email
+        if (!formData.email.trim()) {
+            newErrors.email = translations.errors.emailRequired
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = translations.errors.emailInvalid
+        }
+
+        // Телефон (необязательный, но если указан - проверяем формат)
+        if (formData.phone && !/^[\d\+\-\s()]*$/.test(formData.phone)) {
+            newErrors.phone = translations.errors.phoneInvalid
+        }
+
+        // Описание
+        if (!formData.description.trim()) {
+            newErrors.description = translations.errors.descriptionRequired
+        } else if (formData.description.trim().length < 10) {
+            newErrors.description = translations.errors.descriptionTooShort
+        }
+
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0
+    }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
@@ -155,31 +232,44 @@ const ContactForm: React.FC = () => {
             ...prev,
             [name]: value
         }))
+        // Очищаем ошибку при вводе
+        if (errors[name as keyof FormErrors]) {
+            setErrors(prev => ({ ...prev, [name]: undefined }))
+        }
     }
 
-    // --- Отправка через Web3Forms ---
+    // --- Отправка через защищённый API ---
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        setIsSubmitting(true)
 
-        const payload = {
-            access_key: 'd4573125-e740-4b8d-9844-9a4f520416a9',
-            subject: 'Новая заявка с сайта Evolution Group 🚀',
-            from_name: 'Evolution Group',
-            ...formData,
+        // Клиентская валидация
+        if (!validateForm()) {
+            return
         }
 
+        setIsSubmitting(true)
+        setErrors({})
+
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Accept: 'application/json',
                 },
-                body: JSON.stringify(payload),
+                body: JSON.stringify(formData),
             })
 
             const result = await response.json()
+
+            if (response.status === 429) {
+                setErrors({ general: translations.errors.rateLimited })
+                return
+            }
+
+            if (!response.ok) {
+                setErrors({ general: result.error || translations.errors.serverError })
+                return
+            }
 
             if (result.success) {
                 setIsSubmitted(true)
@@ -192,11 +282,10 @@ const ContactForm: React.FC = () => {
                     newsletter: false,
                 })
             } else {
-                alert('Ошибка при отправке формы. Попробуйте снова.')
+                setErrors({ general: result.error || translations.errors.serverError })
             }
-        } catch (error) {
-            console.error(error)
-            alert('Не удалось отправить форму. Проверьте интернет или попробуйте позже.')
+        } catch {
+            setErrors({ general: translations.errors.serverError })
         } finally {
             setIsSubmitting(false)
         }
@@ -270,41 +359,58 @@ const ContactForm: React.FC = () => {
             <div className="relative z-10 max-w-3xl mx-auto px-6">
                 <Card className="bg-white/5 backdrop-blur-xl border-white/10 animate-slide-up" style={{animationDelay: '0.2s'}}>
                     <CardBody className="p-8 sm:p-10">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} noValidate>
+                            {/* General Error */}
+                            {errors.general && (
+                                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
+                                    {errors.general}
+                                </div>
+                            )}
+
                             {/* Name & Email */}
                             <div className="grid md:grid-cols-2 gap-6 mb-6">
-                                <Input
-                                    type="text"
-                                    name="name"
-                                    label={translations.form.fields.name.label}
-                                    placeholder={translations.form.fields.name.placeholder}
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    required
-                                    classNames={{
-                                        input: "text-white",
-                                        label: "text-white/70",
-                                        inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
-                                    }}
-                                    radius="lg"
-                                    size="lg"
-                                />
-                                <Input
-                                    type="email"
-                                    name="email"
-                                    label={translations.form.fields.email.label}
-                                    placeholder={translations.form.fields.email.placeholder}
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    required
-                                    classNames={{
-                                        input: "text-white",
-                                        label: "text-white/70",
-                                        inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
-                                    }}
-                                    radius="lg"
-                                    size="lg"
-                                />
+                                <div>
+                                    <Input
+                                        type="text"
+                                        name="name"
+                                        label={translations.form.fields.name.label}
+                                        placeholder={translations.form.fields.name.placeholder}
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        required
+                                        maxLength={100}
+                                        isInvalid={!!errors.name}
+                                        errorMessage={errors.name}
+                                        classNames={{
+                                            input: "text-white",
+                                            label: "text-white/70",
+                                            inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
+                                        }}
+                                        radius="lg"
+                                        size="lg"
+                                    />
+                                </div>
+                                <div>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        label={translations.form.fields.email.label}
+                                        placeholder={translations.form.fields.email.placeholder}
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        required
+                                        maxLength={254}
+                                        isInvalid={!!errors.email}
+                                        errorMessage={errors.email}
+                                        classNames={{
+                                            input: "text-white",
+                                            label: "text-white/70",
+                                            inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
+                                        }}
+                                        radius="lg"
+                                        size="lg"
+                                    />
+                                </div>
                             </div>
 
                             {/* Company & Phone */}
@@ -316,6 +422,7 @@ const ContactForm: React.FC = () => {
                                     placeholder={translations.form.fields.company.placeholder}
                                     value={formData.company}
                                     onChange={handleInputChange}
+                                    maxLength={200}
                                     classNames={{
                                         input: "text-white",
                                         label: "text-white/70",
@@ -324,21 +431,26 @@ const ContactForm: React.FC = () => {
                                     radius="lg"
                                     size="lg"
                                 />
-                                <Input
-                                    type="tel"
-                                    name="phone"
-                                    label={translations.form.fields.phone.label}
-                                    placeholder={translations.form.fields.phone.placeholder}
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                    classNames={{
-                                        input: "text-white",
-                                        label: "text-white/70",
-                                        inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
-                                    }}
-                                    radius="lg"
-                                    size="lg"
-                                />
+                                <div>
+                                    <Input
+                                        type="tel"
+                                        name="phone"
+                                        label={translations.form.fields.phone.label}
+                                        placeholder={translations.form.fields.phone.placeholder}
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        maxLength={20}
+                                        isInvalid={!!errors.phone}
+                                        errorMessage={errors.phone}
+                                        classNames={{
+                                            input: "text-white",
+                                            label: "text-white/70",
+                                            inputWrapper: "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
+                                        }}
+                                        radius="lg"
+                                        size="lg"
+                                    />
+                                </div>
                             </div>
 
                             {/* Description */}
@@ -348,9 +460,17 @@ const ContactForm: React.FC = () => {
                                     label={translations.form.fields.description.label}
                                     placeholder={translations.form.fields.description.placeholder}
                                     value={formData.description}
-                                    onValueChange={(value) => setFormData(prev => ({ ...prev, description: value }))}
+                                    onValueChange={(value) => {
+                                        setFormData(prev => ({ ...prev, description: value }))
+                                        if (errors.description) {
+                                            setErrors(prev => ({ ...prev, description: undefined }))
+                                        }
+                                    }}
                                     required
+                                    maxLength={5000}
                                     minRows={5}
+                                    isInvalid={!!errors.description}
+                                    errorMessage={errors.description}
                                     classNames={{
                                         input: "text-white",
                                         label: "text-white/70",
@@ -383,6 +503,7 @@ const ContactForm: React.FC = () => {
                                     className="flex-1 bg-blue-600 hover:bg-blue-700 font-semibold h-14"
                                     radius="full"
                                     isLoading={isSubmitting}
+                                    isDisabled={isSubmitting}
                                 >
                                     {isSubmitting ? translations.buttons.submitting : translations.buttons.submit}
                                 </Button>
