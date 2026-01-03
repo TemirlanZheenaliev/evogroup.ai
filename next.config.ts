@@ -9,7 +9,7 @@ const securityHeaders = [
     // Запрет iframe embedding (clickjacking protection)
     {
         key: 'X-Frame-Options',
-        value: 'SAMEORIGIN'
+        value: 'DENY'
     },
     // Запрет MIME sniffing
     {
@@ -20,6 +20,11 @@ const securityHeaders = [
     {
         key: 'Referrer-Policy',
         value: 'strict-origin-when-cross-origin'
+    },
+    // DNS Prefetch Control
+    {
+        key: 'X-DNS-Prefetch-Control',
+        value: 'on'
     },
     // Permissions policy
     {
@@ -37,7 +42,7 @@ const securityHeaders = [
             "img-src 'self' data: blob: https:",
             "media-src 'self' blob:",
             "connect-src 'self' https://api.web3forms.com https://api.deepseek.com https://wa.me",
-            "frame-ancestors 'self'",
+            "frame-ancestors 'none'",
             "base-uri 'self'",
             "form-action 'self' https://api.web3forms.com"
         ].join('; ')
@@ -45,21 +50,11 @@ const securityHeaders = [
     // Strict Transport Security (HTTPS only)
     {
         key: 'Strict-Transport-Security',
-        value: 'max-age=31536000; includeSubDomains'
+        value: 'max-age=31536000; includeSubDomains; preload'
     }
 ]
 
 const nextConfig: NextConfig = {
-    // Security headers
-    async headers() {
-        return [
-            {
-                source: '/:path*',
-                headers: securityHeaders,
-            },
-        ]
-    },
-
     // Оптимизация компиляции и минификации
     swcMinify: true,
 
@@ -85,59 +80,8 @@ const nextConfig: NextConfig = {
     async headers() {
         return [
             {
-                source: '/(.*)',
-                headers: [
-                    // Защита от clickjacking
-                    {
-                        key: 'X-Frame-Options',
-                        value: 'DENY',
-                    },
-                    // Защита от MIME sniffing
-                    {
-                        key: 'X-Content-Type-Options',
-                        value: 'nosniff',
-                    },
-                    // XSS защита (для старых браузеров)
-                    {
-                        key: 'X-XSS-Protection',
-                        value: '1; mode=block',
-                    },
-                    // Referrer Policy
-                    {
-                        key: 'Referrer-Policy',
-                        value: 'strict-origin-when-cross-origin',
-                    },
-                    // DNS Prefetch Control
-                    {
-                        key: 'X-DNS-Prefetch-Control',
-                        value: 'on',
-                    },
-                    // Permissions Policy (ограничение доступа к API браузера)
-                    {
-                        key: 'Permissions-Policy',
-                        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
-                    },
-                    // Content Security Policy
-                    {
-                        key: 'Content-Security-Policy',
-                        value: [
-                            "default-src 'self'",
-                            "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
-                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-                            "font-src 'self' https://fonts.gstatic.com",
-                            "img-src 'self' data: https: blob:",
-                            "connect-src 'self' https://api.web3forms.com",
-                            "frame-ancestors 'none'",
-                            "base-uri 'self'",
-                            "form-action 'self'",
-                        ].join('; '),
-                    },
-                    // Strict Transport Security (HTTPS only)
-                    {
-                        key: 'Strict-Transport-Security',
-                        value: 'max-age=31536000; includeSubDomains; preload',
-                    },
-                ],
+                source: '/:path*',
+                headers: securityHeaders,
             },
         ]
     },
