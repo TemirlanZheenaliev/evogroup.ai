@@ -120,7 +120,7 @@ const TrustSignals: React.FC = () => {
     const clients = getClients()
 
     return (
-        <section id="trust" className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+        <section id="trust" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full blur-3xl" />

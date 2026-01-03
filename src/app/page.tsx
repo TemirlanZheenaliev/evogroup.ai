@@ -6,7 +6,7 @@ import ModernHero from '@/components/sections/ModernHero'
 import TrustSignals from '@/components/sections/TrustSignals'
 import Footer from '@/components/sections/Footer'
 import Link from 'next/link'
-import { Card, CardBody, Button } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 
 export default function Home() {
     return (
@@ -22,53 +22,10 @@ export default function Home() {
                     <ModernHeader />
                     <ModernHero />
 
-                    {/* Quick Links Section */}
-                    <section className="relative py-24">
-                        <div className="max-w-7xl mx-auto px-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-                                Узнайте больше
-                            </h2>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <Link href="/solutions">
-                                    <Card isPressable className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full">
-                                        <CardBody className="p-6">
-                                            <h3 className="text-xl font-bold text-white mb-2">Решения</h3>
-                                            <p className="text-white/60">AI-системы для разных отраслей</p>
-                                        </CardBody>
-                                    </Card>
-                                </Link>
-                                <Link href="/cases">
-                                    <Card isPressable className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full">
-                                        <CardBody className="p-6">
-                                            <h3 className="text-xl font-bold text-white mb-2">Кейсы</h3>
-                                            <p className="text-white/60">Наши проекты и результаты</p>
-                                        </CardBody>
-                                    </Card>
-                                </Link>
-                                <Link href="/technology">
-                                    <Card isPressable className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full">
-                                        <CardBody className="p-6">
-                                            <h3 className="text-xl font-bold text-white mb-2">Технологии</h3>
-                                            <p className="text-white/60">Современный AI стек</p>
-                                        </CardBody>
-                                    </Card>
-                                </Link>
-                                <Link href="/team">
-                                    <Card isPressable className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full">
-                                        <CardBody className="p-6">
-                                            <h3 className="text-xl font-bold text-white mb-2">Команда</h3>
-                                            <p className="text-white/60">Познакомьтесь с экспертами</p>
-                                        </CardBody>
-                                    </Card>
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
-
                     <TrustSignals />
 
                     {/* CTA Section */}
-                    <section className="relative py-24">
+                    <section className="relative py-20">
                         <div className="max-w-4xl mx-auto px-6 text-center">
                             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                                 Готовы начать проект?

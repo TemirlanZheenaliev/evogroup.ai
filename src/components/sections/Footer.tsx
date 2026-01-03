@@ -80,9 +80,9 @@ const Footer: React.FC = () => {
     }
 
     return (
-        <footer className="relative py-24 overflow-hidden border-t border-white/5">
+        <footer className="relative py-20 overflow-hidden border-t border-white/5">
             {/* Newsletter section */}
-            <div className="relative z-10 max-w-4xl mx-auto px-6 mb-24 text-center animate-fade-in">
+            <div className="relative z-10 max-w-4xl mx-auto px-6 mb-16 text-center animate-fade-in">
                 <h3 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                     {translations.newsletter.title}
                 </h3>

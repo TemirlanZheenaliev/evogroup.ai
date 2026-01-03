@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useMemo, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useMemo, ReactNode, useEffect } from 'react'
 
 // Тип для локалей
 export type Locale = 'ru' | 'en' | 'ky'
@@ -15,6 +15,7 @@ interface I18nContextType {
     locale: Locale
     changeLanguage: (locale: Locale) => void
     t: (key: string, namespace?: string) => string
+    isHydrated: boolean
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
@@ -70,14 +71,15 @@ interface I18nProviderProps {
 
 const I18nProviderComponent = ({ children, initialLocale = 'ru' }: I18nProviderProps) => {
     const [locale, setLocale] = useState<Locale>(initialLocale)
+    const [isHydrated, setIsHydrated] = useState(false)
 
-    // Синхронизация с localStorage после гидратации
-    React.useEffect(() => {
+    // Синхронизация с localStorage ПОСЛЕ гидратации (предотвращает hydration mismatch)
+    useEffect(() => {
         const saved = localStorage.getItem('locale') as Locale
-        if (saved && ['ru', 'en', 'ky'].includes(saved) && saved !== locale) {
+        if (saved && ['ru', 'en', 'ky'].includes(saved)) {
             setLocale(saved)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        setIsHydrated(true)
     }, [])
 
     // Смена языка (оптимизированная)
@@ -122,7 +124,8 @@ const I18nProviderComponent = ({ children, initialLocale = 'ru' }: I18nProviderP
         locale,
         changeLanguage,
         t,
-    }), [locale, changeLanguage, t])
+        isHydrated,
+    }), [locale, changeLanguage, t, isHydrated])
 
     return (
         <I18nContext.Provider value={contextValue}>
@@ -146,7 +149,9 @@ export function useTranslation(namespace?: string) {
     const t = React.useCallback((key: string): string => context.t(key, namespace), [context, namespace])
 
     return useMemo(() => ({
-        ...context,
+        locale: context.locale,
+        changeLanguage: context.changeLanguage,
+        isHydrated: context.isHydrated,
         t: namespace ? t : context.t,
-    }), [context, namespace, t])
+    }), [context.locale, context.changeLanguage, context.isHydrated, namespace, t, context.t])
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers/Providers'
+import ChatBot from '@/components/ChatBot'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
@@ -103,6 +104,7 @@ export default function RootLayout({
         <body className={`${inter.className} antialiased dark bg-black text-white`}>
         <Providers>
             {children}
+            <ChatBot />
         </Providers>
         </body>
         </html>

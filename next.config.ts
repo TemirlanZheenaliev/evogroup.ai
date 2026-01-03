@@ -1,6 +1,65 @@
 import type { NextConfig } from 'next'
 
+const securityHeaders = [
+    // Защита от XSS атак
+    {
+        key: 'X-XSS-Protection',
+        value: '1; mode=block'
+    },
+    // Запрет iframe embedding (clickjacking protection)
+    {
+        key: 'X-Frame-Options',
+        value: 'SAMEORIGIN'
+    },
+    // Запрет MIME sniffing
+    {
+        key: 'X-Content-Type-Options',
+        value: 'nosniff'
+    },
+    // Referrer policy
+    {
+        key: 'Referrer-Policy',
+        value: 'strict-origin-when-cross-origin'
+    },
+    // Permissions policy
+    {
+        key: 'Permissions-Policy',
+        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+    },
+    // Content Security Policy
+    {
+        key: 'Content-Security-Policy',
+        value: [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.web3forms.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' https://fonts.gstatic.com data:",
+            "img-src 'self' data: blob: https:",
+            "media-src 'self' blob:",
+            "connect-src 'self' https://api.web3forms.com https://api.deepseek.com https://wa.me",
+            "frame-ancestors 'self'",
+            "base-uri 'self'",
+            "form-action 'self' https://api.web3forms.com"
+        ].join('; ')
+    },
+    // Strict Transport Security (HTTPS only)
+    {
+        key: 'Strict-Transport-Security',
+        value: 'max-age=31536000; includeSubDomains'
+    }
+]
+
 const nextConfig: NextConfig = {
+    // Security headers
+    async headers() {
+        return [
+            {
+                source: '/:path*',
+                headers: securityHeaders,
+            },
+        ]
+    },
+
     // Оптимизация компиляции и минификации
     swcMinify: true,
 
