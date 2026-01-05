@@ -12,24 +12,14 @@ export default function Team() {
     const [livePhotoPlaying, setLivePhotoPlaying] = useState<string | null>(null)
     const modalVideoRef = useRef<VideoAvatarRef>(null)
 
-    // Debug: log when video playing state changes
-    useEffect(() => {
-        console.log('Modal video playing state:', isVideoPlaying)
-    }, [isVideoPlaying])
-
     // Auto-play video when modal opens
     useEffect(() => {
         if (selectedMember !== null) {
-            console.log('Selected member changed to:', selectedMember)
-            // Start playing video after a small delay
             const timer = setTimeout(() => {
-                console.log('Starting video playback...')
                 setIsVideoPlaying(true)
             }, 300)
-
             return () => clearTimeout(timer)
         } else {
-            console.log('Modal closed, stopping video')
             setIsVideoPlaying(false)
         }
     }, [selectedMember])
@@ -64,7 +54,7 @@ export default function Team() {
                     name: 'Begaiym Zhardambekova',
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ years in IT Tech',
-                    video: '/Begaiym.MP4',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Banking Sector Project Manager',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -75,7 +65,7 @@ export default function Team() {
                     name: 'Askar Rasulov',
                     position: 'CEO & Oil-Gas Dept Lead',
                     experience: '10+ years in IT Tech',
-                    video: '/Askar.MP4',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'CEO & Oil-Gas Department Lead',
                     email: 'a.rasulov@evogroup.ai',
@@ -86,7 +76,7 @@ export default function Team() {
                     name: 'Vadim Berkovich',
                     position: 'CTO & AI Architect',
                     experience: '15+ years in DevTech',
-                    video: '/Vadim.MP4',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'Lead AI, Data Architecture and Educational Systems Expert',
                     email: 'v.berkovich@evogroup.ai',
@@ -99,7 +89,7 @@ export default function Team() {
                     name: 'Elmira Myrzabekova',
                     position: 'Sales Manager | B2B',
                     experience: '5+ years in B2B Sales',
-                    video: '/Elya.MP4',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Sales Manager | B2B | IT and AI Solutions',
                     email: 'ely@evogroup.ai',
@@ -111,7 +101,7 @@ export default function Team() {
                     name: 'Aizat Sagynova',
                     position: 'Marketing & Content',
                     experience: '5+ years in Tech Marketing',
-                    video: '/Aizat.MP4',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Marketing Specialist | AI & Business Communications',
                     email: 'a.sagynova@evogroup.ai',
@@ -125,7 +115,7 @@ export default function Team() {
                     name: 'Бегайым Жардамбекова',
                     position: 'Мамлекеттик жана банк бөлүмүнүн жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
-                    video: '/Begaiym.MP4',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Банк секторундагы долбоорлордун жетекчиси',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -136,7 +126,7 @@ export default function Team() {
                     name: 'Аскар Расулов',
                     position: 'Башкы директор жана мунай-газ бөлүмүнүн жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
-                    video: '/Askar.MP4',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Башкы директор жана мунай-газ бөлүмүнүн жетекчиси',
                     email: 'a.rasulov@evogroup.ai',
@@ -147,7 +137,7 @@ export default function Team() {
                     name: 'Вадим Беркович',
                     position: 'Техникалык директор жана ИИ архитектору',
                     experience: 'DevTech тармагында 15+ жыл',
-                    video: '/Vadim.MP4',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'ИИ, маалымат архитектурасы жана билим берүү системалары боюнча негизги эксперт',
                     email: 'v.berkovich@evogroup.ai',
@@ -160,7 +150,7 @@ export default function Team() {
                     name: 'Эльмира Мырзабекова',
                     position: 'Сатуу боюнча менеджер | B2B',
                     experience: 'B2B сатууларында 5+ жыл',
-                    video: '/Elya.MP4',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Сатуу боюнча менеджер | B2B | IT жана AI чечимдери',
                     email: 'ely@evogroup.ai',
@@ -172,7 +162,7 @@ export default function Team() {
                     name: 'Айзат Сагынова',
                     position: 'Маркетинг жана контент',
                     experience: 'Tech маркетингде 5+ жыл',
-                    video: '/Aizat.MP4',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетинг адиси | AI жана бизнес-коммуникациялар',
                     email: 'a.sagynova@evogroup.ai',
@@ -186,7 +176,7 @@ export default function Team() {
                     name: 'Бегайым Жардамбекова',
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ лет в IT Tech',
-                    video: '/Begaiym.MP4',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Руководитель проектов по банковскому сектору',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -197,7 +187,7 @@ export default function Team() {
                     name: 'Аскар Расулов',
                     position: 'CEO & Oil-Gas Dept Lead',
                     experience: '10+ лет в IT Tech',
-                    video: '/Askar.MP4',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Генеральный директор и руководитель отдела нефти и газа',
                     email: 'a.rasulov@evogroup.ai',
@@ -208,7 +198,7 @@ export default function Team() {
                     name: 'Вадим Беркович',
                     position: 'CTO & AI Architect',
                     experience: '15+ лет в DevTech',
-                    video: '/Vadim.MP4',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'Ведущий эксперт по AI, Data Architecture и образовательным системам',
                     email: 'v.berkovich@evogroup.ai',
@@ -221,7 +211,7 @@ export default function Team() {
                     name: 'Эльмира Мырзабекова',
                     position: 'Менеджер по продажам | B2B',
                     experience: '5+ лет в B2B продажах',
-                    video: '/Elya.MP4',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Менеджер по продажам | B2B | IT и AI-решения',
                     email: 'ely@evogroup.ai',
@@ -233,7 +223,7 @@ export default function Team() {
                     name: 'Айзат Сагынова',
                     position: 'Маркетинг и контент',
                     experience: '5+ лет в Tech-маркетинге',
-                    video: '/Aizat.MP4',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетолог | AI и бизнес-коммуникации',
                     email: 'a.sagynova@evogroup.ai',
