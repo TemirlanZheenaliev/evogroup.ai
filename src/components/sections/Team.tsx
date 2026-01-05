@@ -1,12 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from '@/components/providers/I18nProvider'
 import { Avatar, Card, CardBody, Modal, ModalContent, ModalBody, Link } from '@nextui-org/react'
+import VideoAvatar, { VideoAvatarRef } from '@/components/ui/VideoAvatar'
 
 export default function Team() {
     const { locale } = useTranslation()
     const [selectedMember, setSelectedMember] = useState<string | null>(null)
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+    const [livePhotoPlaying, setLivePhotoPlaying] = useState<string | null>(null)
+    const modalVideoRef = useRef<VideoAvatarRef>(null)
+
+    // Auto-play video when modal opens
+    useEffect(() => {
+        if (selectedMember !== null) {
+            const timer = setTimeout(() => {
+                setIsVideoPlaying(true)
+            }, 300)
+            return () => clearTimeout(timer)
+        } else {
+            setIsVideoPlaying(false)
+        }
+    }, [selectedMember])
 
     const getTranslations = () => {
         if (locale === 'en') {
@@ -38,7 +54,7 @@ export default function Team() {
                     name: 'Begaiym Zhardambekova',
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ years in IT Tech',
-                    initials: 'BZ',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Banking Sector Project Manager',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -49,7 +65,7 @@ export default function Team() {
                     name: 'Askar Rasulov',
                     position: 'Project Manager',
                     experience: '10+ years in IT Tech',
-                    initials: 'AR',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Project Manager | Oil-Gas Department',
                     email: 'a.rasulov@evogroup.ai',
@@ -60,7 +76,7 @@ export default function Team() {
                     name: 'Vadim Berkovich',
                     position: 'CEO & AI Architect',
                     experience: '15+ years in DevTech',
-                    initials: 'VB',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | Lead AI, Data Architecture and Educational Systems Expert',
                     email: 'v.berkovich@evogroup.ai',
@@ -73,7 +89,7 @@ export default function Team() {
                     name: 'Elmira Myrzabekova',
                     position: 'Sales Manager | B2B',
                     experience: '3+ years in B2B Sales',
-                    initials: 'EM',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Sales Manager | B2B | IT and AI Solutions',
                     email: 'ely@evogroup.ai',
@@ -85,7 +101,7 @@ export default function Team() {
                     name: 'Aizat Sagynova',
                     position: 'Marketing & Content',
                     experience: '3+ years in Tech Marketing',
-                    initials: 'AS',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Marketing Specialist | AI & Business Communications',
                     email: 'a.sagynova@evogroup.ai',
@@ -99,7 +115,7 @@ export default function Team() {
                     name: 'Бегайым Жардамбекова',
                     position: 'Мамлекеттик жана банк бөлүмүнүн жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
-                    initials: 'БЖ',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Банк секторундагы долбоорлордун жетекчиси',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -110,7 +126,7 @@ export default function Team() {
                     name: 'Аскар Расулов',
                     position: 'Долбоорлордун жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
-                    initials: 'АР',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Долбоорлордун жетекчиси | Мунай-газ бөлүмү',
                     email: 'a.rasulov@evogroup.ai',
@@ -121,7 +137,7 @@ export default function Team() {
                     name: 'Вадим Беркович',
                     position: 'CEO жана ИИ архитектору',
                     experience: 'DevTech тармагында 15+ жыл',
-                    initials: 'ВБ',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | ИИ, маалымат архитектурасы жана билим берүү системалары боюнча негизги эксперт',
                     email: 'v.berkovich@evogroup.ai',
@@ -134,7 +150,7 @@ export default function Team() {
                     name: 'Эльмира Мырзабекова',
                     position: 'Сатуу боюнча менеджер | B2B',
                     experience: 'B2B сатууларында 3+ жыл',
-                    initials: 'ЭМ',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Сатуу боюнча менеджер | B2B | IT жана AI чечимдери',
                     email: 'ely@evogroup.ai',
@@ -146,7 +162,7 @@ export default function Team() {
                     name: 'Айзат Сагынова',
                     position: 'Маркетинг жана контент',
                     experience: 'Tech маркетингде 3+ жыл',
-                    initials: 'АС',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетинг адиси | AI жана бизнес-коммуникациялар',
                     email: 'a.sagynova@evogroup.ai',
@@ -160,7 +176,7 @@ export default function Team() {
                     name: 'Бегайым Жардамбекова',
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ лет в IT Tech',
-                    initials: 'БЖ',
+                    video: '/Begaiym.mp4',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Руководитель проектов по банковскому сектору',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -171,7 +187,7 @@ export default function Team() {
                     name: 'Аскар Расулов',
                     position: 'Руководитель проектов',
                     experience: '10+ лет в IT Tech',
-                    initials: 'АР',
+                    video: '/Askar.mp4',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Руководитель проектов | Нефтегазовый отдел',
                     email: 'a.rasulov@evogroup.ai',
@@ -182,7 +198,7 @@ export default function Team() {
                     name: 'Вадим Беркович',
                     position: 'CEO & AI Architect',
                     experience: '15+ лет в DevTech',
-                    initials: 'ВБ',
+                    video: '/Vadim.mp4',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | Ведущий эксперт по AI, Data Architecture и образовательным системам',
                     email: 'v.berkovich@evogroup.ai',
@@ -195,7 +211,7 @@ export default function Team() {
                     name: 'Эльмира Мырзабекова',
                     position: 'Менеджер по продажам | B2B',
                     experience: '3+ лет в B2B продажах',
-                    initials: 'ЭМ',
+                    video: '/Elya.mp4',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Менеджер по продажам | B2B | IT и AI-решения',
                     email: 'ely@evogroup.ai',
@@ -207,7 +223,7 @@ export default function Team() {
                     name: 'Айзат Сагынова',
                     position: 'Маркетинг и контент',
                     experience: '3+ лет в Tech-маркетинге',
-                    initials: 'АС',
+                    video: '/Aizat.mp4',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетолог | AI и бизнес-коммуникации',
                     email: 'a.sagynova@evogroup.ai',
@@ -249,14 +265,31 @@ export default function Team() {
                             <CardBody className="p-10 text-center">
                                 <div className="flex justify-center mb-8">
                                     <div className="relative">
-                                        <Avatar
-                                            name={'initials' in member ? String(member.initials) : undefined}
-                                            className={`w-40 h-40 text-5xl bg-gradient-to-br ${member.gradient} transition-all duration-500 group-hover:scale-110`}
-                                            classNames={{
-                                                base: "ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all",
-                                                name: "text-white font-bold"
-                                            }}
-                                        />
+                                        {'video' in member && member.video ? (
+                                            <div
+                                                className="w-40 h-40 rounded-full overflow-hidden ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all group-hover:scale-110 duration-500"
+                                                onMouseDown={() => setLivePhotoPlaying(member.id)}
+                                                onMouseUp={() => setLivePhotoPlaying(null)}
+                                                onMouseLeave={() => setLivePhotoPlaying(null)}
+                                                onTouchStart={() => setLivePhotoPlaying(member.id)}
+                                                onTouchEnd={() => setLivePhotoPlaying(null)}
+                                            >
+                                                <VideoAvatar
+                                                    videoSrc={member.video}
+                                                    className="w-full h-full object-cover"
+                                                    isPlaying={livePhotoPlaying === member.id}
+                                                />
+                                            </div>
+                                        ) : (
+                                            <Avatar
+                                                name={'initials' in member ? String(member.initials) : undefined}
+                                                className={`w-40 h-40 text-5xl bg-gradient-to-br ${member.gradient} transition-all duration-500 group-hover:scale-110`}
+                                                classNames={{
+                                                    base: "ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all",
+                                                    name: "text-white font-bold"
+                                                }}
+                                            />
+                                        )}
                                         {/* Gradient glow effect on hover */}
                                         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 blur-2xl transition-all duration-500 -z-10" />
                                     </div>
@@ -312,13 +345,25 @@ export default function Team() {
                         return (
                             <ModalBody>
                                 <div className="flex flex-col md:flex-row min-h-[600px]">
-                                    {/* Left side - Avatar */}
+                                    {/* Left side - Large Video */}
                                     <div className="w-full md:w-1/2 bg-black/20 flex items-center justify-center p-8">
-                                        <div className={`w-full aspect-square max-w-md rounded-2xl bg-gradient-to-br ${getGradientClass()} flex items-center justify-center ring-4 ring-white/10`}>
-                                            <span className="text-9xl font-bold text-white">
-                                                {'initials' in member ? String(member.initials) : ''}
-                                            </span>
-                                        </div>
+                                        {'video' in member && member.video ? (
+                                            <div className="w-full aspect-square max-w-md rounded-2xl overflow-hidden ring-4 ring-white/10">
+                                                <VideoAvatar
+                                                    ref={modalVideoRef}
+                                                    videoSrc={member.video}
+                                                    className="w-full h-full object-cover"
+                                                    isPlaying={isVideoPlaying}
+                                                    onEnded={() => setIsVideoPlaying(false)}
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div className={`w-full aspect-square max-w-md rounded-2xl bg-gradient-to-br ${getGradientClass()} flex items-center justify-center ring-4 ring-white/10`}>
+                                                <span className="text-9xl font-bold text-white">
+                                                    {'initials' in member ? String(member.initials) : ''}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Right side - Content */}
