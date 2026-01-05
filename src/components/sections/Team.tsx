@@ -294,7 +294,7 @@ export default function Team() {
                                         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 blur-2xl transition-all duration-500 -z-10" />
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                                <h3 className="text-lg lg:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300 whitespace-nowrap">
                                     {member.name}
                                 </h3>
                                 <div className="text-blue-400 font-semibold mb-3 text-base">
