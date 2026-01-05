@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
 import { useTranslation } from '@/components/providers/I18nProvider'
 import { Avatar, Card, CardBody, Modal, ModalContent, ModalBody, Link } from '@nextui-org/react'
 import VideoAvatar, { VideoAvatarRef } from '@/components/ui/VideoAvatar'
@@ -297,12 +296,11 @@ export default function Team() {
                                                         isPlaying={true}
                                                     />
                                                 ) : (
-                                                    <Image
+                                                    <img
                                                         src={member.preview}
                                                         alt={member.name}
-                                                        width={144}
-                                                        height={144}
                                                         className="w-full h-full object-cover"
+                                                        loading="eager"
                                                     />
                                                 )}
                                             </div>
