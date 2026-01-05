@@ -1,13 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Initialize DeepSeek client
-const client = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  baseURL: 'https://api.deepseek.com',
-  timeout: 30000, // 30 seconds timeout
-  maxRetries: 3, // Retry 3 times on failure
-});
+// Lazy initialization of DeepSeek client
+let client: OpenAI | null = null;
+
+function getClient(): OpenAI {
+  if (!client) {
+    if (!process.env.DEEPSEEK_API_KEY) {
+      throw new Error('DEEPSEEK_API_KEY is not configured');
+    }
+    client = new OpenAI({
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      baseURL: 'https://api.deepseek.com',
+      timeout: 30000,
+      maxRetries: 3,
+    });
+  }
+  return client;
+}
 
 // Simple rate limiting per IP
 const chatRateLimitMap = new Map<string, { count: number; timestamp: number }>();
@@ -148,7 +158,7 @@ export async function POST(req: NextRequest) {
     ];
 
     // Call DeepSeek API
-    const completion = await client.chat.completions.create({
+    const completion = await getClient().chat.completions.create({
       model: 'deepseek-chat',
       messages: apiMessages as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
       temperature: 0.7, // Баланс между творчеством и точностью
