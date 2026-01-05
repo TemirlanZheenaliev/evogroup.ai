@@ -262,12 +262,12 @@ export default function Team() {
                             className="group bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 animate-slide-up cursor-pointer"
                             style={{animationDelay: `${index * 0.1}s`}}
                         >
-                            <CardBody className="p-10 text-center">
-                                <div className="flex justify-center mb-8">
+                            <CardBody className="p-6 lg:p-8 text-center">
+                                <div className="flex justify-center mb-6">
                                     <div className="relative">
                                         {'video' in member && member.video ? (
                                             <div
-                                                className="w-40 h-40 rounded-full overflow-hidden ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all group-hover:scale-110 duration-500"
+                                                className="w-32 h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all group-hover:scale-110 duration-500"
                                                 onMouseDown={() => setLivePhotoPlaying(member.id)}
                                                 onMouseUp={() => setLivePhotoPlaying(null)}
                                                 onMouseLeave={() => setLivePhotoPlaying(null)}
@@ -283,7 +283,7 @@ export default function Team() {
                                         ) : (
                                             <Avatar
                                                 name={'initials' in member ? String(member.initials) : undefined}
-                                                className={`w-40 h-40 text-5xl bg-gradient-to-br ${member.gradient} transition-all duration-500 group-hover:scale-110`}
+                                                className={`w-32 h-32 lg:w-36 lg:h-36 text-4xl bg-gradient-to-br ${member.gradient} transition-all duration-500 group-hover:scale-110`}
                                                 classNames={{
                                                     base: "ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all",
                                                     name: "text-white font-bold"
@@ -294,7 +294,7 @@ export default function Team() {
                                         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 blur-2xl transition-all duration-500 -z-10" />
                                     </div>
                                 </div>
-                                <h3 className="text-lg lg:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300 whitespace-nowrap">
+                                <h3 className="text-base lg:text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300 whitespace-nowrap">
                                     {member.name}
                                 </h3>
                                 <div className="text-blue-400 font-semibold mb-3 text-base">
