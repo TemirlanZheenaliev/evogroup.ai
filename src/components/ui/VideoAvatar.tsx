@@ -19,28 +19,7 @@ export interface VideoAvatarRef {
 const VideoAvatar = forwardRef<VideoAvatarRef, VideoAvatarProps>(
     ({ videoSrc, className = '', isPlaying = false, onEnded, rotate = 90 }, ref) => {
         const videoRef = useRef<HTMLVideoElement>(null)
-        const containerRef = useRef<HTMLDivElement>(null)
-        const [isVisible, setIsVisible] = useState(false)
         const [isLoaded, setIsLoaded] = useState(false)
-
-        // Lazy loading - only load video when visible in viewport
-        useEffect(() => {
-            const container = containerRef.current
-            if (!container) return
-
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true)
-                        observer.disconnect()
-                    }
-                },
-                { rootMargin: '100px', threshold: 0.1 }
-            )
-
-            observer.observe(container)
-            return () => observer.disconnect()
-        }, [])
 
         useImperativeHandle(ref, () => ({
             play: () => {
@@ -84,21 +63,18 @@ const VideoAvatar = forwardRef<VideoAvatarRef, VideoAvatarProps>(
         }
 
         return (
-            <div ref={containerRef} className={className} style={{ transform: `rotate(${rotate}deg)` }}>
-                {isVisible && (
-                    <video
-                        ref={videoRef}
-                        src={videoSrc}
-                        className="w-full h-full object-cover"
-                        muted
-                        playsInline
-                        preload="metadata"
-                        loop={false}
-                        onEnded={handleEnded}
-                        onLoadedData={() => setIsLoaded(true)}
-                    />
-                )}
-            </div>
+            <video
+                ref={videoRef}
+                src={videoSrc}
+                className={className}
+                style={{ transform: `rotate(${rotate}deg)` }}
+                muted
+                playsInline
+                preload="auto"
+                loop={false}
+                onEnded={handleEnded}
+                onLoadedData={() => setIsLoaded(true)}
+            />
         )
     }
 )
