@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { useTranslation } from '@/components/providers/I18nProvider'
 import { Avatar, Card, CardBody, Modal, ModalContent, ModalBody, Link } from '@nextui-org/react'
 import VideoAvatar, { VideoAvatarRef } from '@/components/ui/VideoAvatar'
@@ -55,6 +56,7 @@ export default function Team() {
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ years in IT Tech',
                     video: '/Begaiym.mp4',
+                    preview: '/Begaiym-preview.jpg',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Banking Sector Project Manager',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -66,6 +68,7 @@ export default function Team() {
                     position: 'Project Manager',
                     experience: '10+ years in IT Tech',
                     video: '/Askar.mp4',
+                    preview: '/Askar-preview.jpg',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Project Manager | Oil-Gas Department',
                     email: 'a.rasulov@evogroup.ai',
@@ -77,6 +80,7 @@ export default function Team() {
                     position: 'CEO & AI Architect',
                     experience: '15+ years in DevTech',
                     video: '/Vadim.mp4',
+                    preview: '/Vadim-preview.jpg',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | Lead AI, Data Architecture and Educational Systems Expert',
                     email: 'v.berkovich@evogroup.ai',
@@ -90,6 +94,7 @@ export default function Team() {
                     position: 'Sales Manager | B2B',
                     experience: '3+ years in B2B Sales',
                     video: '/Elya.mp4',
+                    preview: '/Elya-preview.jpg',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Sales Manager | B2B | IT and AI Solutions',
                     email: 'ely@evogroup.ai',
@@ -102,6 +107,7 @@ export default function Team() {
                     position: 'Marketing & Content',
                     experience: '3+ years in Tech Marketing',
                     video: '/Aizat.mp4',
+                    preview: '/Aizat-preview.jpg',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Marketing Specialist | AI & Business Communications',
                     email: 'a.sagynova@evogroup.ai',
@@ -116,6 +122,7 @@ export default function Team() {
                     position: 'Мамлекеттик жана банк бөлүмүнүн жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
                     video: '/Begaiym.mp4',
+                    preview: '/Begaiym-preview.jpg',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Банк секторундагы долбоорлордун жетекчиси',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -127,6 +134,7 @@ export default function Team() {
                     position: 'Долбоорлордун жетекчиси',
                     experience: 'IT Tech тармагында 10+ жыл',
                     video: '/Askar.mp4',
+                    preview: '/Askar-preview.jpg',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Долбоорлордун жетекчиси | Мунай-газ бөлүмү',
                     email: 'a.rasulov@evogroup.ai',
@@ -138,6 +146,7 @@ export default function Team() {
                     position: 'CEO жана ИИ архитектору',
                     experience: 'DevTech тармагында 15+ жыл',
                     video: '/Vadim.mp4',
+                    preview: '/Vadim-preview.jpg',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | ИИ, маалымат архитектурасы жана билим берүү системалары боюнча негизги эксперт',
                     email: 'v.berkovich@evogroup.ai',
@@ -151,6 +160,7 @@ export default function Team() {
                     position: 'Сатуу боюнча менеджер | B2B',
                     experience: 'B2B сатууларында 3+ жыл',
                     video: '/Elya.mp4',
+                    preview: '/Elya-preview.jpg',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Сатуу боюнча менеджер | B2B | IT жана AI чечимдери',
                     email: 'ely@evogroup.ai',
@@ -163,6 +173,7 @@ export default function Team() {
                     position: 'Маркетинг жана контент',
                     experience: 'Tech маркетингде 3+ жыл',
                     video: '/Aizat.mp4',
+                    preview: '/Aizat-preview.jpg',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетинг адиси | AI жана бизнес-коммуникациялар',
                     email: 'a.sagynova@evogroup.ai',
@@ -177,6 +188,7 @@ export default function Team() {
                     position: 'Gov & Banks Dept Lead',
                     experience: '10+ лет в IT Tech',
                     video: '/Begaiym.mp4',
+                    preview: '/Begaiym-preview.jpg',
                     gradient: 'from-green-500 to-emerald-500',
                     fullPosition: 'Руководитель проектов по банковскому сектору',
                     email: 'b.zhardambekova@evogroup.ai',
@@ -188,6 +200,7 @@ export default function Team() {
                     position: 'Руководитель проектов',
                     experience: '10+ лет в IT Tech',
                     video: '/Askar.mp4',
+                    preview: '/Askar-preview.jpg',
                     gradient: 'from-purple-500 to-pink-500',
                     fullPosition: 'Руководитель проектов | Нефтегазовый отдел',
                     email: 'a.rasulov@evogroup.ai',
@@ -199,6 +212,7 @@ export default function Team() {
                     position: 'CEO & AI Architect',
                     experience: '15+ лет в DevTech',
                     video: '/Vadim.mp4',
+                    preview: '/Vadim-preview.jpg',
                     gradient: 'from-blue-500 to-cyan-500',
                     fullPosition: 'CEO | Ведущий эксперт по AI, Data Architecture и образовательным системам',
                     email: 'v.berkovich@evogroup.ai',
@@ -212,6 +226,7 @@ export default function Team() {
                     position: 'Менеджер по продажам | B2B',
                     experience: '3+ лет в B2B продажах',
                     video: '/Elya.mp4',
+                    preview: '/Elya-preview.jpg',
                     gradient: 'from-orange-500 to-amber-500',
                     fullPosition: 'Менеджер по продажам | B2B | IT и AI-решения',
                     email: 'ely@evogroup.ai',
@@ -224,6 +239,7 @@ export default function Team() {
                     position: 'Маркетинг и контент',
                     experience: '3+ лет в Tech-маркетинге',
                     video: '/Aizat.mp4',
+                    preview: '/Aizat-preview.jpg',
                     gradient: 'from-pink-500 to-rose-500',
                     fullPosition: 'Маркетолог | AI и бизнес-коммуникации',
                     email: 'a.sagynova@evogroup.ai',
@@ -265,7 +281,7 @@ export default function Team() {
                             <CardBody className="p-6 lg:p-8 text-center">
                                 <div className="flex justify-center mb-6">
                                     <div className="relative">
-                                        {'video' in member && member.video ? (
+                                        {'preview' in member && member.preview ? (
                                             <div
                                                 className="w-32 h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden ring-4 ring-white/10 group-hover:ring-blue-500/20 transition-all group-hover:scale-110 duration-500"
                                                 onMouseDown={() => setLivePhotoPlaying(member.id)}
@@ -274,11 +290,21 @@ export default function Team() {
                                                 onTouchStart={() => setLivePhotoPlaying(member.id)}
                                                 onTouchEnd={() => setLivePhotoPlaying(null)}
                                             >
-                                                <VideoAvatar
-                                                    videoSrc={member.video}
-                                                    className="w-full h-full object-cover"
-                                                    isPlaying={livePhotoPlaying === member.id}
-                                                />
+                                                {livePhotoPlaying === member.id && 'video' in member && member.video ? (
+                                                    <VideoAvatar
+                                                        videoSrc={member.video}
+                                                        className="w-full h-full object-cover"
+                                                        isPlaying={true}
+                                                    />
+                                                ) : (
+                                                    <Image
+                                                        src={member.preview}
+                                                        alt={member.name}
+                                                        width={144}
+                                                        height={144}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
                                             </div>
                                         ) : (
                                             <Avatar
