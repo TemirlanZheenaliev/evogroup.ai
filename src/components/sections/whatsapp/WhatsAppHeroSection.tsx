@@ -19,11 +19,11 @@ const WhatsAppHeroSection: React.FC = () => {
         if (locale === 'en') {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Your WhatsApp',
+                title: 'Your Evo CRM',
                 titleHighlight: ['under control.', 'is smart.', 'is fast.'],
                 subtitle: 'See ALL your company\'s conversations. AI responds for you. Clients don\'t leave with managers.',
                 ctaPrimary: 'Try 30 days free',
-                ctaSecondary: 'Watch demo',
+                ctaSecondary: 'Try demo',
                 stats: [
                     { value: '99.5%', label: 'Uptime' },
                     { value: '≤2 sec', label: 'Response time' },
@@ -33,11 +33,11 @@ const WhatsAppHeroSection: React.FC = () => {
         } else if (locale === 'ky') {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Сиздин WhatsApp',
+                title: 'Сиздин Evo CRM',
                 titleHighlight: ['контролдо.', 'акылдуу.', 'тез.'],
                 subtitle: 'Компаниянын БАРДЫК жазышмаларын көрүңүз. AI сиз үчүн жооп берет. Кардарлар менеджерлер менен кетпейт.',
                 ctaPrimary: '30 күн акысыз сыноо',
-                ctaSecondary: 'Демо көрүү',
+                ctaSecondary: 'Демо сыноо',
                 stats: [
                     { value: '99.5%', label: 'Иштөө убактысы' },
                     { value: '≤2 сек', label: 'Жооп убактысы' },
@@ -47,11 +47,11 @@ const WhatsAppHeroSection: React.FC = () => {
         } else {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Ваш WhatsApp',
+                title: 'Ваш Evo CRM',
                 titleHighlight: ['под контролем.', 'умный.', 'быстрый.'],
                 subtitle: 'Видите ВСЕ переписки компании. AI отвечает за вас. Клиенты не уходят с менеджерами.',
                 ctaPrimary: 'Попробовать 30 дней бесплатно',
-                ctaSecondary: 'Смотреть демо',
+                ctaSecondary: 'Попробовать демо',
                 stats: [
                     { value: '99.5%', label: 'Доступность' },
                     { value: '≤2 сек', label: 'Время отклика' },
@@ -113,7 +113,10 @@ const WhatsAppHeroSection: React.FC = () => {
                         variant="bordered"
                         className="text-base font-semibold px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300"
                         radius="full"
-                        onPress={() => scrollToSection('whatsapp-demo')}
+                        as="a"
+                        href="https://demo.evogroup.ai/demo"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         {translations.ctaSecondary}
                     </Button>
