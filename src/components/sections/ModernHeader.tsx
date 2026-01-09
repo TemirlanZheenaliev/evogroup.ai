@@ -17,7 +17,7 @@ const ModernHeader = () => {
         ru: {
             company: 'Evolution Group',
             solutions: 'Решения',
-            whatsappCrm: 'Evo CRM',
+            whatsappCrm: 'EvoAI CRM',
             cases: 'Кейсы',
             technology: 'Технологии',
             team: 'Команда',
@@ -27,7 +27,7 @@ const ModernHeader = () => {
         en: {
             company: 'Evolution Group',
             solutions: 'Solutions',
-            whatsappCrm: 'Evo CRM',
+            whatsappCrm: 'EvoAI CRM',
             cases: 'Cases',
             technology: 'Technology',
             team: 'Team',
@@ -37,7 +37,7 @@ const ModernHeader = () => {
         ky: {
             company: 'Evolution Group',
             solutions: 'Чечимдер',
-            whatsappCrm: 'Evo CRM',
+            whatsappCrm: 'EvoAI CRM',
             cases: 'Мисалдар',
             technology: 'Технологиялар',
             team: 'Команда',

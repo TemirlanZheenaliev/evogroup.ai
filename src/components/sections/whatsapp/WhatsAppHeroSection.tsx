@@ -19,7 +19,7 @@ const WhatsAppHeroSection: React.FC = () => {
         if (locale === 'en') {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Your Evo CRM',
+                title: 'Your EvoAI CRM',
                 titleHighlight: ['under control.', 'is smart.', 'is fast.'],
                 subtitle: 'See ALL your company\'s conversations. AI responds for you. Clients don\'t leave with managers.',
                 ctaPrimary: 'Try 30 days free',
@@ -33,7 +33,7 @@ const WhatsAppHeroSection: React.FC = () => {
         } else if (locale === 'ky') {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Сиздин Evo CRM',
+                title: 'Сиздин EvoAI CRM',
                 titleHighlight: ['контролдо.', 'акылдуу.', 'тез.'],
                 subtitle: 'Компаниянын БАРДЫК жазышмаларын көрүңүз. AI сиз үчүн жооп берет. Кардарлар менеджерлер менен кетпейт.',
                 ctaPrimary: '30 күн акысыз сыноо',
@@ -47,7 +47,7 @@ const WhatsAppHeroSection: React.FC = () => {
         } else {
             return {
                 badge: 'WhatsApp Business Platform',
-                title: 'Ваш Evo CRM',
+                title: 'Ваш EvoAI CRM',
                 titleHighlight: ['под контролем.', 'умный.', 'быстрый.'],
                 subtitle: 'Видите ВСЕ переписки компании. AI отвечает за вас. Клиенты не уходят с менеджерами.',
                 ctaPrimary: 'Попробовать 30 дней бесплатно',
