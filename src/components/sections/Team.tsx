@@ -76,7 +76,7 @@ export default function Team() {
                 {
                     id: 'ceo',
                     name: 'Vadim Berkovich',
-                    position: 'CTO & AI Architect',
+                    position: 'CEO & AI Architect',
                     experience: '15+ years in DevTech',
                     video: '/Vadim.mp4',
                     preview: '/Vadim-preview.jpg',
@@ -142,7 +142,7 @@ export default function Team() {
                 {
                     id: 'ceo',
                     name: 'Вадим Беркович',
-                    position: 'CTO жана ИИ архитектору',
+                    position: 'CEO жана ИИ архитектору',
                     experience: 'DevTech тармагында 15+ жыл',
                     video: '/Vadim.mp4',
                     preview: '/Vadim-preview.jpg',
@@ -208,7 +208,7 @@ export default function Team() {
                 {
                     id: 'ceo',
                     name: 'Вадим Беркович',
-                    position: 'CTO & AI Architect',
+                    position: 'CEO & AI Architect',
                     experience: '15+ лет в DevTech',
                     video: '/Vadim.mp4',
                     preview: '/Vadim-preview.jpg',

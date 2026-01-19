@@ -111,7 +111,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'cto',
     name: 'Вадим Беркович',
-    position: 'CTO & AI Lead',
+    position: 'CEO & AI Lead',
     expertise: ['Machine Learning', 'Computer Vision', 'NLP', 'System Architecture'],
     image: '/team/cto.jpg',
     linkedin: 'https://linkedin.com/in/vadim-berkovich'
