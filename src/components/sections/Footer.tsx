@@ -24,9 +24,9 @@ const Footer: React.FC = () => {
                     slogan: 'Made with ❤️ in Kyrgyzstan'
                 },
                 sections: {
-                    solutions: { title: 'Solutions', items: ['Banking', 'Government', 'Oil & Gas'] },
-                    company: { title: 'Company', items: ['About', 'Team', 'Careers'] },
-                    support: { title: 'Support', items: ['Documentation', 'Cases', 'Contact'] }
+                    company: { title: 'Company', items: ['About', 'Team', 'Careers'], links: ['/', '/team', '/contact'] },
+                    support: { title: 'Support', items: ['Documentation', 'Cases', 'Contact'], links: ['/technology', '/cases', '/contact'] },
+                    legal: { title: 'Legal', items: ['Privacy Policy', 'Terms of Service'], links: ['/privacy', '/terms'] }
                 },
                 copyright: 'All rights reserved.'
             }
@@ -43,9 +43,9 @@ const Footer: React.FC = () => {
                     slogan: 'Кыргызстанда ❤️ менен жасалган'
                 },
                 sections: {
-                    solutions: { title: 'Чечимдер', items: ['Банк', 'Мамлекет', 'Мунай жана газ'] },
-                    company: { title: 'Компания', items: ['Биз жөнүндө', 'Команда', 'Карьера'] },
-                    support: { title: 'Колдоо', items: ['Документация', 'Кейстер', 'Байланыш'] }
+                    company: { title: 'Компания', items: ['Биз жөнүндө', 'Команда', 'Карьера'], links: ['/', '/team', '/contact'] },
+                    support: { title: 'Колдоо', items: ['Документация', 'Кейстер', 'Байланыш'], links: ['/technology', '/cases', '/contact'] },
+                    legal: { title: 'Укуктук', items: ['Купуялык саясаты', 'Колдонуу шарттары'], links: ['/privacy', '/terms'] }
                 },
                 copyright: 'Бардык укуктар корголгон.'
             }
@@ -62,9 +62,9 @@ const Footer: React.FC = () => {
                     slogan: 'Сделано с ❤️ в Кыргызстане'
                 },
                 sections: {
-                    solutions: { title: 'Решения', items: ['Банкинг', 'Госсектор', 'Нефть и газ'] },
-                    company: { title: 'Компания', items: ['О нас', 'Команда', 'Карьера'] },
-                    support: { title: 'Поддержка', items: ['Документация', 'Кейсы', 'Контакты'] }
+                    company: { title: 'Компания', items: ['О нас', 'Команда', 'Карьера'], links: ['/', '/team', '/contact'] },
+                    support: { title: 'Поддержка', items: ['Документация', 'Кейсы', 'Контакты'], links: ['/technology', '/cases', '/contact'] },
+                    legal: { title: 'Правовая информация', items: ['Политика конфиденциальности', 'Условия использования'], links: ['/privacy', '/terms'] }
                 },
                 copyright: 'Все права защищены.'
             }
@@ -121,12 +121,12 @@ const Footer: React.FC = () => {
             {/* Links */}
             <div className="relative z-10 max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-20">
                 <div className="animate-slide-up">
-                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.solutions.title}</h4>
+                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.company.title}</h4>
                     <ul className="space-y-4">
-                        {translations.sections.solutions.items.map((item, i) => (
+                        {translations.sections.company.items.map((item, i) => (
                             <li key={i}>
                                 <Link
-                                    href="#"
+                                    href={translations.sections.company.links[i]}
                                     className="text-white/60 hover:text-white text-sm transition-colors duration-300 block"
                                 >
                                     {item}
@@ -136,12 +136,12 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div className="animate-slide-up" style={{animationDelay: '0.1s'}}>
-                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.company.title}</h4>
+                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.support.title}</h4>
                     <ul className="space-y-4">
-                        {translations.sections.company.items.map((item, i) => (
+                        {translations.sections.support.items.map((item, i) => (
                             <li key={i}>
                                 <Link
-                                    href="#"
+                                    href={translations.sections.support.links[i]}
                                     className="text-white/60 hover:text-white text-sm transition-colors duration-300 block"
                                 >
                                     {item}
@@ -151,12 +151,12 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div className="animate-slide-up" style={{animationDelay: '0.2s'}}>
-                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.support.title}</h4>
+                    <h4 className="text-white font-semibold mb-6 text-base">{translations.sections.legal.title}</h4>
                     <ul className="space-y-4">
-                        {translations.sections.support.items.map((item, i) => (
+                        {translations.sections.legal.items.map((item, i) => (
                             <li key={i}>
                                 <Link
-                                    href="#"
+                                    href={translations.sections.legal.links[i]}
                                     className="text-white/60 hover:text-white text-sm transition-colors duration-300 block"
                                 >
                                     {item}
