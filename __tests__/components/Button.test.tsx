@@ -15,21 +15,21 @@ describe('Button Component', () => {
     expect(screen.getByRole('button')).toHaveClass('bg-blue-600')
 
     rerender(<Button variant="secondary">Secondary</Button>)
-    expect(screen.getByRole('button')).toHaveClass('bg-gradient-to-r')
+    expect(screen.getByRole('button')).toHaveClass('bg-slate-700')
 
     rerender(<Button variant="outline">Outline</Button>)
-    expect(screen.getByRole('button')).toHaveClass('border-2', 'border-blue-600')
+    expect(screen.getByRole('button')).toHaveClass('border-2', 'border-white/20')
 
     rerender(<Button variant="ghost">Ghost</Button>)
-    expect(screen.getByRole('button')).toHaveClass('text-gray-600')
+    expect(screen.getByRole('button')).toHaveClass('text-white')
   })
 
   it('renders different sizes correctly', () => {
     const { rerender } = render(<Button size="sm">Small</Button>)
-    expect(screen.getByRole('button')).toHaveClass('h-9')
+    expect(screen.getByRole('button')).toHaveClass('h-8')
 
     rerender(<Button size="md">Medium</Button>)
-    expect(screen.getByRole('button')).toHaveClass('h-11')
+    expect(screen.getByRole('button')).toHaveClass('h-9')
 
     rerender(<Button size="lg">Large</Button>)
     expect(screen.getByRole('button')).toHaveClass('h-12')

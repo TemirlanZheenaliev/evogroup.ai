@@ -42,7 +42,8 @@ describe('Icon Component', () => {
 
   it('renders fallback icon for unknown name', () => {
     render(<Icon name="unknown-icon-name" />)
-    const svg = screen.getByRole('img').querySelector('svg')
+    // Fallback renders svg directly without wrapper span
+    const svg = document.querySelector('svg[aria-label="unknown-icon-name"]')
     // Check for question mark icon (circle with question mark)
     expect(svg?.querySelector('circle')).toBeInTheDocument()
     expect(svg?.querySelector('path')).toBeInTheDocument()
