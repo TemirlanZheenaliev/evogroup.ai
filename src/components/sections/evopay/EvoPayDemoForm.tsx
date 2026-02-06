@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from '@/components/providers/I18nProvider'
 
 interface FormData {
     name: string
@@ -21,6 +22,7 @@ interface FormErrors {
 }
 
 const EvoPayDemoForm: React.FC = () => {
+    const { locale } = useTranslation()
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -32,6 +34,101 @@ const EvoPayDemoForm: React.FC = () => {
     const [errors, setErrors] = useState<FormErrors>({})
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
+
+    const translations = {
+        ru: {
+            badge: 'Получить демо',
+            title: 'Готовы увеличить выручку?',
+            subtitle: 'Оставьте заявку, и мы покажем как EvoPay работает в вашем ресторане. Первый месяц — бесплатно.',
+            features: ['Персональная демонстрация', 'Ответы на все ваши вопросы', 'Запуск за 3 дня', '30 дней бесплатного периода'],
+            namePlaceholder: 'Ваше имя *',
+            emailPlaceholder: 'Email *',
+            phonePlaceholder: 'Номер телефона *',
+            companyPlaceholder: 'Название ресторана/кафе *',
+            tablesLabel: 'Количество столов',
+            messagePlaceholder: 'Дополнительная информация (необязательно)',
+            submit: 'Получить демо',
+            submitting: 'Отправка...',
+            privacy: 'Нажимая кнопку, вы соглашаетесь с обработкой персональных данных',
+            successTitle: 'Заявка отправлена!',
+            successMessage: 'Мы получили вашу заявку и свяжемся с вами в течение 24 часов для демонстрации EvoPay.',
+            successSteps: ['Изучим ваши требования', 'Подготовим демонстрацию', 'Покажем возможности системы', 'Ответим на все вопросы'],
+            sendAnother: 'Отправить ещё одну заявку',
+            errors: {
+                nameRequired: 'Укажите ваше имя',
+                nameInvalid: 'Имя содержит недопустимые символы',
+                emailRequired: 'Укажите email',
+                emailInvalid: 'Неверный формат email',
+                phoneRequired: 'Укажите номер телефона',
+                phoneInvalid: 'Неверный формат телефона',
+                companyRequired: 'Укажите название заведения',
+                tooManyRequests: 'Слишком много запросов. Попробуйте через 15 минут.',
+                general: 'Не удалось отправить заявку. Попробуйте позже.'
+            }
+        },
+        en: {
+            badge: 'Get demo',
+            title: 'Ready to increase revenue?',
+            subtitle: 'Leave a request and we\'ll show how EvoPay works in your restaurant. First month — free.',
+            features: ['Personal demonstration', 'Answers to all your questions', 'Launch in 3 days', '30 days free trial'],
+            namePlaceholder: 'Your name *',
+            emailPlaceholder: 'Email *',
+            phonePlaceholder: 'Phone number *',
+            companyPlaceholder: 'Restaurant/cafe name *',
+            tablesLabel: 'Number of tables',
+            messagePlaceholder: 'Additional information (optional)',
+            submit: 'Get demo',
+            submitting: 'Sending...',
+            privacy: 'By clicking the button, you agree to personal data processing',
+            successTitle: 'Request sent!',
+            successMessage: 'We received your request and will contact you within 24 hours for an EvoPay demo.',
+            successSteps: ['Review your requirements', 'Prepare demonstration', 'Show system features', 'Answer all questions'],
+            sendAnother: 'Send another request',
+            errors: {
+                nameRequired: 'Please enter your name',
+                nameInvalid: 'Name contains invalid characters',
+                emailRequired: 'Please enter email',
+                emailInvalid: 'Invalid email format',
+                phoneRequired: 'Please enter phone number',
+                phoneInvalid: 'Invalid phone format',
+                companyRequired: 'Please enter establishment name',
+                tooManyRequests: 'Too many requests. Please try again in 15 minutes.',
+                general: 'Failed to send request. Please try again later.'
+            }
+        },
+        ky: {
+            badge: 'Демо алуу',
+            title: 'Кирешени көбөйтүүгө даярсызбы?',
+            subtitle: 'Өтүнүч калтырыңыз, биз EvoPay ресторанүңүздө кантип иштээрин көрсөтөбүз. Биринчи ай — акысыз.',
+            features: ['Жеке демонстрация', 'Бардык суроолорго жооптор', '3 күндө ишке киргизүү', '30 күн акысыз сыноо'],
+            namePlaceholder: 'Атыңыз *',
+            emailPlaceholder: 'Email *',
+            phonePlaceholder: 'Телефон номери *',
+            companyPlaceholder: 'Ресторан/кафенин аталышы *',
+            tablesLabel: 'Столдордун саны',
+            messagePlaceholder: 'Кошумча маалымат (милдеттүү эмес)',
+            submit: 'Демо алуу',
+            submitting: 'Жөнөтүлүүдө...',
+            privacy: 'Баскычты басуу менен, сиз жеке маалыматтарды иштетүүгө макулдугуңузду билдиресиз',
+            successTitle: 'Өтүнүч жөнөтүлдү!',
+            successMessage: 'Биз өтүнүчүңүздү алдык жана EvoPay демонстрациясы үчүн 24 сааттын ичинде сиз менен байланышабыз.',
+            successSteps: ['Талаптарыңызды изилдейбиз', 'Демонстрация даярдайбыз', 'Системанын мүмкүнчүлүктөрүн көрсөтөбүз', 'Бардык суроолорго жооп беребиз'],
+            sendAnother: 'Дагы бир өтүнүч жөнөтүү',
+            errors: {
+                nameRequired: 'Атыңызды киргизиңиз',
+                nameInvalid: 'Атта уруксат берилбеген символдор бар',
+                emailRequired: 'Email киргизиңиз',
+                emailInvalid: 'Email форматы туура эмес',
+                phoneRequired: 'Телефон номерин киргизиңиз',
+                phoneInvalid: 'Телефон форматы туура эмес',
+                companyRequired: 'Мекеменин аталышын киргизиңиз',
+                tooManyRequests: 'Өтө көп суроо. 15 мүнөттөн кийин кайталап көрүңүз.',
+                general: 'Өтүнүч жөнөтүлгөн жок. Кийинчерээк кайталап көрүңүз.'
+            }
+        }
+    }
+
+    const t = translations[locale] || translations.ru
 
     // Input sanitization
     const sanitizeInput = (input: string): string => {
@@ -58,25 +155,25 @@ const EvoPayDemoForm: React.FC = () => {
         const newErrors: FormErrors = {}
 
         if (!formData.name.trim()) {
-            newErrors.name = 'Укажите ваше имя'
+            newErrors.name = t.errors.nameRequired
         } else if (!/^[a-zA-Zа-яА-ЯёЁүүөөңңҢҢ\s\-']+$/.test(formData.name)) {
-            newErrors.name = 'Имя содержит недопустимые символы'
+            newErrors.name = t.errors.nameInvalid
         }
 
         if (!formData.email.trim()) {
-            newErrors.email = 'Укажите email'
+            newErrors.email = t.errors.emailRequired
         } else if (!validateEmail(formData.email)) {
-            newErrors.email = 'Неверный формат email'
+            newErrors.email = t.errors.emailInvalid
         }
 
         if (!formData.phone.trim()) {
-            newErrors.phone = 'Укажите номер телефона'
+            newErrors.phone = t.errors.phoneRequired
         } else if (!validatePhone(formData.phone)) {
-            newErrors.phone = 'Неверный формат телефона'
+            newErrors.phone = t.errors.phoneInvalid
         }
 
         if (!formData.company.trim()) {
-            newErrors.company = 'Укажите название заведения'
+            newErrors.company = t.errors.companyRequired
         }
 
         setErrors(newErrors)
@@ -125,14 +222,14 @@ const EvoPayDemoForm: React.FC = () => {
             })
 
             if (response.status === 429) {
-                setErrors({ general: 'Слишком много запросов. Попробуйте через 15 минут.' })
+                setErrors({ general: t.errors.tooManyRequests })
                 return
             }
 
             const result = await response.json()
 
             if (!response.ok) {
-                setErrors({ general: result.error || 'Не удалось отправить заявку. Попробуйте позже.' })
+                setErrors({ general: result.error || t.errors.general })
                 return
             }
 
@@ -147,10 +244,10 @@ const EvoPayDemoForm: React.FC = () => {
                     message: ''
                 })
             } else {
-                setErrors({ general: result.error || 'Не удалось отправить заявку. Попробуйте позже.' })
+                setErrors({ general: result.error || t.errors.general })
             }
         } catch {
-            setErrors({ general: 'Не удалось отправить заявку. Попробуйте позже.' })
+            setErrors({ general: t.errors.general })
         } finally {
             setIsSubmitting(false)
         }
@@ -173,18 +270,13 @@ const EvoPayDemoForm: React.FC = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                         </div>
-                        <h3 className="text-3xl font-bold text-white mb-4">Заявка отправлена!</h3>
+                        <h3 className="text-3xl font-bold text-white mb-4">{t.successTitle}</h3>
                         <p className="text-white/70 text-lg mb-8">
-                            Мы получили вашу заявку и свяжемся с вами в течение 24 часов для демонстрации EvoPay.
+                            {t.successMessage}
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                            {[
-                                'Изучим ваши требования',
-                                'Подготовим демонстрацию',
-                                'Покажем возможности системы',
-                                'Ответим на все вопросы'
-                            ].map((step, index) => (
+                            {t.successSteps.map((step, index) => (
                                 <div key={index} className="flex items-center gap-3 text-left text-white/80 p-4 bg-white/5 rounded-xl border border-white/10">
                                     <span className="flex-shrink-0 w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center text-sm text-emerald-400 font-bold">
                                         {index + 1}
@@ -198,7 +290,7 @@ const EvoPayDemoForm: React.FC = () => {
                             onClick={() => setIsSubmitted(false)}
                             className="px-8 py-3 bg-white/10 hover:bg-white/15 text-white rounded-full font-semibold transition-all"
                         >
-                            Отправить ещё одну заявку
+                            {t.sendAnother}
                         </button>
                     </motion.div>
                 </div>
@@ -234,7 +326,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="inline-block px-4 py-2 bg-cyan-500/10 rounded-full text-xs font-bold text-cyan-400 uppercase tracking-wider mb-6"
                             >
-                                Получить демо
+                                {t.badge}
                             </motion.span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
@@ -243,7 +335,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 transition={{ delay: 0.1 }}
                                 className="text-3xl sm:text-4xl font-extrabold text-white mb-4"
                             >
-                                Готовы увеличить выручку?
+                                {t.title}
                             </motion.h2>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
@@ -252,7 +344,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 transition={{ delay: 0.2 }}
                                 className="text-lg text-white/60 mb-8"
                             >
-                                Оставьте заявку, и мы покажем как EvoPay работает в вашем ресторане. Первый месяц — бесплатно.
+                                {t.subtitle}
                             </motion.p>
 
                             <motion.ul
@@ -262,12 +354,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 transition={{ delay: 0.3 }}
                                 className="space-y-4"
                             >
-                                {[
-                                    'Персональная демонстрация',
-                                    'Ответы на все ваши вопросы',
-                                    'Запуск за 3 дня',
-                                    '30 дней бесплатного периода'
-                                ].map((item, index) => (
+                                {t.features.map((item, index) => (
                                     <li key={index} className="flex items-center gap-3">
                                         <div className="w-6 h-6 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
                                             <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -301,7 +388,7 @@ const EvoPayDemoForm: React.FC = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        placeholder="Ваше имя *"
+                                        placeholder={t.namePlaceholder}
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         maxLength={100}
@@ -319,7 +406,7 @@ const EvoPayDemoForm: React.FC = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        placeholder="Email *"
+                                        placeholder={t.emailPlaceholder}
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         maxLength={254}
@@ -337,7 +424,7 @@ const EvoPayDemoForm: React.FC = () => {
                                     <input
                                         type="tel"
                                         name="phone"
-                                        placeholder="Номер телефона *"
+                                        placeholder={t.phonePlaceholder}
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         maxLength={20}
@@ -355,7 +442,7 @@ const EvoPayDemoForm: React.FC = () => {
                                     <input
                                         type="text"
                                         name="company"
-                                        placeholder="Название ресторана/кафе *"
+                                        placeholder={t.companyPlaceholder}
                                         value={formData.company}
                                         onChange={handleInputChange}
                                         maxLength={200}
@@ -371,7 +458,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 {/* Tables */}
                                 <div>
                                     <label className="block text-sm text-white/60 mb-2">
-                                        Количество столов
+                                        {t.tablesLabel}
                                     </label>
                                     <div className="grid grid-cols-4 gap-2">
                                         {tablesOptions.map((option) => (
@@ -395,7 +482,7 @@ const EvoPayDemoForm: React.FC = () => {
                                 <div>
                                     <textarea
                                         name="message"
-                                        placeholder="Дополнительная информация (необязательно)"
+                                        placeholder={t.messagePlaceholder}
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         maxLength={1000}
@@ -416,15 +503,15 @@ const EvoPayDemoForm: React.FC = () => {
                                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                             </svg>
-                                            Отправка...
+                                            {t.submitting}
                                         </span>
                                     ) : (
-                                        'Получить демо'
+                                        t.submit
                                     )}
                                 </button>
 
                                 <p className="text-xs text-white/40 text-center">
-                                    Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                                    {t.privacy}
                                 </p>
                             </form>
                         </motion.div>
