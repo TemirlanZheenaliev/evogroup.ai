@@ -17,6 +17,8 @@ const ModernHeader = () => {
         ru: {
             company: 'Evolution Group',
             solutions: 'Решения',
+            whatsappCrm: 'EvoAI CRM',
+            evopay: 'EvoPay',
             cases: 'Кейсы',
             technology: 'Технологии',
             team: 'Команда',
@@ -26,6 +28,8 @@ const ModernHeader = () => {
         en: {
             company: 'Evolution Group',
             solutions: 'Solutions',
+            whatsappCrm: 'EvoAI CRM',
+            evopay: 'EvoPay',
             cases: 'Cases',
             technology: 'Technology',
             team: 'Team',
@@ -35,6 +39,8 @@ const ModernHeader = () => {
         ky: {
             company: 'Evolution Group',
             solutions: 'Чечимдер',
+            whatsappCrm: 'EvoAI CRM',
+            evopay: 'EvoPay',
             cases: 'Мисалдар',
             technology: 'Технологиялар',
             team: 'Команда',
@@ -47,6 +53,8 @@ const ModernHeader = () => {
 
     const menuItems = [
         { href: '/solutions', label: t.solutions },
+        { href: '/solutions/whatsapp', label: t.whatsappCrm },
+        { href: '/solutions/evopay', label: t.evopay },
         { href: '/cases', label: t.cases },
         { href: '/technology', label: t.technology },
         { href: '/team', label: t.team },
